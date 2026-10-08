@@ -33,11 +33,11 @@ export const OrderStatusTracker = ({ timeline = [], currentStatus = "Order Place
         <div className="w-full py-4">
             <div className="relative flex items-center justify-between">
                 {/* Progress bar background line */}
-                <div className="absolute top-1/2 left-0 right-0 h-1 bg-slate-200 -translate-y-1/2 z-0" />
+                <div className="absolute top-1/2 left-0 right-0 h-1.5 bg-neutral-200 -translate-y-1/2 z-0" />
                 
                 {/* Progress bar filled line */}
                 <div
-                    className="absolute top-1/2 left-0 h-1 bg-emerald-500 -translate-y-1/2 z-0 transition-all duration-500"
+                    className="absolute top-1/2 left-0 h-1.5 bg-neutral-950 -translate-y-1/2 z-0 transition-all duration-500"
                     style={{
                         width:
                             currentStatus === "Cancelled"
@@ -65,12 +65,12 @@ export const OrderStatusTracker = ({ timeline = [], currentStatus = "Order Place
                             <div
                                 className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shadow-md transition-all duration-300 ${
                                     state === "completed"
-                                        ? "bg-emerald-500 text-white ring-4 ring-emerald-100"
+                                        ? "bg-emerald-600 text-white ring-4 ring-emerald-100"
                                         : state === "current"
-                                        ? "bg-slate-900 text-white ring-4 ring-slate-200 animate-pulse scale-110"
+                                        ? "bg-neutral-950 text-white ring-4 ring-neutral-200 scale-110"
                                         : state === "cancelled"
-                                        ? "bg-rose-100 text-rose-500 border border-rose-300"
-                                        : "bg-white text-slate-400 border-2 border-slate-300"
+                                        ? "bg-rose-100 text-rose-700 border border-rose-300"
+                                        : "bg-white text-neutral-700 border-2 border-neutral-300"
                                 }`}
                             >
                                 {state === "completed" ? "✓" : stage.icon}
@@ -79,18 +79,18 @@ export const OrderStatusTracker = ({ timeline = [], currentStatus = "Order Place
                             {/* Stage Label */}
                             <div className="text-center mt-2">
                                 <p
-                                    className={`text-xs font-bold leading-tight ${
+                                    className={`text-xs leading-tight ${
                                         state === "completed"
-                                            ? "text-emerald-700"
+                                            ? "text-emerald-800 font-bold"
                                             : state === "current"
-                                            ? "text-slate-900"
-                                            : "text-slate-400"
+                                            ? "text-neutral-950 font-black"
+                                            : "text-neutral-700 font-bold"
                                     }`}
                                 >
                                     {stage.label}
                                 </p>
                                 {matchingTimelineItem && matchingTimelineItem.date && (
-                                    <p className="text-[10px] text-slate-400 mt-0.5 max-w-[80px] truncate">
+                                    <p className="text-[10px] text-neutral-600 font-semibold mt-0.5 max-w-[90px] truncate">
                                         {matchingTimelineItem.date}
                                     </p>
                                 )}

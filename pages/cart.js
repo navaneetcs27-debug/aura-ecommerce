@@ -65,18 +65,18 @@ const Cart = () => {
         return (
             <>
                 <Head>
-                    <title>Your Shopping Cart is Empty - AURA STYLE</title>
+                    <title>Your Shopping Bag is Empty - AURA ATELIER</title>
                 </Head>
-                <div className="max-w-md mx-auto my-16 p-8 bg-white rounded-3xl border border-slate-200/80 text-center shadow-xs">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-slate-100 flex items-center justify-center text-3xl">
-                        🛒
+                <div className="max-w-md mx-auto my-16 p-8 bg-white rounded-3xl border border-[#dfdcd3] text-center shadow-xs">
+                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-neutral-100 flex items-center justify-center text-3xl">
+                        🛍️
                     </div>
-                    <h2 className="text-xl font-bold text-slate-900">Your Cart is Empty</h2>
-                    <p className="text-xs text-slate-500 mt-2 mb-6 leading-relaxed">
-                        Looks like you have not added anything yet. Explore our curated catalog of apparel and coats!
+                    <h2 className="text-xl font-black text-neutral-950">Your Shopping Bag is Empty</h2>
+                    <p className="text-xs text-neutral-700 mt-2 mb-6 leading-relaxed font-medium">
+                        Explore our curated atelier catalog of pure silks, merino knitwear, and architectural coats.
                     </p>
                     <Link href="/search">
-                        <a className="inline-flex items-center justify-center px-6 py-3 bg-slate-900 text-white text-xs font-bold rounded-xl hover:bg-slate-800 transition shadow-sm">
+                        <a className="inline-flex items-center justify-center px-7 py-3.5 bg-neutral-950 text-white text-xs font-black uppercase tracking-wider rounded-xl hover:bg-black transition shadow-sm">
                             Explore Collections 🛍️
                         </a>
                     </Link>
@@ -88,16 +88,16 @@ const Cart = () => {
     return (
         <>
             <Head>
-                <title>Shopping Cart ({totalItemsCount} items) - AURA STYLE</title>
+                <title>Shopping Bag ({totalItemsCount} items) - AURA ATELIER</title>
             </Head>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
                 {/* Header */}
-                <div className="flex items-center justify-between pb-6 border-b border-slate-200">
+                <div className="flex items-center justify-between pb-6 border-b border-neutral-200">
                     <div>
-                        <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
-                            <span>Shopping Cart</span>
-                            <span className="text-sm font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
+                        <h1 className="text-2xl sm:text-3xl font-black text-neutral-950 tracking-tight flex items-center gap-2.5">
+                            <span>Shopping Bag</span>
+                            <span className="text-xs font-black text-neutral-950 bg-neutral-100 border border-neutral-300 px-3 py-1 rounded-full">
                                 {totalItemsCount} items
                             </span>
                         </h1>
@@ -105,9 +105,9 @@ const Cart = () => {
                     <button
                         type="button"
                         onClick={handleClearCart}
-                        className="text-xs font-semibold text-rose-600 hover:bg-rose-50 px-3 py-1.5 rounded-xl transition"
+                        className="text-xs font-bold text-rose-700 hover:bg-rose-50 px-3.5 py-1.5 rounded-xl transition"
                     >
-                        Clear Cart
+                        Clear Bag
                     </button>
                 </div>
 
@@ -117,18 +117,18 @@ const Cart = () => {
                     {/* Left: Cart Items List */}
                     <div className="lg:col-span-8 space-y-4">
                         {/* Free Shipping Progress Indicator */}
-                        <div className="p-4 bg-white border border-slate-200/80 rounded-2xl shadow-xs">
-                            <div className="flex items-center justify-between text-xs font-semibold text-slate-700 mb-2">
+                        <div className="p-4 bg-white border border-[#dfdcd3] rounded-2xl shadow-2xs">
+                            <div className="flex items-center justify-between text-xs font-bold text-neutral-950 mb-2">
                                 <span>
                                     {amountNeededForFreeDelivery > 0
-                                        ? `Add ₹${amountNeededForFreeDelivery} more to qualify for FREE Delivery! 🚚`
-                                        : `🎉 Congratulations! You have unlocked FREE Delivery!`}
+                                        ? `Add ₹${amountNeededForFreeDelivery} more to unlock COMPLIMENTARY Express Delivery! 🚚`
+                                        : `🎉 Congratulations! You have unlocked COMPLIMENTARY Express Delivery!`}
                                 </span>
-                                <span>{progressPercentage}%</span>
+                                <span className="font-black">{progressPercentage}%</span>
                             </div>
-                            <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                            <div className="w-full bg-neutral-100 h-2.5 rounded-full overflow-hidden border border-neutral-200">
                                 <div
-                                    className="bg-emerald-500 h-full rounded-full transition-all duration-500"
+                                    className="bg-emerald-600 h-full rounded-full transition-all duration-500"
                                     style={{ width: `${progressPercentage}%` }}
                                 />
                             </div>
@@ -144,7 +144,7 @@ const Cart = () => {
                         {/* Continue Shopping Link */}
                         <div className="pt-2">
                             <Link href="/search">
-                                <a className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-slate-900 transition">
+                                <a className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-neutral-900 hover:text-black transition">
                                     <span>←</span> Continue Shopping
                                 </a>
                             </Link>
@@ -152,61 +152,61 @@ const Cart = () => {
                     </div>
 
                     {/* Right: Order Summary Sidebar */}
-                    <div className="lg:col-span-4 bg-white border border-slate-200/80 rounded-3xl p-6 shadow-sm sticky top-28 space-y-6">
-                        <h2 className="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3">
+                    <div className="lg:col-span-4 bg-white border border-[#dfdcd3] rounded-3xl p-6 shadow-sm sticky top-36 space-y-6">
+                        <h2 className="text-lg font-black text-neutral-950 border-b border-neutral-100 pb-3">
                             Order Summary
                         </h2>
 
                         {/* Pricing Breakdown */}
                         <div className="space-y-3 text-xs">
-                            <div className="flex justify-between text-slate-600">
+                            <div className="flex justify-between text-neutral-800 font-medium">
                                 <span>Subtotal ({totalItemsCount} items)</span>
-                                <span className="font-semibold text-slate-900">₹{subtotal}</span>
+                                <span className="font-bold text-neutral-950">₹{subtotal}</span>
                             </div>
 
-                            <div className="flex justify-between text-slate-600">
+                            <div className="flex justify-between text-neutral-800 font-medium">
                                 <span>Estimated Tax (10% GST)</span>
-                                <span className="font-semibold text-slate-900">₹{tax}</span>
+                                <span className="font-bold text-neutral-950">₹{tax}</span>
                             </div>
 
-                            <div className="flex justify-between text-slate-600">
+                            <div className="flex justify-between text-neutral-800 font-medium">
                                 <span>Delivery Fee</span>
                                 {deliveryCharge === 0 ? (
-                                    <span className="font-bold text-emerald-600">FREE</span>
+                                    <span className="font-extrabold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">FREE</span>
                                 ) : (
-                                    <span className="font-semibold text-slate-900">₹{deliveryCharge}</span>
+                                    <span className="font-bold text-neutral-950">₹{deliveryCharge}</span>
                                 )}
                             </div>
 
                             {discount > 0 && (
-                                <div className="flex justify-between text-emerald-600 font-semibold bg-emerald-50 p-2 rounded-xl">
-                                    <span>Coupon Discount ({appliedCoupon?.code})</span>
+                                <div className="flex justify-between text-emerald-800 font-bold bg-emerald-50 p-2.5 rounded-xl border border-emerald-200">
+                                    <span>Privilege Coupon ({appliedCoupon?.code})</span>
                                     <span>-₹{discount}</span>
                                 </div>
                             )}
 
-                            <div className="pt-3 border-t border-slate-100 flex justify-between items-baseline">
-                                <span className="text-sm font-bold text-slate-900">Grand Total</span>
-                                <span className="text-2xl font-extrabold text-slate-900">₹{grandTotal}</span>
+                            <div className="pt-3 border-t border-neutral-200 flex justify-between items-baseline">
+                                <span className="text-sm font-black text-neutral-950">Grand Total</span>
+                                <span className="text-2xl font-black text-neutral-950">₹{grandTotal}</span>
                             </div>
                         </div>
 
                         {/* Coupon Code Box */}
                         <div className="pt-2">
-                            <label className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block mb-2">
-                                Apply Promo Code
+                            <label className="text-[11px] font-black uppercase tracking-wider text-neutral-800 block mb-2">
+                                Apply Privilege Code
                             </label>
 
                             {appliedCoupon ? (
-                                <div className="flex items-center justify-between p-3 bg-slate-50 border border-emerald-200 rounded-2xl">
+                                <div className="flex items-center justify-between p-3 bg-neutral-50 border border-emerald-400 rounded-2xl">
                                     <div className="flex items-center gap-2">
-                                        <span className="text-emerald-600 font-bold text-xs">✓ {appliedCoupon.code}</span>
-                                        <span className="text-[11px] text-slate-500">applied</span>
+                                        <span className="text-emerald-800 font-black text-xs font-mono">✓ {appliedCoupon.code}</span>
+                                        <span className="text-[11px] text-neutral-700 font-semibold">applied</span>
                                     </div>
                                     <button
                                         type="button"
                                         onClick={handleRemoveCoupon}
-                                        className="text-xs font-semibold text-rose-600 hover:text-rose-800"
+                                        className="text-xs font-bold text-rose-700 hover:text-rose-900"
                                     >
                                         Remove
                                     </button>
@@ -222,30 +222,30 @@ const Cart = () => {
                                                 setCouponInput(e.target.value.toUpperCase());
                                                 setCouponError('');
                                             }}
-                                            className="flex-1 px-3.5 py-2 text-xs bg-slate-50 uppercase font-semibold rounded-xl border border-slate-200 focus:outline-none focus:bg-white focus:border-slate-400"
+                                            className="flex-1 px-3.5 py-2.5 text-xs bg-neutral-50 uppercase font-bold text-neutral-950 rounded-xl border border-neutral-300 focus:outline-none focus:bg-white focus:border-neutral-950"
                                         />
                                         <button
                                             type="button"
                                             onClick={() => handleApplyCoupon()}
-                                            className="px-4 py-2 bg-slate-900 text-white text-xs font-bold rounded-xl hover:bg-slate-800 transition"
+                                            className="px-4 py-2 bg-neutral-950 text-white text-xs font-extrabold rounded-xl hover:bg-black transition"
                                         >
                                             Apply
                                         </button>
                                     </div>
                                     {couponError && (
-                                        <p className="text-[11px] text-rose-500 mt-1.5">{couponError}</p>
+                                        <p className="text-[11px] text-rose-600 font-bold mt-1.5">{couponError}</p>
                                     )}
 
                                     {/* Available Coupons Badges */}
                                     <div className="mt-3">
-                                        <span className="text-[10px] text-slate-400 font-semibold block mb-1.5">Tap to apply:</span>
+                                        <span className="text-[10px] text-neutral-700 font-bold uppercase tracking-wider block mb-1.5">Tap code to apply:</span>
                                         <div className="flex flex-wrap gap-1.5">
                                             {AVAILABLE_COUPONS.map((c) => (
                                                 <button
                                                     key={c.code}
                                                     type="button"
                                                     onClick={() => handleApplyCoupon(c.code)}
-                                                    className="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[10px] font-bold rounded-lg border border-slate-200 transition"
+                                                    className="px-2.5 py-1 bg-neutral-100 hover:bg-neutral-950 hover:text-white text-neutral-900 text-[10px] font-extrabold rounded-lg border border-neutral-300 transition"
                                                 >
                                                     {c.code}
                                                 </button>
@@ -260,19 +260,19 @@ const Cart = () => {
                         <button
                             type="button"
                             onClick={() => router.push('/checkout')}
-                            className="w-full py-4 bg-slate-900 text-white font-bold text-sm rounded-2xl hover:bg-slate-800 shadow-md active:scale-98 transition flex items-center justify-center gap-2"
+                            className="w-full py-4 bg-neutral-950 text-white font-black text-xs sm:text-sm uppercase tracking-wider rounded-2xl hover:bg-black shadow-md active:scale-98 transition flex items-center justify-center gap-2"
                         >
                             <span>Proceed to Checkout</span>
                             <span>→</span>
                         </button>
 
                         {/* Trust info */}
-                        <div className="pt-2 flex items-center justify-center gap-4 text-[11px] text-slate-400 font-medium border-t border-slate-100">
+                        <div className="pt-2 flex items-center justify-center gap-4 text-[11px] text-neutral-700 font-bold border-t border-neutral-100">
                             <span className="flex items-center gap-1">🔒 256-Bit SSL</span>
                             <span>•</span>
-                            <span className="flex items-center gap-1">⚡ Fast Shipping</span>
+                            <span className="flex items-center gap-1">⚡ Express Delivery</span>
                             <span>•</span>
-                            <span className="flex items-center gap-1">🔄 Easy Returns</span>
+                            <span className="flex items-center gap-1">🔄 7-Day Returns</span>
                         </div>
                     </div>
                 </div>

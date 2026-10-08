@@ -75,10 +75,10 @@ export const ResultsContainer = ({ currPage = 1, resultsPerPage = 12 }) => {
 
     if (products.length === 0) {
         return (
-            <div className="w-full py-16 bg-white rounded-3xl border border-slate-200/80 text-center p-8">
+            <div className="w-full py-16 bg-white rounded-3xl border border-neutral-300 text-center p-8 shadow-sm">
                 <span className="text-4xl block mb-2">🔍</span>
-                <h3 className="text-base font-bold text-slate-800">No matching products found</h3>
-                <p className="text-xs text-slate-500 mt-1">Try clearing some filters or searching for something else.</p>
+                <h3 className="text-base font-black text-neutral-950">No matching products found</h3>
+                <p className="text-xs text-neutral-700 font-semibold mt-1">Try clearing some filters or searching for something else.</p>
             </div>
         );
     }

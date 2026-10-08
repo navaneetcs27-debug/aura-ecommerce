@@ -77,66 +77,94 @@ export const FiltersBar = () => {
     }
 
     return (
-        <div className="m-4 border-r px-3 border-slate-300">
-            <div className="flex pb-2 justify-between border-b border-slate-300">
-                <div className="flex items-center">
+        <div className="space-y-4">
+            <div className="flex pb-3 justify-between items-center border-b border-neutral-200">
+                <div className="flex items-center gap-2">
                     <FiltersIcon />
-                    <span className="px-2">Filters</span>
+                    <span className="font-extrabold text-sm uppercase tracking-wider text-neutral-950">Filters</span>
                 </div>
-                <button className="mx-2" onClick={clearFilters}>Clear All</button>
+                <button 
+                    type="button" 
+                    className="text-xs font-bold text-neutral-600 hover:text-neutral-950 underline transition" 
+                    onClick={clearFilters}
+                >
+                    Clear All
+                </button>
             </div>
-            <div className="flex pb-2 flex-col justify-between border-b border-slate-300">
+            <div className="border-b border-neutral-200 pb-2">
                 <Accordion label="Categories">
                     {
                         CATEGORIES.map((category, index) => {
                             return (
-                                <CheckBox key={index} label={category.name} onChange={(e) => handleCheckboxChange("categories", e.target.checked, category.name)}/>
-                            )
+                                <CheckBox 
+                                    key={index} 
+                                    checked={(selectedFilters.categories || []).includes(category.name)}
+                                    label={category.name} 
+                                    onChange={(e) => handleCheckboxChange("categories", e.target.checked, category.name)}
+                                />
+                            );
                         })
                     }
                 </Accordion>
             </div>
-            <div className="flex pb-2 flex-col justify-between border-b border-slate-300">
+            <div className="border-b border-neutral-200 pb-2">
                 <Accordion label="Colors">
                     {
                         COLORS.map((category, index) => {
                             return (
-                                <CheckBox key={index} label={category.name} onChange={(e) => handleCheckboxChange("colors", e.target.checked, category.name)} />
-                            )
+                                <CheckBox 
+                                    key={index} 
+                                    checked={(selectedFilters.colors || []).includes(category.name)}
+                                    label={category.name} 
+                                    onChange={(e) => handleCheckboxChange("colors", e.target.checked, category.name)} 
+                                />
+                            );
                         })
                     }
                 </Accordion>
             </div>
-            <div className="flex pb-2 flex-col justify-between border-b border-slate-300">
-                <Accordion label="Price">
-                    <>
-                    <Slider 
-                        range
-                        min={PRICE_RANGE[0]}
-                        max={PRICE_RANGE[1]}
-                        value={selectedFilters.price}
-                        onChange={onSliderChange}
-                        handleStyle={{
-                            borderColor: "grey"
-                        }}
-                        trackStyle={{
-                            background: "black"
-                          }}
-                         />
-                    </>
+            <div className="border-b border-neutral-200 pb-2">
+                <Accordion label="Price Range">
+                    <div className="pt-2 px-1">
+                        <Slider 
+                            range
+                            min={PRICE_RANGE[0]}
+                            max={PRICE_RANGE[1]}
+                            value={selectedFilters.price && selectedFilters.price.length ? selectedFilters.price : PRICE_RANGE}
+                            onChange={onSliderChange}
+                            handleStyle={{
+                                borderColor: "#0a0a0a",
+                                backgroundColor: "#ffffff",
+                                boxShadow: "0 2px 6px rgba(0,0,0,0.2)"
+                            }}
+                            trackStyle={[{
+                                background: "#0a0a0a"
+                            }]}
+                        />
+                        <div className="flex justify-between items-center text-xs font-bold text-neutral-950 pt-2">
+                            <span>₹{selectedFilters.price?.[0] || PRICE_RANGE[0]}</span>
+                            <span>₹{selectedFilters.price?.[1] || PRICE_RANGE[1]}</span>
+                        </div>
+                    </div>
                 </Accordion>
             </div>
-            <div className="flex pb-2 flex-col justify-between border-b border-slate-300">
+            <div className="border-b border-neutral-200 pb-2">
                 <Accordion label="Gender">
                     {
                         GENDERS.map((gender, index) => {
                             return (
-                                <Radio key={index} label={gender.name} name="gender" onChange={(e) => handleRadioSelect(e.target.value)} />
-                            )
+                                <Radio 
+                                    key={index} 
+                                    checked={selectedFilters.gender === gender.name}
+                                    label={gender.name} 
+                                    name="gender" 
+                                    onChange={(e) => handleRadioSelect(e.target.value)} 
+                                />
+                            );
                         })
                     }
                 </Accordion>
             </div>
         </div>
-    )
-}
+    );
+};

@@ -50,33 +50,33 @@ export default function RegisterPage() {
     return (
         <>
             <Head>
-                <title>Create Account - AURA STYLE</title>
+                <title>Create Account - AURA ATELIER</title>
             </Head>
 
             <div className="max-w-lg mx-auto px-4 py-6">
-                <div className="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-md space-y-6">
+                <div className="bg-white rounded-3xl p-8 border border-neutral-300 shadow-md space-y-6">
                     <div className="text-center">
-                        <div className="w-12 h-12 mx-auto mb-3 rounded-2xl bg-slate-900 text-white flex items-center justify-center font-bold text-xl">
+                        <div className="w-12 h-12 mx-auto mb-3 rounded-2xl bg-neutral-950 text-white flex items-center justify-center font-black text-xl">
                             A
                         </div>
-                        <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight">
+                        <h1 className="text-2xl font-black text-neutral-950 tracking-tight">
                             Create Your Account
                         </h1>
-                        <p className="text-xs text-slate-500 mt-1">
-                            Join AURA STYLE for seamless checkout, order tracking, and exclusive discounts.
+                        <p className="text-xs text-neutral-800 font-medium mt-1">
+                            Join AURA ATELIER for seamless checkout, order tracking, and exclusive discounts.
                         </p>
                     </div>
 
                     <form onSubmit={handleRegister} className="space-y-4">
                         {errorMessage && (
-                            <div className="p-3 bg-rose-50 border border-rose-200 rounded-xl text-xs text-rose-600 font-medium">
+                            <div className="p-3 bg-rose-50 border border-rose-300 rounded-xl text-xs text-rose-800 font-bold">
                                 {errorMessage}
                             </div>
                         )}
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label className="text-xs font-bold text-slate-700 block mb-1">
+                                <label className="text-xs font-bold text-neutral-900 block mb-1">
                                     Full Name *
                                 </label>
                                 <input
@@ -85,12 +85,12 @@ export default function RegisterPage() {
                                     placeholder="e.g. John Doe"
                                     value={form.name}
                                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                                    className="w-full px-3.5 py-2.5 text-xs bg-slate-50 rounded-xl border border-slate-200 focus:outline-none focus:bg-white focus:border-slate-400"
+                                    className="w-full px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:bg-white focus:border-neutral-950 text-neutral-950 font-semibold"
                                 />
                             </div>
 
                             <div>
-                                <label className="text-xs font-bold text-slate-700 block mb-1">
+                                <label className="text-xs font-bold text-neutral-900 block mb-1">
                                     Mobile Number
                                 </label>
                                 <input
@@ -98,13 +98,13 @@ export default function RegisterPage() {
                                     placeholder="+91 98765 43210"
                                     value={form.phone}
                                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                                    className="w-full px-3.5 py-2.5 text-xs bg-slate-50 rounded-xl border border-slate-200 focus:outline-none focus:bg-white focus:border-slate-400"
+                                    className="w-full px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:bg-white focus:border-neutral-950 text-neutral-950 font-semibold"
                                 />
                             </div>
                         </div>
 
                         <div>
-                            <label className="text-xs font-bold text-slate-700 block mb-1">
+                            <label className="text-xs font-bold text-neutral-900 block mb-1">
                                 Email Address *
                             </label>
                             <input
@@ -113,12 +113,12 @@ export default function RegisterPage() {
                                 placeholder="name@example.com"
                                 value={form.email}
                                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                                className="w-full px-3.5 py-2.5 text-xs bg-slate-50 rounded-xl border border-slate-200 focus:outline-none focus:bg-white focus:border-slate-400"
+                                className="w-full px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:bg-white focus:border-neutral-950 text-neutral-950 font-semibold"
                             />
                         </div>
 
                         <div>
-                            <label className="text-xs font-bold text-slate-700 block mb-1">
+                            <label className="text-xs font-bold text-neutral-900 block mb-1">
                                 Password *
                             </label>
                             <input
@@ -127,13 +127,13 @@ export default function RegisterPage() {
                                 placeholder="At least 4 characters"
                                 value={form.password}
                                 onChange={(e) => setForm({ ...form, password: e.target.value })}
-                                className="w-full px-3.5 py-2.5 text-xs bg-slate-50 rounded-xl border border-slate-200 focus:outline-none focus:bg-white focus:border-slate-400"
+                                className="w-full px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:bg-white focus:border-neutral-950 text-neutral-950 font-semibold"
                             />
                         </div>
 
                         {/* Optional initial address */}
-                        <div className="pt-2 border-t border-slate-100">
-                            <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block mb-2">
+                        <div className="pt-2 border-t border-neutral-200">
+                            <span className="text-[11px] font-bold text-neutral-700 uppercase tracking-wider block mb-2">
                                 Default Delivery Address (Optional)
                             </span>
                             <div className="space-y-2">
@@ -142,7 +142,7 @@ export default function RegisterPage() {
                                     placeholder="Street / House / Apartment No."
                                     value={form.street}
                                     onChange={(e) => setForm({ ...form, street: e.target.value })}
-                                    className="w-full px-3.5 py-2 text-xs bg-slate-50 rounded-xl border border-slate-200 focus:outline-none"
+                                    className="w-full px-3.5 py-2 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
                                 />
                                 <div className="grid grid-cols-2 gap-2">
                                     <input
@@ -150,14 +150,14 @@ export default function RegisterPage() {
                                         placeholder="City"
                                         value={form.city}
                                         onChange={(e) => setForm({ ...form, city: e.target.value })}
-                                        className="w-full px-3.5 py-2 text-xs bg-slate-50 rounded-xl border border-slate-200 focus:outline-none"
+                                        className="w-full px-3.5 py-2 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
                                     />
                                     <input
                                         type="text"
                                         placeholder="PIN Code"
                                         value={form.pincode}
                                         onChange={(e) => setForm({ ...form, pincode: e.target.value })}
-                                        className="w-full px-3.5 py-2 text-xs bg-slate-50 rounded-xl border border-slate-200 focus:outline-none"
+                                        className="w-full px-3.5 py-2 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
                                     />
                                 </div>
                             </div>
@@ -166,17 +166,17 @@ export default function RegisterPage() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-2xl shadow-md transition active:scale-98"
+                            className="w-full py-3.5 bg-neutral-950 hover:bg-neutral-800 text-white font-bold text-xs rounded-2xl shadow-md transition active:scale-98"
                         >
                             {loading ? "Creating Account..." : "Create Free Account"}
                         </button>
                     </form>
 
-                    <div className="text-center pt-2 border-t border-slate-100">
-                        <p className="text-xs text-slate-500">
+                    <div className="text-center pt-2 border-t border-neutral-200">
+                        <p className="text-xs text-neutral-800 font-medium">
                             Already have an account?{' '}
                             <Link href={`/login${redirectPath ? `?redirect=${encodeURIComponent(redirectPath)}` : ''}`}>
-                                <a className="font-bold text-slate-900 hover:underline">Sign In</a>
+                                <a className="font-black text-neutral-950 hover:underline">Sign In</a>
                             </Link>
                         </p>
                     </div>

@@ -37,12 +37,12 @@ export default function ProfilePage() {
 
     if (!isAuthenticated || !user) {
         return (
-            <div className="max-w-md mx-auto my-16 p-8 bg-white rounded-3xl border border-slate-200 text-center shadow-xs">
+            <div className="max-w-md mx-auto my-16 p-8 bg-white rounded-3xl border border-neutral-300 text-center shadow-sm">
                 <span className="text-4xl block mb-3">🔒</span>
-                <h1 className="text-xl font-bold text-slate-900">Sign In Required</h1>
-                <p className="text-xs text-slate-500 mt-1 mb-6">Please sign in to view your profile and saved addresses.</p>
+                <h1 className="text-xl font-black text-neutral-950">Sign In Required</h1>
+                <p className="text-xs text-neutral-700 font-semibold mt-1 mb-6">Please sign in to view your profile and saved addresses.</p>
                 <Link href="/login?redirect=/profile">
-                    <a className="inline-flex px-6 py-2.5 bg-slate-900 text-white text-xs font-bold rounded-xl hover:bg-slate-800 transition">
+                    <a className="inline-flex px-6 py-2.5 bg-neutral-950 text-white text-xs font-bold rounded-xl hover:bg-neutral-800 transition">
                         Sign In Now
                     </a>
                 </Link>
@@ -87,12 +87,12 @@ export default function ProfilePage() {
     return (
         <>
             <Head>
-                <title>My Profile - AURA STYLE</title>
+                <title>My Profile - AURA ATELIER</title>
             </Head>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
                 {/* Header Profile Card */}
-                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-neutral-300 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
                     <div className="flex items-center gap-5">
                         <Image
                             src={user.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'}
@@ -100,35 +100,35 @@ export default function ProfilePage() {
                             width={80}
                             height={80}
                             unoptimized
-                            className="rounded-2xl object-cover border-2 border-slate-100 shadow-sm"
+                            className="rounded-2xl object-cover border-2 border-neutral-200 shadow-xs"
                         />
                         <div>
                             <div className="flex items-center gap-2">
-                                <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900">{user.name}</h1>
-                                <span className="px-2 py-0.5 bg-indigo-50 text-indigo-700 font-bold text-[10px] rounded-full uppercase">
-                                    Gold Member
+                                <h1 className="text-xl sm:text-2xl font-black text-neutral-950">{user.name}</h1>
+                                <span className="px-2.5 py-0.5 bg-neutral-950 text-white font-bold text-[10px] rounded-full uppercase tracking-wider">
+                                    Atelier Member
                                 </span>
                             </div>
-                            <p className="text-xs text-slate-500 mt-0.5">{user.email} • {user.phone}</p>
-                            <p className="text-xs text-slate-400 mt-1 italic font-light">{user.bio || 'Fashion enthusiast'}</p>
+                            <p className="text-xs text-neutral-800 font-bold mt-0.5">{user.email} • {user.phone}</p>
+                            <p className="text-xs text-neutral-700 mt-1 font-medium italic">{user.bio || 'Curator of everyday aesthetics'}</p>
                         </div>
                     </div>
 
                     <div className="flex items-center gap-3">
                         <Link href="/orders">
-                            <a className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-xl transition">
+                            <a className="px-4 py-2 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-neutral-950 text-xs font-bold rounded-xl transition">
                                 📦 {orders.length} Orders
                             </a>
                         </Link>
                         <Link href="/wishlist">
-                            <a className="px-4 py-2 bg-rose-50 hover:bg-rose-100 text-rose-700 text-xs font-bold rounded-xl transition">
+                            <a className="px-4 py-2 bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-800 text-xs font-bold rounded-xl transition">
                                 ❤️ {wishlistCount} Wishlist
                             </a>
                         </Link>
                         <button
                             type="button"
                             onClick={handleLogout}
-                            className="px-4 py-2 text-rose-600 hover:bg-rose-50 text-xs font-bold rounded-xl transition"
+                            className="px-4 py-2 text-rose-700 hover:bg-rose-50 border border-rose-200 text-xs font-bold rounded-xl transition"
                         >
                             Sign Out
                         </button>
@@ -139,12 +139,12 @@ export default function ProfilePage() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     
                     {/* Navigation Sidebar */}
-                    <div className="lg:col-span-3 bg-white rounded-3xl p-3 border border-slate-200/80 shadow-xs space-y-1">
+                    <div className="lg:col-span-3 bg-white rounded-3xl p-3 border border-neutral-300 shadow-sm space-y-1">
                         <button
                             type="button"
                             onClick={() => setActiveTab('profile')}
                             className={`w-full text-left px-4 py-3 rounded-2xl text-xs font-bold transition flex items-center gap-2.5 ${
-                                activeTab === 'profile' ? 'bg-slate-900 text-white' : 'text-slate-600 hover:bg-slate-100'
+                                activeTab === 'profile' ? 'bg-neutral-950 text-white' : 'text-neutral-800 hover:bg-neutral-100'
                             }`}
                         >
                             <span>👤</span> Personal Details
@@ -153,78 +153,78 @@ export default function ProfilePage() {
                             type="button"
                             onClick={() => setActiveTab('addresses')}
                             className={`w-full text-left px-4 py-3 rounded-2xl text-xs font-bold transition flex items-center gap-2.5 ${
-                                activeTab === 'addresses' ? 'bg-slate-900 text-white' : 'text-slate-600 hover:bg-slate-100'
+                                activeTab === 'addresses' ? 'bg-neutral-950 text-white' : 'text-neutral-800 hover:bg-neutral-100'
                             }`}
                         >
                             <span>📍</span> Saved Addresses ({savedAddresses.length})
                         </button>
                         <Link href="/orders">
-                            <a className="w-full text-left px-4 py-3 rounded-2xl text-xs font-bold text-slate-600 hover:bg-slate-100 transition flex items-center gap-2.5">
+                            <a className="w-full text-left px-4 py-3 rounded-2xl text-xs font-bold text-neutral-800 hover:bg-neutral-100 transition flex items-center gap-2.5">
                                 <span>📦</span> Order History & Tracking
                             </a>
                         </Link>
                         <Link href="/wishlist">
-                            <a className="w-full text-left px-4 py-3 rounded-2xl text-xs font-bold text-slate-600 hover:bg-slate-100 transition flex items-center gap-2.5">
+                            <a className="w-full text-left px-4 py-3 rounded-2xl text-xs font-bold text-neutral-800 hover:bg-neutral-100 transition flex items-center gap-2.5">
                                 <span>❤️</span> My Wishlist
                             </a>
                         </Link>
                     </div>
 
                     {/* Content Panel */}
-                    <div className="lg:col-span-9 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xs">
+                    <div className="lg:col-span-9 bg-white rounded-3xl p-6 sm:p-8 border border-neutral-300 shadow-sm">
                         {activeTab === 'profile' && (
                             <form onSubmit={handleSaveProfile} className="space-y-6 max-w-xl">
                                 <div>
-                                    <h2 className="text-lg font-bold text-slate-900">Personal Information</h2>
-                                    <p className="text-xs text-slate-500 mt-0.5">Manage your display name, contact phone, and bio.</p>
+                                    <h2 className="text-lg font-black text-neutral-950">Personal Information</h2>
+                                    <p className="text-xs text-neutral-700 font-semibold mt-0.5">Manage your display name, contact phone, and bio.</p>
                                 </div>
 
                                 <div className="space-y-4">
                                     <div>
-                                        <label className="text-xs font-bold text-slate-700 block mb-1">Full Name</label>
+                                        <label className="text-xs font-bold text-neutral-900 block mb-1">Full Name</label>
                                         <input
                                             type="text"
                                             value={editForm.name}
                                             onChange={(e) => setEditForm({ ...editForm, name: e.target.value })}
-                                            className="w-full px-3.5 py-2.5 text-xs bg-slate-50 rounded-xl border border-slate-200 focus:outline-none focus:bg-white"
+                                            className="w-full px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
                                         />
                                     </div>
 
                                     <div>
-                                        <label className="text-xs font-bold text-slate-700 block mb-1">Email Address</label>
+                                        <label className="text-xs font-bold text-neutral-900 block mb-1">Email Address</label>
                                         <input
                                             type="email"
                                             disabled
                                             value={user.email}
-                                            className="w-full px-3.5 py-2.5 text-xs bg-slate-100 text-slate-500 rounded-xl border border-slate-200 cursor-not-allowed"
+                                            className="w-full px-3.5 py-2.5 text-xs bg-neutral-100 text-neutral-700 font-semibold rounded-xl border border-neutral-300 cursor-not-allowed"
                                         />
-                                        <span className="text-[10px] text-slate-400">Email cannot be changed directly.</span>
+                                        <span className="text-[10px] text-neutral-600 font-semibold">Email cannot be changed directly.</span>
                                     </div>
 
                                     <div>
-                                        <label className="text-xs font-bold text-slate-700 block mb-1">Mobile Phone</label>
+                                        <label className="text-xs font-bold text-neutral-900 block mb-1">Mobile Phone</label>
                                         <input
                                             type="tel"
                                             value={editForm.phone}
                                             onChange={(e) => setEditForm({ ...editForm, phone: e.target.value })}
-                                            className="w-full px-3.5 py-2.5 text-xs bg-slate-50 rounded-xl border border-slate-200 focus:outline-none focus:bg-white"
+                                            className="w-full px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
                                         />
                                     </div>
 
                                     <div>
-                                        <label className="text-xs font-bold text-slate-700 block mb-1">About / Bio</label>
+                                        <label className="text-xs font-bold text-neutral-900 block mb-1">About / Bio</label>
                                         <textarea
                                             rows="3"
                                             value={editForm.bio}
                                             onChange={(e) => setEditForm({ ...editForm, bio: e.target.value })}
-                                            className="w-full px-3.5 py-2.5 text-xs bg-slate-50 rounded-xl border border-slate-200 focus:outline-none focus:bg-white"
+                                            className="w-full px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
                                         ></textarea>
                                     </div>
                                 </div>
 
                                 <button
                                     type="submit"
-                                    className="px-6 py-2.5 bg-slate-900 text-white text-xs font-bold rounded-xl hover:bg-slate-800 transition shadow-sm"
+                                    className="px-6 py-2.5 bg-neutral-950 text-white text-xs font-bold rounded-xl hover:bg-neutral-800 transition shadow-sm"
                                 >
                                     Save Profile Changes
                                 </button>
@@ -235,13 +235,13 @@ export default function ProfilePage() {
                             <div className="space-y-6">
                                 <div className="flex items-center justify-between">
                                     <div>
-                                        <h2 className="text-lg font-bold text-slate-900">Saved Shipping Addresses</h2>
-                                        <p className="text-xs text-slate-500 mt-0.5">Manage delivery addresses for quick 1-click checkout.</p>
+                                        <h2 className="text-lg font-black text-neutral-950">Saved Shipping Addresses</h2>
+                                        <p className="text-xs text-neutral-700 font-semibold mt-0.5">Manage delivery addresses for quick 1-click checkout.</p>
                                     </div>
                                     <button
                                         type="button"
                                         onClick={() => setShowAddAddressModal(true)}
-                                        className="px-4 py-2 bg-slate-900 text-white text-xs font-bold rounded-xl hover:bg-slate-800 transition shadow-sm flex items-center gap-1.5"
+                                        className="px-4 py-2 bg-neutral-950 text-white text-xs font-bold rounded-xl hover:bg-neutral-800 transition shadow-sm flex items-center gap-1.5"
                                     >
                                         <span>+ Add New Address</span>
                                     </button>
@@ -253,27 +253,27 @@ export default function ProfilePage() {
                                             key={addr.id}
                                             className={`p-5 rounded-2xl border transition ${
                                                 addr.isDefault
-                                                    ? 'bg-slate-50/80 border-slate-900 ring-1 ring-slate-900'
-                                                    : 'bg-white border-slate-200'
+                                                    ? 'bg-neutral-100 border-neutral-950 ring-1 ring-neutral-950'
+                                                    : 'bg-white border-neutral-300'
                                             }`}
                                         >
                                             <div className="flex items-center justify-between mb-2">
-                                                <span className="px-2 py-0.5 bg-slate-200 text-slate-800 text-[10px] font-bold rounded-md uppercase">
+                                                <span className="px-2 py-0.5 bg-neutral-200 border border-neutral-300 text-neutral-950 text-[10px] font-black rounded-md uppercase">
                                                     {addr.tag || "Address"}
                                                 </span>
                                                 {addr.isDefault && (
-                                                    <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+                                                    <span className="text-[10px] font-black text-emerald-900 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded-full">
                                                         ✓ Default
                                                     </span>
                                                 )}
                                             </div>
 
-                                            <h3 className="font-bold text-sm text-slate-900">{addr.fullName}</h3>
-                                            <p className="text-xs text-slate-600 mt-1 leading-relaxed">{addr.street}</p>
-                                            <p className="text-xs text-slate-600">{addr.city}, {addr.state} - {addr.pincode}</p>
-                                            <p className="text-xs text-slate-500 mt-1">📞 {addr.phone}</p>
+                                            <h3 className="font-black text-sm text-neutral-950">{addr.fullName}</h3>
+                                            <p className="text-xs text-neutral-800 font-medium mt-1 leading-relaxed">{addr.street}</p>
+                                            <p className="text-xs text-neutral-800 font-medium">{addr.city}, {addr.state} - {addr.pincode}</p>
+                                            <p className="text-xs text-neutral-700 font-bold mt-1">📞 {addr.phone}</p>
 
-                                            <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                                            <div className="mt-4 pt-3 border-t border-neutral-200 flex items-center justify-between text-xs">
                                                 {!addr.isDefault && (
                                                     <button
                                                         type="button"
@@ -281,7 +281,7 @@ export default function ProfilePage() {
                                                             setDefaultAddress(addr.id);
                                                             showToast("Set as default delivery address", "success");
                                                         }}
-                                                        className="font-semibold text-slate-700 hover:text-slate-900"
+                                                        className="font-bold text-neutral-900 hover:text-black underline"
                                                     >
                                                         Set Default
                                                     </button>
@@ -292,7 +292,7 @@ export default function ProfilePage() {
                                                         removeAddress(addr.id);
                                                         showToast("Address removed", "info");
                                                     }}
-                                                    className="font-semibold text-rose-600 hover:text-rose-800 ml-auto"
+                                                    className="font-bold text-rose-700 hover:text-rose-900 ml-auto"
                                                 >
                                                     Delete
                                                 </button>
@@ -303,8 +303,8 @@ export default function ProfilePage() {
 
                                 {/* Add Address Modal / Expandable Form */}
                                 {showAddAddressModal && (
-                                    <div className="p-6 bg-slate-50 rounded-2xl border border-slate-200 space-y-4 animate-fadeIn">
-                                        <h3 className="text-sm font-bold text-slate-900">Add New Shipping Address</h3>
+                                    <div className="p-6 bg-neutral-100 rounded-2xl border border-neutral-300 space-y-4 animate-fadeIn">
+                                        <h3 className="text-sm font-black text-neutral-950">Add New Shipping Address</h3>
                                         <form onSubmit={handleAddAddressSubmit} className="space-y-3">
                                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                                 <input
@@ -313,7 +313,7 @@ export default function ProfilePage() {
                                                     placeholder="Full Name"
                                                     value={newAddress.fullName}
                                                     onChange={(e) => setNewAddress({ ...newAddress, fullName: e.target.value })}
-                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-slate-200 focus:outline-none"
+                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
                                                 />
                                                 <input
                                                     type="tel"
@@ -321,7 +321,7 @@ export default function ProfilePage() {
                                                     placeholder="Phone Number"
                                                     value={newAddress.phone}
                                                     onChange={(e) => setNewAddress({ ...newAddress, phone: e.target.value })}
-                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-slate-200 focus:outline-none"
+                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
                                                 />
                                             </div>
                                             <input
@@ -330,7 +330,7 @@ export default function ProfilePage() {
                                                 placeholder="Street / House / Flat / Apartment No."
                                                 value={newAddress.street}
                                                 onChange={(e) => setNewAddress({ ...newAddress, street: e.target.value })}
-                                                className="w-full px-3.5 py-2 text-xs bg-white rounded-xl border border-slate-200 focus:outline-none"
+                                                className="w-full px-3.5 py-2 text-xs bg-white rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
                                             />
                                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                                                 <input
@@ -339,7 +339,7 @@ export default function ProfilePage() {
                                                     placeholder="City"
                                                     value={newAddress.city}
                                                     onChange={(e) => setNewAddress({ ...newAddress, city: e.target.value })}
-                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-slate-200 focus:outline-none"
+                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
                                                 />
                                                 <input
                                                     type="text"
@@ -347,7 +347,7 @@ export default function ProfilePage() {
                                                     placeholder="State"
                                                     value={newAddress.state}
                                                     onChange={(e) => setNewAddress({ ...newAddress, state: e.target.value })}
-                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-slate-200 focus:outline-none"
+                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
                                                 />
                                                 <input
                                                     type="text"
@@ -355,17 +355,17 @@ export default function ProfilePage() {
                                                     placeholder="PIN Code"
                                                     value={newAddress.pincode}
                                                     onChange={(e) => setNewAddress({ ...newAddress, pincode: e.target.value })}
-                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-slate-200 focus:outline-none"
+                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
                                                 />
                                             </div>
 
                                             <div className="flex items-center justify-between pt-2">
-                                                <label className="flex items-center gap-2 text-xs text-slate-700 cursor-pointer">
+                                                <label className="flex items-center gap-2 text-xs text-neutral-900 font-bold cursor-pointer">
                                                     <input
                                                         type="checkbox"
                                                         checked={newAddress.isDefault}
                                                         onChange={(e) => setNewAddress({ ...newAddress, isDefault: e.target.checked })}
-                                                        className="rounded text-slate-900"
+                                                        className="rounded text-neutral-950 accent-neutral-950"
                                                     />
                                                     <span>Set as default shipping address</span>
                                                 </label>
@@ -374,13 +374,13 @@ export default function ProfilePage() {
                                                     <button
                                                         type="button"
                                                         onClick={() => setShowAddAddressModal(false)}
-                                                        className="px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-200 rounded-xl"
+                                                        className="px-4 py-2 text-xs font-bold text-neutral-700 hover:bg-neutral-200 rounded-xl"
                                                     >
                                                         Cancel
                                                     </button>
                                                     <button
                                                         type="submit"
-                                                        className="px-5 py-2 bg-slate-900 text-white text-xs font-bold rounded-xl hover:bg-slate-800"
+                                                        className="px-5 py-2 bg-neutral-950 text-white text-xs font-bold rounded-xl hover:bg-neutral-800"
                                                     >
                                                         Save Address
                                                     </button>

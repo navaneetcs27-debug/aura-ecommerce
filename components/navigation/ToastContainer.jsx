@@ -10,20 +10,20 @@ export const ToastContainer = () => {
         switch (type) {
             case 'success':
                 return (
-                    <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm">
+                    <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300 flex items-center justify-center font-black text-xs">
                         ✓
                     </span>
                 );
             case 'error':
                 return (
-                    <span className="w-6 h-6 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-sm">
+                    <span className="w-6 h-6 rounded-full bg-rose-100 text-rose-900 border border-rose-300 flex items-center justify-center font-black text-xs">
                         ✕
                     </span>
                 );
             case 'info':
             default:
                 return (
-                    <span className="w-6 h-6 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center font-bold text-sm">
+                    <span className="w-6 h-6 rounded-full bg-neutral-200 text-neutral-950 border border-neutral-300 flex items-center justify-center font-black text-xs">
                         ℹ
                     </span>
                 );
@@ -35,15 +35,15 @@ export const ToastContainer = () => {
             {toasts.map((toast) => (
                 <div
                     key={toast.id}
-                    className="pointer-events-auto flex items-center justify-between p-4 bg-white/95 backdrop-blur-md rounded-xl shadow-2xl border border-slate-200/80 animate-slideUp transition-all duration-300 transform hover:scale-[1.02]"
+                    className="pointer-events-auto flex items-center justify-between p-4 bg-white rounded-2xl shadow-2xl border border-neutral-300 animate-slideUp transition-all duration-300 transform hover:scale-[1.02]"
                 >
                     <div className="flex items-center gap-3">
                         {getIcon(toast.type)}
-                        <p className="text-sm font-medium text-slate-800">{toast.message}</p>
+                        <p className="text-xs font-black text-neutral-950 leading-snug">{toast.message}</p>
                     </div>
                     <button
                         onClick={() => removeToast(toast.id)}
-                        className="ml-3 text-slate-400 hover:text-slate-600 p-1 text-xs rounded transition"
+                        className="ml-3 text-neutral-700 hover:text-black font-bold p-1 text-xs rounded transition"
                         aria-label="Close"
                     >
                         ✕

@@ -52,12 +52,12 @@ export default function OrderDetailsPage() {
 
     if (!order) {
         return (
-            <div className="max-w-md mx-auto my-16 p-8 bg-white rounded-3xl border border-slate-200 text-center shadow-xs">
+            <div className="max-w-md mx-auto my-16 p-8 bg-white rounded-3xl border border-neutral-300 text-center shadow-sm">
                 <span className="text-4xl block mb-3">🔍</span>
-                <h1 className="text-xl font-bold text-slate-900">Order Not Found</h1>
-                <p className="text-xs text-slate-500 mt-1 mb-6">Could not find an order matching #{orderId}.</p>
+                <h1 className="text-xl font-black text-neutral-950">Order Not Found</h1>
+                <p className="text-xs text-neutral-700 font-semibold mt-1 mb-6">Could not find an order matching #{orderId}.</p>
                 <Link href="/orders">
-                    <a className="inline-flex px-6 py-2.5 bg-slate-900 text-white text-xs font-bold rounded-xl hover:bg-slate-800 transition">
+                    <a className="inline-flex px-6 py-2.5 bg-neutral-950 text-white text-xs font-bold rounded-xl hover:bg-neutral-800 transition">
                         Back to Orders
                     </a>
                 </Link>
@@ -68,14 +68,14 @@ export default function OrderDetailsPage() {
     return (
         <>
             <Head>
-                <title>Order #{order.id} - AURA STYLE</title>
+                <title>Order #{order.id} - AURA ATELIER</title>
             </Head>
 
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
                 {/* Top Nav */}
                 <div className="flex items-center justify-between">
                     <Link href="/orders">
-                        <a className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-600 hover:text-slate-900 transition">
+                        <a className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-800 hover:text-neutral-950 transition">
                             <span>←</span> Back to All Orders
                         </a>
                     </Link>
@@ -84,7 +84,7 @@ export default function OrderDetailsPage() {
                         <button
                             type="button"
                             onClick={handlePrintInvoice}
-                            className="px-4 py-2 bg-white border border-slate-200 hover:bg-slate-50 text-slate-800 text-xs font-bold rounded-xl shadow-xs transition flex items-center gap-1.5"
+                            className="px-4 py-2 bg-white border border-neutral-300 hover:bg-neutral-100 text-neutral-950 text-xs font-bold rounded-xl shadow-xs transition flex items-center gap-1.5"
                         >
                             <span>📄 Print Receipt</span>
                         </button>
@@ -92,28 +92,28 @@ export default function OrderDetailsPage() {
                 </div>
 
                 {/* Order Summary Hero Card */}
-                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xs space-y-6">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-neutral-300 shadow-sm space-y-6">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-neutral-200">
                         <div>
-                            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                            <span className="text-[11px] font-black text-neutral-700 uppercase tracking-wider">
                                 Order Reference
                             </span>
-                            <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-mono mt-0.5">
+                            <h1 className="text-2xl sm:text-3xl font-black text-neutral-950 font-mono mt-0.5">
                                 #{order.id}
                             </h1>
-                            <p className="text-xs text-slate-500 mt-1">
+                            <p className="text-xs text-neutral-700 font-bold mt-1">
                                 Placed on {order.formattedDate || new Date(order.date).toLocaleDateString()}
                             </p>
                         </div>
 
                         <div className="flex items-center gap-3 self-start sm:self-auto">
                             <span
-                                className={`px-4 py-1.5 rounded-full text-xs font-bold ${
+                                className={`px-4 py-1.5 rounded-full text-xs font-black border ${
                                     order.status === 'Delivered'
-                                        ? 'bg-emerald-100 text-emerald-800'
+                                        ? 'bg-emerald-100 text-emerald-900 border-emerald-300'
                                         : order.status === 'Cancelled'
-                                        ? 'bg-rose-100 text-rose-800'
-                                        : 'bg-amber-100 text-amber-800'
+                                        ? 'bg-rose-100 text-rose-900 border-rose-300'
+                                        : 'bg-amber-100 text-amber-900 border-amber-300'
                                 }`}
                             >
                                 ● {order.status}
@@ -124,12 +124,12 @@ export default function OrderDetailsPage() {
                     {/* Live Tracker */}
                     <div className="space-y-4 pt-2">
                         <div className="flex items-center justify-between">
-                            <h2 className="text-sm font-bold text-slate-900">Shipment Timeline & Tracking</h2>
+                            <h2 className="text-sm font-black text-neutral-950">Shipment Timeline & Tracking</h2>
                             {order.status !== 'Delivered' && order.status !== 'Cancelled' && (
                                 <button
                                     type="button"
                                     onClick={handleAdvanceStage}
-                                    className="px-3.5 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-bold rounded-xl transition border border-indigo-200"
+                                    className="px-3.5 py-1.5 bg-neutral-950 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition shadow-xs"
                                 >
                                     ⚡ Advance Stage (Demo)
                                 </button>
@@ -146,16 +146,16 @@ export default function OrderDetailsPage() {
                 {/* Items & Breakdown */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     {/* Itemized Table */}
-                    <div className="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xs space-y-4">
-                        <h2 className="text-sm font-bold text-slate-900 border-b border-slate-100 pb-3">
+                    <div className="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-8 border border-neutral-300 shadow-sm space-y-4">
+                        <h2 className="text-sm font-black text-neutral-950 border-b border-neutral-200 pb-3">
                             Item Details ({order.items?.length || 0})
                         </h2>
 
-                        <div className="space-y-4 divide-y divide-slate-100">
+                        <div className="space-y-4 divide-y divide-neutral-100">
                             {order.items?.map((item, idx) => (
                                 <div key={idx} className="pt-3 flex items-center justify-between gap-4">
                                     <div className="flex items-center gap-4">
-                                        <div className="w-16 h-20 bg-slate-50 rounded-2xl p-2 flex items-center justify-center border border-slate-100 flex-shrink-0">
+                                        <div className="w-16 h-20 bg-neutral-100 rounded-2xl p-2 flex items-center justify-center border border-neutral-200 flex-shrink-0">
                                             <Image
                                                 loader={imageLoader}
                                                 src={item.imgUrl}
@@ -166,19 +166,19 @@ export default function OrderDetailsPage() {
                                             />
                                         </div>
                                         <div>
-                                            <p className="text-xs font-semibold text-slate-400 uppercase">{item.category}</p>
+                                            <p className="text-xs font-black text-neutral-700 uppercase tracking-wider">{item.category}</p>
                                             <Link href={`/product/${item.id}`}>
-                                                <a className="text-sm font-bold text-slate-900 hover:underline line-clamp-1">
+                                                <a className="text-sm font-bold text-neutral-950 hover:underline line-clamp-1">
                                                     {item.title}
                                                 </a>
                                             </Link>
-                                            <p className="text-xs text-slate-500 mt-1">
-                                                Qty: <span className="font-bold text-slate-800">{item.qt || 1}</span> × ₹{item.price}
+                                            <p className="text-xs text-neutral-700 font-semibold mt-1">
+                                                Qty: <span className="font-black text-neutral-950">{item.qt || 1}</span> × ₹{item.price}
                                             </p>
                                         </div>
                                     </div>
 
-                                    <span className="text-sm sm:text-base font-bold text-slate-900">
+                                    <span className="text-sm sm:text-base font-black text-neutral-950">
                                         ₹{(Number(item.price) || 0) * (Number(item.qt) || 1)}
                                     </span>
                                 </div>
@@ -189,48 +189,48 @@ export default function OrderDetailsPage() {
                     {/* Side Info Cards: Address & Price Breakdown */}
                     <div className="lg:col-span-4 space-y-6">
                         {/* Shipping Address */}
-                        <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs space-y-3">
-                            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 pb-2">
+                        <div className="bg-white rounded-3xl p-6 border border-neutral-300 shadow-sm space-y-3">
+                            <h3 className="text-xs font-black uppercase tracking-wider text-neutral-700 border-b border-neutral-200 pb-2">
                                 Delivery Address
                             </h3>
-                            <p className="text-sm font-bold text-slate-900">{order.shippingAddress?.fullName}</p>
-                            <p className="text-xs text-slate-600 leading-relaxed">{order.shippingAddress?.street}</p>
-                            <p className="text-xs text-slate-600">{order.shippingAddress?.city}, {order.shippingAddress?.state} - {order.shippingAddress?.pincode}</p>
-                            <p className="text-xs text-slate-500 pt-1">📞 {order.shippingAddress?.phone}</p>
+                            <p className="text-sm font-black text-neutral-950">{order.shippingAddress?.fullName}</p>
+                            <p className="text-xs text-neutral-800 font-medium leading-relaxed">{order.shippingAddress?.street}</p>
+                            <p className="text-xs text-neutral-800 font-medium">{order.shippingAddress?.city}, {order.shippingAddress?.state} - {order.shippingAddress?.pincode}</p>
+                            <p className="text-xs text-neutral-700 font-bold pt-1">📞 {order.shippingAddress?.phone}</p>
                         </div>
 
                         {/* Payment & Price Summary */}
-                        <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs space-y-3 text-xs">
-                            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 pb-2">
+                        <div className="bg-white rounded-3xl p-6 border border-neutral-300 shadow-sm space-y-3 text-xs">
+                            <h3 className="text-xs font-black uppercase tracking-wider text-neutral-700 border-b border-neutral-200 pb-2">
                                 Payment Details
                             </h3>
-                            <div className="flex justify-between text-slate-600">
+                            <div className="flex justify-between text-neutral-800 font-medium">
                                 <span>Subtotal</span>
-                                <span className="font-semibold text-slate-900">₹{order.pricing?.subtotal}</span>
+                                <span className="font-bold text-neutral-950">₹{order.pricing?.subtotal}</span>
                             </div>
-                            <div className="flex justify-between text-slate-600">
+                            <div className="flex justify-between text-neutral-800 font-medium">
                                 <span>Tax (10%)</span>
-                                <span className="font-semibold text-slate-900">₹{order.pricing?.tax}</span>
+                                <span className="font-bold text-neutral-950">₹{order.pricing?.tax}</span>
                             </div>
-                            <div className="flex justify-between text-slate-600">
+                            <div className="flex justify-between text-neutral-800 font-medium">
                                 <span>Delivery Fee</span>
-                                <span className="font-semibold text-slate-900">
+                                <span className="font-bold text-neutral-950">
                                     {order.pricing?.deliveryCharge === 0 ? 'FREE' : `₹${order.pricing?.deliveryCharge}`}
                                 </span>
                             </div>
                             {order.pricing?.discount > 0 && (
-                                <div className="flex justify-between text-emerald-600 font-semibold bg-emerald-50 p-2 rounded-xl">
+                                <div className="flex justify-between text-emerald-900 font-bold bg-emerald-50 border border-emerald-200 p-2 rounded-xl">
                                     <span>Discount</span>
                                     <span>-₹{order.pricing?.discount}</span>
                                 </div>
                             )}
-                            <div className="pt-3 border-t border-slate-100 flex justify-between items-baseline">
-                                <span className="text-sm font-bold text-slate-900">Grand Total</span>
-                                <span className="text-xl font-extrabold text-slate-900">₹{order.pricing?.grandTotal}</span>
+                            <div className="pt-3 border-t border-neutral-200 flex justify-between items-baseline">
+                                <span className="text-sm font-bold text-neutral-800">Grand Total</span>
+                                <span className="text-xl font-black text-neutral-950">₹{order.pricing?.grandTotal}</span>
                             </div>
 
-                            <p className="text-[11px] text-slate-400 pt-2">
-                                Method: <span className="text-slate-700 font-medium">{order.paymentMethod?.label}</span>
+                            <p className="text-[11px] text-neutral-700 font-semibold pt-2">
+                                Method: <span className="text-neutral-950 font-bold">{order.paymentMethod?.label}</span>
                             </p>
                         </div>
 
@@ -239,7 +239,7 @@ export default function OrderDetailsPage() {
                             <button
                                 type="button"
                                 onClick={handleCancel}
-                                className="w-full py-3 bg-rose-50 hover:bg-rose-100 text-rose-700 text-xs font-bold rounded-2xl border border-rose-200 transition"
+                                className="w-full py-3 bg-rose-50 hover:bg-rose-100 text-rose-800 text-xs font-bold rounded-2xl border border-rose-300 transition"
                             >
                                 Cancel Order
                             </button>

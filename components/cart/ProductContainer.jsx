@@ -34,11 +34,11 @@ export const CartItemRow = ({ product }) => {
     };
 
     return (
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 sm:p-5 bg-white border border-slate-200/80 rounded-2xl shadow-xs hover:border-slate-300 transition gap-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 sm:p-5 bg-white border border-[#dfdcd3] rounded-2xl shadow-2xs hover:border-neutral-400 transition gap-4">
             {/* Left: Thumbnail & Info */}
             <div className="flex items-center gap-4 flex-1">
                 <Link href={`/product/${product.id}`}>
-                    <div className="w-20 h-24 sm:w-24 sm:h-28 bg-slate-50 rounded-xl p-2 flex items-center justify-center flex-shrink-0 cursor-pointer border border-slate-100 hover:opacity-90 transition">
+                    <div className="w-20 h-24 sm:w-24 sm:h-28 bg-neutral-100 rounded-xl p-2 flex items-center justify-center flex-shrink-0 cursor-pointer border border-neutral-200 hover:opacity-90 transition">
                         <Image
                             loader={imageLoader}
                             src={product.imgUrl}
@@ -51,23 +51,23 @@ export const CartItemRow = ({ product }) => {
                 </Link>
 
                 <div className="flex flex-col">
-                    <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
+                    <span className="text-[11px] font-black text-neutral-800 uppercase tracking-wider">
                         {product.category || "Apparel"}
                     </span>
                     <Link href={`/product/${product.id}`}>
-                        <a className="font-bold text-sm sm:text-base text-slate-900 hover:text-slate-700 transition line-clamp-1">
+                        <a className="font-extrabold text-sm sm:text-base text-neutral-950 hover:text-neutral-700 transition line-clamp-1">
                             {product.title}
                         </a>
                     </Link>
-                    <p className="text-xs text-slate-500 mt-0.5">
-                        Unit Price: <span className="font-semibold text-slate-800">₹{unitPrice}</span>
+                    <p className="text-xs text-neutral-700 font-medium mt-0.5">
+                        Unit Price: <span className="font-bold text-neutral-950">₹{unitPrice}</span>
                     </p>
 
                     {/* Quick Move to Wishlist action */}
                     <button
                         type="button"
                         onClick={handleMoveToWishlist}
-                        className="text-left text-xs font-medium text-slate-500 hover:text-rose-600 transition mt-2 inline-flex items-center gap-1"
+                        className="text-left text-xs font-bold text-neutral-800 hover:text-rose-600 transition mt-2 inline-flex items-center gap-1"
                     >
                         <span>❤️</span> Move to Wishlist
                     </button>
@@ -75,7 +75,7 @@ export const CartItemRow = ({ product }) => {
             </div>
 
             {/* Right: Quantity Stepper, Item Total & Remove */}
-            <div className="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-4 sm:gap-6 pt-3 sm:pt-0 border-t sm:border-t-0 border-slate-100">
+            <div className="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-4 sm:gap-6 pt-3 sm:pt-0 border-t sm:border-t-0 border-neutral-100">
                 {/* Quantity */}
                 <div className="flex flex-col items-center">
                     <NumberCounter
@@ -86,9 +86,9 @@ export const CartItemRow = ({ product }) => {
                 </div>
 
                 {/* Total */}
-                <div className="text-right min-w-[70px]">
-                    <span className="text-xs text-slate-400 block sm:hidden">Total</span>
-                    <span className="text-base sm:text-lg font-bold text-slate-900">
+                <div className="text-right min-w-[80px]">
+                    <span className="text-xs text-neutral-700 font-bold block sm:hidden">Total</span>
+                    <span className="text-base sm:text-lg font-black text-neutral-950">
                         ₹{itemTotal}
                     </span>
                 </div>
@@ -97,11 +97,11 @@ export const CartItemRow = ({ product }) => {
                 <button
                     type="button"
                     onClick={handleRemove}
-                    className="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition"
+                    className="p-2 text-neutral-600 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition"
                     title="Remove from Cart"
                     aria-label="Remove item"
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.8" stroke="currentColor" className="w-5 h-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-5 h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
                     </svg>
                 </button>

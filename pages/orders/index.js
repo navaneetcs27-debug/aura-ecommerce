@@ -47,44 +47,44 @@ export default function OrdersPage() {
     const getStatusBadge = (status) => {
         switch (status) {
             case 'Delivered':
-                return 'bg-emerald-100 text-emerald-800 border-emerald-200';
+                return 'bg-emerald-100 text-emerald-900 border-emerald-300 font-bold';
             case 'Shipped':
             case 'Out for Delivery':
-                return 'bg-blue-100 text-blue-800 border-blue-200';
+                return 'bg-blue-100 text-blue-900 border-blue-300 font-bold';
             case 'Processing':
             case 'Order Placed':
-                return 'bg-amber-100 text-amber-800 border-amber-200';
+                return 'bg-amber-100 text-amber-900 border-amber-300 font-bold';
             case 'Cancelled':
-                return 'bg-rose-100 text-rose-800 border-rose-200';
+                return 'bg-rose-100 text-rose-900 border-rose-300 font-bold';
             default:
-                return 'bg-slate-100 text-slate-800 border-slate-200';
+                return 'bg-neutral-100 text-neutral-900 border-neutral-300 font-bold';
         }
     };
 
     return (
         <>
             <Head>
-                <title>My Orders ({orders.length}) - AURA STYLE</title>
+                <title>My Orders ({orders.length}) - AURA ATELIER</title>
                 <meta name="description" content="View and track your previous orders." />
             </Head>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
                 {/* Header */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-neutral-300">
                     <div>
-                        <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+                        <h1 className="text-2xl sm:text-3xl font-black text-neutral-950 tracking-tight flex items-center gap-3">
                             <span>Order History & Tracking</span>
-                            <span className="text-sm font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
+                            <span className="text-xs font-black text-neutral-950 bg-neutral-200 border border-neutral-300 px-3 py-1 rounded-full">
                                 {orders.length} orders
                             </span>
                         </h1>
-                        <p className="text-xs sm:text-sm text-slate-500 mt-1">
-                            Track shipments in real-time, view invoices, or re-order your favorite fits.
+                        <p className="text-xs sm:text-sm text-neutral-800 font-medium mt-1">
+                            Track shipments in real-time, view invoices, or re-order your favorite pieces.
                         </p>
                     </div>
 
                     {/* Filter Tabs */}
-                    <div className="flex items-center gap-1.5 p-1 bg-slate-100 rounded-2xl self-start sm:self-auto overflow-x-auto max-w-full">
+                    <div className="flex items-center gap-1.5 p-1.5 bg-neutral-200 border border-neutral-300 rounded-2xl self-start sm:self-auto overflow-x-auto max-w-full">
                         {[
                             { id: 'all', label: 'All Orders' },
                             { id: 'active', label: 'In Progress' },
@@ -95,10 +95,10 @@ export default function OrdersPage() {
                                 key={tab.id}
                                 type="button"
                                 onClick={() => setStatusFilter(tab.id)}
-                                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition whitespace-nowrap ${
+                                className={`px-4 py-1.5 rounded-xl text-xs font-bold transition whitespace-nowrap ${
                                     statusFilter === tab.id
-                                        ? 'bg-white text-slate-900 shadow-xs'
-                                        : 'text-slate-500 hover:text-slate-900'
+                                        ? 'bg-neutral-950 text-white shadow-xs'
+                                        : 'text-neutral-700 hover:text-neutral-950'
                                 }`}
                             >
                                 {tab.label}
@@ -109,18 +109,18 @@ export default function OrdersPage() {
 
                 {/* Orders List */}
                 {filteredOrders.length === 0 ? (
-                    <div className="max-w-md mx-auto my-16 p-8 bg-white rounded-3xl border border-slate-200/80 text-center shadow-xs">
-                        <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-slate-100 flex items-center justify-center text-3xl">
+                    <div className="max-w-md mx-auto my-16 p-8 bg-white rounded-3xl border border-neutral-300 text-center shadow-sm">
+                        <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-neutral-100 border border-neutral-200 flex items-center justify-center text-3xl">
                             📦
                         </div>
-                        <h2 className="text-xl font-bold text-slate-900">No Orders Found</h2>
-                        <p className="text-xs text-slate-500 mt-2 mb-6">
+                        <h2 className="text-xl font-black text-neutral-950">No Orders Found</h2>
+                        <p className="text-xs text-neutral-700 font-semibold mt-2 mb-6">
                             {statusFilter === 'all'
-                                ? "You haven't placed any orders yet. Start exploring our collections!"
+                                ? "You haven't placed any orders yet. Start exploring our atelier collections!"
                                 : `No orders matching filter "${statusFilter}".`}
                         </p>
                         <Link href="/search">
-                            <a className="inline-flex items-center justify-center px-6 py-3 bg-slate-900 text-white text-xs font-bold rounded-xl hover:bg-slate-800 transition shadow-sm">
+                            <a className="inline-flex items-center justify-center px-6 py-3 bg-neutral-950 text-white text-xs font-bold rounded-xl hover:bg-neutral-800 transition shadow-sm">
                                 Explore Store 🛍️
                             </a>
                         </Link>
@@ -130,28 +130,28 @@ export default function OrdersPage() {
                         {filteredOrders.map((order) => (
                             <div
                                 key={order.id}
-                                className="bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-7 shadow-xs hover:border-slate-300 transition space-y-5"
+                                className="bg-white rounded-3xl border border-neutral-300 p-6 sm:p-7 shadow-sm hover:border-neutral-400 transition space-y-5"
                             >
                                 {/* Top Bar: ID, Date, Status */}
-                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-100">
+                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-neutral-200">
                                     <div className="flex items-center gap-3 flex-wrap">
-                                        <span className="font-mono font-bold text-sm text-slate-900 bg-slate-100 px-3 py-1 rounded-xl">
+                                        <span className="font-mono font-black text-sm text-neutral-950 bg-neutral-100 border border-neutral-300 px-3 py-1 rounded-xl">
                                             #{order.id}
                                         </span>
-                                        <span className="text-xs text-slate-400 font-medium">
+                                        <span className="text-xs text-neutral-700 font-bold">
                                             Placed on {order.formattedDate || new Date(order.date).toLocaleDateString()}
                                         </span>
                                     </div>
 
                                     <div className="flex items-center gap-3">
                                         <span
-                                            className={`px-3 py-1 rounded-full text-xs font-bold border ${getStatusBadge(
+                                            className={`px-3 py-1 rounded-full text-xs font-black border ${getStatusBadge(
                                                 order.status
                                             )}`}
                                         >
                                             ● {order.status}
                                         </span>
-                                        <span className="text-base font-extrabold text-slate-900">
+                                        <span className="text-base font-black text-neutral-950">
                                             ₹{order.pricing?.grandTotal}
                                         </span>
                                     </div>
@@ -163,7 +163,7 @@ export default function OrdersPage() {
                                         {order.items?.slice(0, 4).map((item, idx) => (
                                             <div
                                                 key={idx}
-                                                className="w-16 h-20 bg-slate-50 rounded-xl p-1.5 flex items-center justify-center border border-slate-100 flex-shrink-0"
+                                                className="w-16 h-20 bg-neutral-100 rounded-xl p-1.5 flex items-center justify-center border border-neutral-200 flex-shrink-0"
                                                 title={`${item.title} (Qty: ${item.qt || 1})`}
                                             >
                                                 <Image
@@ -177,16 +177,16 @@ export default function OrdersPage() {
                                             </div>
                                         ))}
                                         {order.items?.length > 4 && (
-                                            <div className="w-16 h-20 bg-slate-100 rounded-xl flex items-center justify-center text-xs font-bold text-slate-600 border border-slate-200">
+                                            <div className="w-16 h-20 bg-neutral-100 rounded-xl flex items-center justify-center text-xs font-black text-neutral-900 border border-neutral-300">
                                                 +{order.items.length - 4} more
                                             </div>
                                         )}
                                         <div className="ml-2">
-                                            <p className="text-xs font-bold text-slate-800">
+                                            <p className="text-xs font-black text-neutral-950">
                                                 {order.items?.length || 0} {order.items?.length === 1 ? 'item' : 'items'}
                                             </p>
-                                            <p className="text-[11px] text-slate-400">
-                                                Est. Delivery: <span className="font-semibold text-slate-700">{order.estimatedDelivery}</span>
+                                            <p className="text-[11px] text-neutral-700 font-semibold mt-0.5">
+                                                Est. Delivery: <span className="font-bold text-neutral-950">{order.estimatedDelivery}</span>
                                             </p>
                                         </div>
                                     </div>
@@ -197,7 +197,7 @@ export default function OrdersPage() {
                                             <button
                                                 type="button"
                                                 onClick={() => handleCancelOrder(order.id)}
-                                                className="px-3.5 py-2 text-xs font-semibold text-rose-600 hover:bg-rose-50 rounded-xl transition"
+                                                className="px-3.5 py-2 text-xs font-bold text-rose-700 hover:bg-rose-50 border border-rose-300 rounded-xl transition"
                                             >
                                                 Cancel Order
                                             </button>
@@ -206,13 +206,13 @@ export default function OrdersPage() {
                                         <button
                                             type="button"
                                             onClick={() => handleReorder(order)}
-                                            className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-xl transition"
+                                            className="px-4 py-2 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-neutral-950 text-xs font-bold rounded-xl transition"
                                         >
                                             🔁 Buy Again
                                         </button>
 
                                         <Link href={`/orders/${order.id}`}>
-                                            <a className="px-5 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl shadow-xs transition">
+                                            <a className="px-5 py-2 bg-neutral-950 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl shadow-xs transition">
                                                 Track & Details →
                                             </a>
                                         </Link>

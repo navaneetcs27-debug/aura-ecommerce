@@ -38,17 +38,17 @@ export const ResultsSummary = ({ count, currPage, resultsPerPage, onPageUpdate }
         "relative inline-flex items-center border px-4 py-2 text-sm font-medium focus:z-20"
 
     return (
-        <div className='sm:flex sm:flex-1 sm:items-center sm:justify-between my-2'>
+        <div className='sm:flex sm:flex-1 sm:items-center sm:justify-between my-2 gap-4'>
             <div>
-                <p className="text-slate-600 text-center">{`Showing ${count} product results`}</p>
+                <p className="text-neutral-900 font-bold text-sm text-center sm:text-left">{`Showing ${count} curated product results`}</p>
             </div>
-            <div className='flex justify-between'>
-                <div className='sm:hidden block flex-1'>
-                    <button onClick={openModal} className='bg-black flex mx-auto justify-center items-center rounded-full h-10 w-10 text-white'>
+            <div className='flex justify-between items-center gap-3'>
+                <div className='sm:hidden block'>
+                    <button onClick={openModal} className='bg-neutral-950 flex mx-auto justify-center items-center rounded-xl h-10 w-10 text-white shadow-sm'>
                         <FiltersIcon />
                     </button>
                     <Transition appear show={isOpen} as={Fragment}>
-                        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+                        <Dialog as="div" className="relative z-50" onClose={closeModal}>
                             <Transition.Child
                                 as={Fragment}
                                 enter="ease-out duration-300"
@@ -58,7 +58,7 @@ export const ResultsSummary = ({ count, currPage, resultsPerPage, onPageUpdate }
                                 leaveFrom="opacity-100"
                                 leaveTo="opacity-0"
                             >
-                                <div className="fixed inset-0 bg-black bg-opacity-25" />
+                                <div className="fixed inset-0 bg-black/60 backdrop-blur-xs" />
                             </Transition.Child>
 
                             <div className="fixed inset-0 overflow-y-auto">
@@ -72,24 +72,24 @@ export const ResultsSummary = ({ count, currPage, resultsPerPage, onPageUpdate }
                                         leaveFrom="opacity-100 scale-100"
                                         leaveTo="opacity-0 scale-95"
                                     >
-                                    <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                                    <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-3xl bg-white p-6 text-left align-middle shadow-2xl transition-all border border-neutral-200">
                                     <div className="mt-2">
                                        <FiltersBar />
                                     </div>
-                                    <div className="mt-4 flex justify-between">
+                                    <div className="mt-6 flex justify-between gap-3">
                                         <button
                                             type="button"
-                                            className="inline-flex justify-center  border border-black bg-white px-4 py-2 text-sm font-medium text-black hover:bg-slate-100 focus:outline-none"
+                                            className="flex-1 py-2.5 border border-neutral-300 rounded-xl text-xs font-bold text-neutral-800 hover:bg-neutral-100 transition"
                                             onClick={closeModal}
                                             >
                                             Cancel
                                         </button>
                                         <button
                                             type="button"
-                                            className="inline-flex justify-center border border-transparent bg-black px-4 py-2 text-sm font-medium text-white hover:bg-black-600 focus:outline-none"
+                                            className="flex-1 py-2.5 bg-neutral-950 rounded-xl text-xs font-bold text-white hover:bg-black transition shadow-sm"
                                             onClick={closeModal}
                                             >
-                                            Apply
+                                            Apply Filters
                                         </button>
                                     </div>
                                      </Dialog.Panel>
@@ -99,10 +99,10 @@ export const ResultsSummary = ({ count, currPage, resultsPerPage, onPageUpdate }
                             </Dialog>
                         </Transition>
                 </div>
-                <nav className="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
-                    <button className={clsx(pageNumberStyle.default, defaultPageNumberStyle)} onClick={() => onPageUpdate(currPage - 1)} disabled={currPage == 1}>
+                <nav className="isolate inline-flex -space-x-px rounded-xl shadow-2xs bg-white border border-neutral-200 overflow-hidden" aria-label="Pagination">
+                    <button className={clsx(pageNumberStyle.default, defaultPageNumberStyle, "text-neutral-900 font-bold hover:bg-neutral-100")} onClick={() => onPageUpdate(currPage - 1)} disabled={currPage == 1}>
                         <span className="sr-only">Previous</span>
-                        <ChevronLeft width={24}/>
+                        <ChevronLeft width={20}/>
                     </button> 
                     <Pagination
                         pagesTotal={totalPages}
@@ -110,12 +110,12 @@ export const ResultsSummary = ({ count, currPage, resultsPerPage, onPageUpdate }
                         currentPage={currPage}
                         isExpanded={false}
                         />
-                     <button className={clsx(pageNumberStyle.default, defaultPageNumberStyle)} onClick={() => onPageUpdate(currPage + 1)} disabled={currPage == totalPages}>
+                     <button className={clsx(pageNumberStyle.default, defaultPageNumberStyle, "text-neutral-900 font-bold hover:bg-neutral-100")} onClick={() => onPageUpdate(currPage + 1)} disabled={currPage == totalPages}>
                         <span className="sr-only">Next</span>
-                        <ChevronRight width={24} />
+                        <ChevronRight width={20} />
                      </button>
                 </nav>
             </div>
         </div>
-    )
-}
+    );
+};

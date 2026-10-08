@@ -46,15 +46,16 @@ export const RatingStars = ({ rating = 5, reviewCount, size = "sm", showNumber =
                 {renderStars()}
             </div>
             {showNumber && (
-                <span className="text-xs font-semibold text-slate-700 ml-0.5">
+                <span className="text-xs font-black text-neutral-950 ml-0.5">
                     {numericRating.toFixed(1)}
                 </span>
             )}
             {reviewCount !== undefined && (
-                <span className="text-xs text-slate-400 font-normal">
+                <span className="text-xs text-neutral-700 font-bold">
                     ({reviewCount})
                 </span>
             )}
         </div>
     );
 };
+

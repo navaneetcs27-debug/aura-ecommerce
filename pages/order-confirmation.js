@@ -46,12 +46,12 @@ export default function OrderConfirmationPage() {
 
     if (!order) {
         return (
-            <div className="max-w-md mx-auto my-16 p-8 bg-white rounded-3xl border border-slate-200 text-center shadow-xs">
+            <div className="max-w-md mx-auto my-16 p-8 bg-white rounded-3xl border border-neutral-300 text-center shadow-sm">
                 <span className="text-4xl block mb-3">📦</span>
-                <h1 className="text-xl font-bold text-slate-900">Loading Order Details...</h1>
-                <p className="text-xs text-slate-500 mt-1 mb-6">Retrieving your order summary.</p>
+                <h1 className="text-xl font-black text-neutral-950">Loading Order Details...</h1>
+                <p className="text-xs text-neutral-700 font-semibold mt-1 mb-6">Retrieving your order summary.</p>
                 <Link href="/orders">
-                    <a className="inline-flex px-6 py-2.5 bg-slate-900 text-white text-xs font-bold rounded-xl hover:bg-slate-800 transition">
+                    <a className="inline-flex px-6 py-2.5 bg-neutral-950 text-white text-xs font-bold rounded-xl hover:bg-neutral-800 transition">
                         View All Orders
                     </a>
                 </Link>
@@ -62,43 +62,43 @@ export default function OrderConfirmationPage() {
     return (
         <>
             <Head>
-                <title>Order Confirmed #{order.id} - AURA STYLE</title>
+                <title>Order Confirmed #{order.id} - AURA ATELIER</title>
             </Head>
 
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
                 {/* Celebratory Hero Card */}
-                <div className="p-8 sm:p-10 bg-white rounded-3xl border border-slate-200/80 shadow-md text-center space-y-4">
-                    <div className="w-16 h-16 mx-auto rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl font-bold animate-bounce shadow-sm">
+                <div className="p-8 sm:p-10 bg-white rounded-3xl border border-neutral-300 shadow-md text-center space-y-4">
+                    <div className="w-16 h-16 mx-auto rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-3xl font-black animate-bounce shadow-xs border border-emerald-300">
                         ✓
                     </div>
-                    <span className="text-xs font-extrabold uppercase tracking-widest text-emerald-600">
+                    <span className="text-xs font-black uppercase tracking-widest text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
                         Payment Successful & Order Placed
                     </span>
-                    <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    <h1 className="text-2xl sm:text-4xl font-black text-neutral-950 tracking-tight">
                         Thank You For Your Order!
                     </h1>
-                    <p className="text-xs sm:text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
-                        We have received your order and our team is already preparing it. You will receive tracking updates via SMS & email.
+                    <p className="text-xs sm:text-sm text-neutral-800 font-medium max-w-lg mx-auto leading-relaxed">
+                        We have received your order and our studio team is already preparing it. You will receive tracking updates via SMS & email.
                     </p>
 
                     <div className="inline-flex flex-wrap items-center justify-center gap-3 pt-2">
-                        <span className="px-3.5 py-1.5 bg-slate-100 rounded-xl text-xs font-bold text-slate-800 font-mono">
+                        <span className="px-3.5 py-1.5 bg-neutral-100 border border-neutral-300 rounded-xl text-xs font-black text-neutral-950 font-mono">
                             Order ID: {order.id}
                         </span>
-                        <span className="px-3.5 py-1.5 bg-emerald-50 text-emerald-700 rounded-xl text-xs font-bold">
+                        <span className="px-3.5 py-1.5 bg-emerald-50 border border-emerald-300 text-emerald-900 rounded-xl text-xs font-black">
                             Estimated Delivery: {order.estimatedDelivery}
                         </span>
                     </div>
                 </div>
 
                 {/* Live Tracking Timeline Card */}
-                <div className="p-6 sm:p-8 bg-white rounded-3xl border border-slate-200/80 shadow-xs space-y-6">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+                <div className="p-6 sm:p-8 bg-white rounded-3xl border border-neutral-300 shadow-sm space-y-6">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-neutral-200 pb-4">
                         <div>
-                            <h2 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
+                            <h2 className="text-base sm:text-lg font-black text-neutral-950 flex items-center gap-2">
                                 <span>🚚 Live Shipment Tracker</span>
                             </h2>
-                            <p className="text-xs text-slate-500 mt-0.5">Real-time status of your parcel</p>
+                            <p className="text-xs text-neutral-700 font-semibold mt-0.5">Real-time status of your parcel</p>
                         </div>
 
                         {/* Interactive demo button to simulate progress */}
@@ -106,7 +106,7 @@ export default function OrderConfirmationPage() {
                             <button
                                 type="button"
                                 onClick={handleAdvanceStage}
-                                className="px-3.5 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-bold rounded-xl transition border border-indigo-200 shadow-xs flex items-center gap-1.5 self-start sm:self-auto"
+                                className="px-3.5 py-1.5 bg-neutral-950 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl transition shadow-xs flex items-center gap-1.5 self-start sm:self-auto"
                             >
                                 <span>⚡ Simulate Next Stage</span>
                             </button>
@@ -122,15 +122,15 @@ export default function OrderConfirmationPage() {
                 {/* Order Details Breakdown */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Items Ordered */}
-                    <div className="p-6 bg-white rounded-3xl border border-slate-200/80 shadow-xs space-y-4">
-                        <h3 className="text-sm font-bold text-slate-900 border-b border-slate-100 pb-2">
+                    <div className="p-6 bg-white rounded-3xl border border-neutral-300 shadow-sm space-y-4">
+                        <h3 className="text-sm font-black text-neutral-950 border-b border-neutral-200 pb-2">
                             Items in this Order ({order.items?.length || 0})
                         </h3>
-                        <div className="space-y-3 divide-y divide-slate-100 max-h-64 overflow-y-auto pr-1">
+                        <div className="space-y-3 divide-y divide-neutral-100 max-h-64 overflow-y-auto pr-1">
                             {order.items?.map((item, idx) => (
                                 <div key={idx} className="pt-2 flex items-center justify-between gap-3 text-xs">
                                     <div className="flex items-center gap-3">
-                                        <div className="w-12 h-14 bg-slate-50 rounded-xl p-1 flex items-center justify-center border border-slate-100">
+                                        <div className="w-12 h-14 bg-neutral-100 rounded-xl p-1 flex items-center justify-center border border-neutral-200">
                                             <Image
                                                 loader={imageLoader}
                                                 src={item.imgUrl}
@@ -141,11 +141,11 @@ export default function OrderConfirmationPage() {
                                             />
                                         </div>
                                         <div>
-                                            <p className="font-bold text-slate-800 line-clamp-1">{item.title}</p>
-                                            <p className="text-[11px] text-slate-400">Qty: {item.qt || 1} × ₹{item.price}</p>
+                                            <p className="font-bold text-neutral-950 line-clamp-1">{item.title}</p>
+                                            <p className="text-[11px] text-neutral-700 font-semibold">Qty: {item.qt || 1} × ₹{item.price}</p>
                                         </div>
                                     </div>
-                                    <span className="font-bold text-slate-900">
+                                    <span className="font-black text-neutral-950 text-sm">
                                         ₹{(Number(item.price) || 0) * (Number(item.qt) || 1)}
                                     </span>
                                 </div>
@@ -154,35 +154,35 @@ export default function OrderConfirmationPage() {
                     </div>
 
                     {/* Shipping & Payment Summary */}
-                    <div className="p-6 bg-white rounded-3xl border border-slate-200/80 shadow-xs space-y-4">
-                        <h3 className="text-sm font-bold text-slate-900 border-b border-slate-100 pb-2">
+                    <div className="p-6 bg-white rounded-3xl border border-neutral-300 shadow-sm space-y-4">
+                        <h3 className="text-sm font-black text-neutral-950 border-b border-neutral-200 pb-2">
                             Delivery & Payment Summary
                         </h3>
                         <div className="space-y-2.5 text-xs">
                             <div>
-                                <span className="text-slate-400 font-semibold block text-[10px] uppercase">Shipping Address</span>
-                                <p className="font-bold text-slate-800">{order.shippingAddress?.fullName}</p>
-                                <p className="text-slate-600">{order.shippingAddress?.street}</p>
-                                <p className="text-slate-600">{order.shippingAddress?.city}, {order.shippingAddress?.pincode}</p>
-                                <p className="text-slate-500">📞 {order.shippingAddress?.phone}</p>
+                                <span className="text-neutral-700 font-bold block text-[10px] uppercase tracking-wider">Shipping Address</span>
+                                <p className="font-black text-neutral-950">{order.shippingAddress?.fullName}</p>
+                                <p className="text-neutral-800 font-medium">{order.shippingAddress?.street}</p>
+                                <p className="text-neutral-800 font-medium">{order.shippingAddress?.city}, {order.shippingAddress?.pincode}</p>
+                                <p className="text-neutral-700 font-bold mt-1">📞 {order.shippingAddress?.phone}</p>
                             </div>
 
-                            <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
+                            <div className="pt-2 border-t border-neutral-200 flex items-center justify-between">
                                 <div>
-                                    <span className="text-slate-400 font-semibold block text-[10px] uppercase">Payment Method</span>
-                                    <p className="font-bold text-slate-800">{order.paymentMethod?.label}</p>
+                                    <span className="text-neutral-700 font-bold block text-[10px] uppercase tracking-wider">Payment Method</span>
+                                    <p className="font-black text-neutral-950">{order.paymentMethod?.label}</p>
                                     {order.paymentMethod?.paymentId && (
-                                        <p className="text-[11px] text-indigo-600 font-mono mt-0.5">Ref: {order.paymentMethod.paymentId}</p>
+                                        <p className="text-[11px] text-neutral-900 font-mono font-bold mt-0.5">Ref: {order.paymentMethod.paymentId}</p>
                                     )}
                                 </div>
-                                <span className="px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-full text-[10px] font-extrabold uppercase">
+                                <span className="px-2.5 py-1 bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-full text-[10px] font-black uppercase">
                                     ✓ {order.paymentMethod?.type === 'cod' ? 'Pay on Delivery' : 'Paid Online'}
                                 </span>
                             </div>
 
-                            <div className="pt-2 border-t border-slate-100 flex justify-between items-baseline">
-                                <span className="font-bold text-slate-700">Total Paid:</span>
-                                <span className="text-lg font-extrabold text-slate-900">₹{order.pricing?.grandTotal}</span>
+                            <div className="pt-2 border-t border-neutral-200 flex justify-between items-baseline">
+                                <span className="font-bold text-neutral-800">Total Paid:</span>
+                                <span className="text-xl font-black text-neutral-950">₹{order.pricing?.grandTotal}</span>
                             </div>
                         </div>
                     </div>
@@ -193,19 +193,19 @@ export default function OrderConfirmationPage() {
                     <button
                         type="button"
                         onClick={handlePrintInvoice}
-                        className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-xl transition flex items-center gap-2"
+                        className="px-5 py-2.5 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-neutral-950 text-xs font-bold rounded-xl transition flex items-center gap-2"
                     >
                         <span>📄 Print Invoice / Receipt</span>
                     </button>
 
                     <div className="flex items-center gap-3">
                         <Link href="/orders">
-                            <a className="px-5 py-2.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-800 text-xs font-bold rounded-xl transition">
+                            <a className="px-5 py-2.5 bg-white border border-neutral-300 hover:bg-neutral-100 text-neutral-950 text-xs font-bold rounded-xl transition">
                                 View in Order History
                             </a>
                         </Link>
                         <Link href="/search">
-                            <a className="px-6 py-2.5 bg-slate-900 text-white text-xs font-bold rounded-xl hover:bg-slate-800 transition shadow-sm">
+                            <a className="px-6 py-2.5 bg-neutral-950 text-white text-xs font-bold rounded-xl hover:bg-neutral-800 transition shadow-sm">
                                 Continue Shopping 🛍️
                             </a>
                         </Link>

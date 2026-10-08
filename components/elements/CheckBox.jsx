@@ -1,8 +1,13 @@
 export const CheckBox = ({ checked, label, onChange }) => {
     return (
-        <div className="flex items-center">
-            <input checked={checked} id="checked-checkbox" onChange={onChange} type="checkbox" value="" className="w-4 h-4 text-indigo-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"/>
-            <label className="ml-2 text-sm font-medium text-gray-900">{label}</label>
-        </div>
-    )
-}
+        <label className="flex items-center gap-2.5 cursor-pointer select-none py-1 group">
+            <input 
+                checked={checked} 
+                onChange={onChange} 
+                type="checkbox" 
+                className="w-4 h-4 text-neutral-950 bg-white rounded border-neutral-400 focus:ring-neutral-900 focus:ring-2 cursor-pointer transition accent-neutral-950"
+            />
+            <span className="text-xs font-bold text-neutral-800 group-hover:text-neutral-950 transition">{label}</span>
+        </label>
+    );
+};

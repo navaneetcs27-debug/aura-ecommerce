@@ -22,17 +22,19 @@ const SearchPage = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
                 <div className="text-center pt-2">
-                    <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-                        Explore Collections
+                    <h1 className="text-2xl sm:text-4xl font-black text-neutral-950 tracking-tight">
+                        Explore Atelier Catalog
                     </h1>
-                    <p className="text-xs text-slate-500 mt-1">Filter by category, color, gender, and price range.</p>
+                    <p className="text-xs sm:text-sm text-neutral-800 font-medium mt-1">
+                        Filter by certified fibres, silhouettes, color palettes, and price points.
+                    </p>
                 </div>
 
                 <SearchBar />
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-4">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-2">
                     {/* Left: Filters Sidebar */}
-                    <div className="lg:col-span-3 bg-white p-5 rounded-3xl border border-slate-200/80 shadow-xs sticky top-28">
+                    <div className="lg:col-span-3 bg-white p-5 rounded-3xl border border-[#dfdcd3] shadow-xs sticky top-36">
                         <FiltersBar />
                     </div>
 
@@ -46,5 +48,6 @@ const SearchPage = () => {
         </>
     );
 };
+
 
 export default SearchPage;
