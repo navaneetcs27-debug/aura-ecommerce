@@ -125,36 +125,34 @@ export default function Home() {
                     <CategoriesSection />
                 </div>
 
-                {/* 4. Flash Deals with Live Countdown Timer */}
-                <div className="bg-gradient-to-br from-rose-950 via-slate-900 to-slate-950 text-white rounded-3xl p-6 sm:p-10 border border-rose-900/40 shadow-2xl relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl pointer-events-none" />
-                    
+                {/* 4. Seasonal Archive Drop with Live Countdown */}
+                <div className="bg-neutral-900 text-white rounded-3xl p-8 sm:p-12 border border-neutral-800 shadow-lg relative overflow-hidden">
                     <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
                         <div>
-                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-rose-500/20 text-rose-400 rounded-full text-xs font-bold uppercase tracking-wider mb-2 border border-rose-500/30">
-                                <span>⚡ LIMITED TIME DROP</span>
+                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-neutral-800 text-neutral-300 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 border border-neutral-700">
+                                <span>Private Archive // Limited Release</span>
                             </div>
                             <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
-                                Flash Deals & High Discounts
+                                Seasonal Archive Drops
                             </h2>
-                            <p className="text-xs sm:text-sm text-slate-300 mt-1">
-                                Save up to 40% on top trending autumn silhouettes before timer ends.
+                            <p className="text-xs sm:text-sm text-neutral-400 mt-1">
+                                Exceptional investment pieces with private reductions up to 35% before archive closure.
                             </p>
                         </div>
 
                         {/* Live Countdown Box */}
-                        <div className="flex items-center gap-2 bg-slate-900/90 border border-white/10 p-2.5 sm:p-3 rounded-2xl backdrop-blur-md self-start md:self-auto">
-                            <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider mr-1">Ends In:</span>
+                        <div className="flex items-center gap-2 bg-black/60 border border-neutral-700 p-2.5 sm:p-3 rounded-2xl backdrop-blur-md self-start md:self-auto">
+                            <span className="text-[11px] font-semibold text-neutral-400 uppercase tracking-widest mr-1">Archive Closes:</span>
                             <div className="flex items-center gap-1.5 font-mono">
-                                <span className="bg-rose-600 text-white text-xs sm:text-sm font-black px-2.5 py-1.5 rounded-lg shadow-inner">
+                                <span className="bg-white text-neutral-900 text-xs sm:text-sm font-black px-2.5 py-1.5 rounded-lg shadow-sm">
                                     {String(timeLeft.hours).padStart(2, '0')}h
                                 </span>
-                                <span className="font-bold text-rose-400">:</span>
-                                <span className="bg-rose-600 text-white text-xs sm:text-sm font-black px-2.5 py-1.5 rounded-lg shadow-inner">
+                                <span className="font-bold text-neutral-500">:</span>
+                                <span className="bg-white text-neutral-900 text-xs sm:text-sm font-black px-2.5 py-1.5 rounded-lg shadow-sm">
                                     {String(timeLeft.minutes).padStart(2, '0')}m
                                 </span>
-                                <span className="font-bold text-rose-400">:</span>
-                                <span className="bg-rose-600 text-white text-xs sm:text-sm font-black px-2.5 py-1.5 rounded-lg shadow-inner">
+                                <span className="font-bold text-neutral-500">:</span>
+                                <span className="bg-white text-neutral-900 text-xs sm:text-sm font-black px-2.5 py-1.5 rounded-lg shadow-sm">
                                     {String(timeLeft.seconds).padStart(2, '0')}s
                                 </span>
                             </div>
@@ -172,25 +170,25 @@ export default function Home() {
                 <div className="space-y-6">
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                         <div>
-                            <span className="text-xs font-bold uppercase tracking-widest text-indigo-600">
-                                🌟 Curated Catalog
+                            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500">
+                                Current Atelier Rotation
                             </span>
-                            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-                                Explore Trending Wardrobe Pieces
+                            <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight mt-1">
+                                Essential Wardrobe Foundations
                             </h2>
                         </div>
 
                         {/* Tab Switchers */}
-                        <div className="flex items-center gap-1.5 bg-slate-200/70 p-1.5 rounded-2xl overflow-x-auto max-w-full backdrop-blur-sm">
+                        <div className="flex items-center gap-1 bg-neutral-100 p-1.5 rounded-xl overflow-x-auto max-w-full border border-neutral-200">
                             {categoryTabs.map((tab) => (
                                 <button
                                     key={tab}
                                     type="button"
                                     onClick={() => setSelectedCategoryTab(tab)}
-                                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
+                                    className={`px-4 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all whitespace-nowrap ${
                                         selectedCategoryTab === tab
-                                            ? 'bg-white text-slate-900 shadow-sm scale-102'
-                                            : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
+                                            ? 'bg-neutral-900 text-white shadow-xs'
+                                            : 'text-neutral-600 hover:text-neutral-900 hover:bg-white/60'
                                     }`}
                                 >
                                     {tab}
@@ -207,8 +205,8 @@ export default function Home() {
 
                     <div className="text-center pt-4">
                         <Link href="/search">
-                            <a className="inline-flex items-center gap-2 px-8 py-3.5 bg-slate-900 text-white font-bold text-xs sm:text-sm rounded-2xl hover:bg-slate-800 transition shadow-lg transform active:scale-95">
-                                <span>Browse Entire 24+ Item Collection</span>
+                            <a className="inline-flex items-center gap-2 px-8 py-3.5 bg-neutral-900 text-white font-semibold text-xs sm:text-sm tracking-wider uppercase rounded-xl hover:bg-black transition shadow-sm active:scale-95">
+                                <span>Explore Entire 24+ Item Collection</span>
                                 <span>→</span>
                             </a>
                         </Link>
@@ -218,31 +216,31 @@ export default function Home() {
                 {/* 6. Editorial Lookbook Double Banner */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Editorial 1: The Winter Trench */}
-                    <div className="group relative rounded-3xl overflow-hidden bg-slate-900 text-white p-8 sm:p-10 flex flex-col justify-between min-h-[340px] border border-slate-800 shadow-lg">
-                        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-transparent z-10" />
+                    <div className="group relative rounded-3xl overflow-hidden bg-neutral-900 text-white p-8 sm:p-10 flex flex-col justify-between min-h-[360px] border border-neutral-800 shadow-md">
+                        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/90 via-neutral-950/50 to-transparent z-10" />
                         <div className="absolute inset-0 z-0">
                             <Image
                                 src="/images/categories/coats.webp"
                                 layout="fill"
                                 objectFit="cover"
                                 alt="Coats editorial"
-                                className="group-hover:scale-105 transition-transform duration-700 opacity-60"
+                                className="group-hover:scale-105 transition-transform duration-700 opacity-70"
                             />
                         </div>
                         <div className="relative z-20 space-y-2">
-                            <span className="text-[11px] font-bold text-amber-300 uppercase tracking-widest">
-                                Editorial Spotlight
+                            <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-[0.25em]">
+                                Editorial Lookbook // 01
                             </span>
                             <h3 className="text-2xl sm:text-3xl font-black">
                                 The Minimalist Outerwear
                             </h3>
-                            <p className="text-xs text-slate-300 max-w-xs leading-relaxed">
-                                Heavy wool coats, trench tailoring, and double-breasted finishes designed to outlast seasons.
+                            <p className="text-xs text-neutral-300 max-w-xs leading-relaxed">
+                                Heavy pure wool overcoats, architectural trench lines, and double-breasted tailoring crafted to outlast seasons.
                             </p>
                         </div>
                         <div className="relative z-20 pt-6">
                             <Link href='/search?categories=["Coats"]'>
-                                <a className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-slate-900 text-xs font-extrabold rounded-xl hover:bg-slate-100 transition shadow-md">
+                                <a className="inline-flex items-center gap-2 px-6 py-3 bg-white text-neutral-900 text-xs font-bold uppercase tracking-wider rounded-xl hover:bg-neutral-100 transition shadow-sm">
                                     <span>Shop Outerwear</span>
                                     <span>→</span>
                                 </a>
@@ -251,31 +249,31 @@ export default function Home() {
                     </div>
 
                     {/* Editorial 2: The Silk & Satin Edit */}
-                    <div className="group relative rounded-3xl overflow-hidden bg-slate-900 text-white p-8 sm:p-10 flex flex-col justify-between min-h-[340px] border border-slate-800 shadow-lg">
-                        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-transparent z-10" />
+                    <div className="group relative rounded-3xl overflow-hidden bg-neutral-900 text-white p-8 sm:p-10 flex flex-col justify-between min-h-[360px] border border-neutral-800 shadow-md">
+                        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/90 via-neutral-950/50 to-transparent z-10" />
                         <div className="absolute inset-0 z-0">
                             <Image
                                 src="/images/categories/blouses.webp"
                                 layout="fill"
                                 objectFit="cover"
                                 alt="Blouses editorial"
-                                className="group-hover:scale-105 transition-transform duration-700 opacity-60"
+                                className="group-hover:scale-105 transition-transform duration-700 opacity-70"
                             />
                         </div>
                         <div className="relative z-20 space-y-2">
-                            <span className="text-[11px] font-bold text-rose-300 uppercase tracking-widest">
-                                Feminine Essentials
+                            <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-[0.25em]">
+                                Editorial Lookbook // 02
                             </span>
                             <h3 className="text-2xl sm:text-3xl font-black">
-                                Pure Silk & Satin Blouses
+                                Pure Silk & Satin Silhouettes
                             </h3>
-                            <p className="text-xs text-slate-300 max-w-xs leading-relaxed">
-                                Delicate pleats, French cuffs, and effortless silhouettes crafted for every day and night.
+                            <p className="text-xs text-neutral-300 max-w-xs leading-relaxed">
+                                Delicate pleats, French cuffs, and effortless fluid draping designed for both day and evening attire.
                             </p>
                         </div>
                         <div className="relative z-20 pt-6">
                             <Link href='/search?categories=["Blouses"]'>
-                                <a className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-slate-900 text-xs font-extrabold rounded-xl hover:bg-slate-100 transition shadow-md">
+                                <a className="inline-flex items-center gap-2 px-6 py-3 bg-white text-neutral-900 text-xs font-bold uppercase tracking-wider rounded-xl hover:bg-neutral-100 transition shadow-sm">
                                     <span>Shop Blouses</span>
                                     <span>→</span>
                                 </a>
@@ -284,92 +282,84 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* 7. Verified Customer Reviews / Social Proof */}
+                {/* 7. Client Reflections / Social Proof */}
                 <div className="space-y-6">
                     <div className="text-center max-w-xl mx-auto">
-                        <span className="text-xs font-bold uppercase tracking-widest text-indigo-600">
-                            💬 Customer Reviews
+                        <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-neutral-500">
+                            Client Reflections
                         </span>
-                        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-                            Loved by 50,000+ Fashion Lovers
+                        <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight mt-1">
+                            Trusted by 50,000+ Patrons Worldwide
                         </h2>
-                        <p className="text-xs text-slate-500 mt-1">
-                            Real experiences from verified buyers across India & globally.
+                        <p className="text-xs text-neutral-500 mt-1">
+                            Real experiences from verified clients across India and globally.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="glass-panel p-6 rounded-3xl border border-slate-200/80 shadow-xs space-y-3 bg-white/90">
-                            <div className="flex items-center gap-1 text-amber-400 text-sm">
+                        <div className="p-6 rounded-2xl border border-neutral-200/90 bg-white shadow-xs space-y-3">
+                            <div className="flex items-center gap-1 text-neutral-900 text-sm">
                                 ★★★★★
                             </div>
-                            <p className="text-xs text-slate-700 italic leading-relaxed">
-                                &quot;The Ruby Red Trench Coat is pure perfection. The weight and tailoring feel like bespoke designer luxury. Arrived in Mumbai in just 2 days!&quot;
+                            <p className="text-xs text-neutral-700 italic leading-relaxed">
+                                &quot;The Ruby Red Trench Coat is pure perfection. The tailoring and textile weight rival bespoke luxury ateliers. Arrived in Mumbai in 2 business days.&quot;
                             </p>
-                            <div className="flex items-center gap-3 pt-2 border-t border-slate-100">
-                                <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-xs">
-                                    SK
-                                </div>
+                            <div className="flex items-center justify-between pt-3 border-t border-neutral-100">
                                 <div>
-                                    <h4 className="text-xs font-bold text-slate-900">Sneha Kapoor</h4>
-                                    <span className="text-[10px] text-emerald-600 font-semibold">✓ Verified Buyer</span>
+                                    <h4 className="text-xs font-bold text-neutral-900">Sneha Kapoor</h4>
+                                    <span className="text-[10px] text-neutral-400 font-medium">Mumbai, MH</span>
                                 </div>
+                                <span className="text-[10px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-semibold border border-emerald-200/60">Verified Order</span>
                             </div>
                         </div>
 
-                        <div className="glass-panel p-6 rounded-3xl border border-slate-200/80 shadow-xs space-y-3 bg-white/90">
-                            <div className="flex items-center gap-1 text-amber-400 text-sm">
+                        <div className="p-6 rounded-2xl border border-neutral-200/90 bg-white shadow-xs space-y-3">
+                            <div className="flex items-center gap-1 text-neutral-900 text-sm">
                                 ★★★★★
                             </div>
-                            <p className="text-xs text-slate-700 italic leading-relaxed">
-                                &quot;The Beige Joggers and Sweater combo is my new daily uniform. Organic cotton feels breathable and super durable after several washes.&quot;
+                            <p className="text-xs text-neutral-700 italic leading-relaxed">
+                                &quot;The Beige Joggers and Merino Sweater pairing is extraordinary. Organic fibres are breathable, exceptionally structured, and maintain shape wash after wash.&quot;
                             </p>
-                            <div className="flex items-center gap-3 pt-2 border-t border-slate-100">
-                                <div className="w-8 h-8 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-xs">
-                                    RV
-                                </div>
+                            <div className="flex items-center justify-between pt-3 border-t border-neutral-100">
                                 <div>
-                                    <h4 className="text-xs font-bold text-slate-900">Rohan Varma</h4>
-                                    <span className="text-[10px] text-emerald-600 font-semibold">✓ Verified Buyer</span>
+                                    <h4 className="text-xs font-bold text-neutral-900">Rohan Varma</h4>
+                                    <span className="text-[10px] text-neutral-400 font-medium">Bengaluru, KA</span>
                                 </div>
+                                <span className="text-[10px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-semibold border border-emerald-200/60">Verified Order</span>
                             </div>
                         </div>
 
-                        <div className="glass-panel p-6 rounded-3xl border border-slate-200/80 shadow-xs space-y-3 bg-white/90">
-                            <div className="flex items-center gap-1 text-amber-400 text-sm">
+                        <div className="p-6 rounded-2xl border border-neutral-200/90 bg-white shadow-xs space-y-3">
+                            <div className="flex items-center gap-1 text-neutral-900 text-sm">
                                 ★★★★★
                             </div>
-                            <p className="text-xs text-slate-700 italic leading-relaxed">
-                                &quot;Checkout was effortless with UPI and 1-Click login. Live order tracking map kept me updated from dispatched to doorstep delivery!&quot;
+                            <p className="text-xs text-neutral-700 italic leading-relaxed">
+                                &quot;Seamless checkout experience with instantaneous confirmation and live map tracking. The garment packaging and fabric hand-feel are unmatched.&quot;
                             </p>
-                            <div className="flex items-center gap-3 pt-2 border-t border-slate-100">
-                                <div className="w-8 h-8 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xs">
-                                    AP
-                                </div>
+                            <div className="flex items-center justify-between pt-3 border-t border-neutral-100">
                                 <div>
-                                    <h4 className="text-xs font-bold text-slate-900">Ananya Patel</h4>
-                                    <span className="text-[10px] text-emerald-600 font-semibold">✓ Verified Buyer</span>
+                                    <h4 className="text-xs font-bold text-neutral-900">Ananya Patel</h4>
+                                    <span className="text-[10px] text-neutral-400 font-medium">New Delhi, DL</span>
                                 </div>
+                                <span className="text-[10px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-semibold border border-emerald-200/60">Verified Order</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* 8. VIP Club & Newsletter Box */}
-                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-8 sm:p-12 border border-indigo-900/50 shadow-2xl">
-                    <div className="absolute top-0 right-1/4 w-80 h-80 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none" />
-                    
+                {/* 8. The Atelier Guestlist & Newsletter */}
+                <div className="relative overflow-hidden rounded-3xl bg-neutral-900 text-white p-8 sm:p-14 border border-neutral-800 shadow-xl">
                     <div className="relative z-10 max-w-2xl mx-auto text-center space-y-4">
-                        <span className="px-3.5 py-1 bg-white/10 backdrop-blur-md rounded-full text-[11px] font-bold tracking-widest uppercase text-amber-300 inline-block border border-white/20">
-                            🎁 AURA VIP CLUB
+                        <span className="px-3.5 py-1 bg-white/10 rounded-full text-[10px] font-bold tracking-[0.25em] uppercase text-neutral-300 inline-block border border-white/10">
+                            The Aura Atelier // Private Guestlist
                         </span>
                         
-                        <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight">
-                            Join The Inner Circle & Get 20% OFF
+                        <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
+                            Receive Private Archive Invitations
                         </h2>
 
-                        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                            Subscribe for secret flash sales, early access to seasonal lookbooks, and receive your instant 20% coupon code <strong className="text-amber-300">WELCOME20</strong>.
+                        <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed max-w-lg mx-auto">
+                            Subscribe to receive early access to seasonal lookbooks, bespoke private drops, and your 20% courtesy privilege with code <strong className="text-white font-mono">WELCOME20</strong>.
                         </p>
 
                         <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto pt-2">
@@ -379,13 +369,13 @@ export default function Home() {
                                 placeholder="Enter your email address..."
                                 value={newsletterEmail}
                                 onChange={(e) => setNewsletterEmail(e.target.value)}
-                                className="px-4 py-3 bg-white/10 border border-white/20 rounded-2xl text-xs text-white placeholder-slate-400 focus:outline-none focus:bg-white/20 focus:border-white transition flex-1 backdrop-blur-md"
+                                className="px-4 py-3 bg-white/10 border border-neutral-700 rounded-xl text-xs text-white placeholder-neutral-400 focus:outline-none focus:bg-white/20 focus:border-white transition flex-1"
                             />
                             <button
                                 type="submit"
-                                className="px-6 py-3 bg-white hover:bg-slate-100 text-slate-900 text-xs font-extrabold rounded-2xl transition shadow-lg transform active:scale-95"
+                                className="px-7 py-3 bg-white hover:bg-neutral-100 text-neutral-900 text-xs font-bold uppercase tracking-wider rounded-xl transition shadow-md active:scale-95 flex-shrink-0"
                             >
-                                {isSubscribed ? "Subscribed! ✓" : "Unlock 20% OFF"}
+                                {isSubscribed ? "Subscribed ✓" : "Join Guestlist"}
                             </button>
                         </form>
                     </div>

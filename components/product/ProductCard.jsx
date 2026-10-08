@@ -56,20 +56,20 @@ export const ProductCard = ({ product }) => {
             {/* Top Badges & Wishlist Button */}
             <div className="relative w-full bg-gradient-to-b from-slate-50 to-slate-100/50 p-4 flex items-center justify-center overflow-hidden">
                 {/* Floating Badges */}
-                <div className="absolute top-3 left-3 z-10 flex flex-col gap-1.5 items-start">
+                <div className="absolute top-3 left-3 z-10 flex flex-col gap-1 items-start">
                     {discountPercent > 0 && (
-                        <span className="bg-rose-500 text-white font-bold text-[11px] tracking-wider px-2 py-0.5 rounded-full shadow-sm uppercase">
-                            {discountPercent}% OFF
+                        <span className="bg-neutral-900 text-white font-bold text-[10px] tracking-wider px-2 py-0.5 rounded shadow-xs uppercase">
+                            -{discountPercent}%
                         </span>
                     )}
                     {product.isBestSeller && (
-                        <span className="bg-amber-500 text-white font-bold text-[10px] tracking-wider px-2 py-0.5 rounded-full shadow-sm uppercase">
-                            ⭐ Best Seller
+                        <span className="bg-white text-neutral-900 border border-neutral-300 font-bold text-[9px] tracking-widest px-2 py-0.5 rounded shadow-xs uppercase">
+                            Bestseller
                         </span>
                     )}
                     {product.isTrending && !product.isBestSeller && (
-                        <span className="bg-indigo-600 text-white font-bold text-[10px] tracking-wider px-2 py-0.5 rounded-full shadow-sm uppercase">
-                            🔥 Trending
+                        <span className="bg-neutral-800 text-neutral-100 font-bold text-[9px] tracking-widest px-2 py-0.5 rounded shadow-xs uppercase">
+                            Trending
                         </span>
                     )}
                 </div>

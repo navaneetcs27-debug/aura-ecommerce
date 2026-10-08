@@ -1,28 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const CategoryCard = ({ name, imgUrl, itemCount = "Featured" }) => {
+export const CategoryCard = ({ name, imgUrl }) => {
     return (
         <Link href={`/search?categories=["${name}"]`}>
-            <a className="group relative w-full h-48 sm:h-56 rounded-3xl overflow-hidden block shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1.5 border border-slate-200/80 bg-slate-100">
+            <a className="group relative w-full h-52 sm:h-60 rounded-2xl overflow-hidden block shadow-xs hover:shadow-xl transition-all duration-500 border border-neutral-200/90 bg-neutral-100">
                 <Image
                     src={imgUrl}
                     layout="fill"
                     objectFit="cover"
                     alt={name}
-                    className="transition-transform duration-700 ease-out group-hover:scale-110"
+                    className="transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 
-                {/* Gradient Shadow Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/30 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
+                {/* Minimalist Editorial Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent transition-opacity duration-300" />
 
-                {/* Floating Category Pill & Meta */}
-                <div className="absolute bottom-3 left-3 right-3 flex flex-col items-center justify-end text-center">
-                    <span className="w-full py-2 px-3 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-extrabold rounded-2xl shadow-md group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                {/* Category Meta */}
+                <div className="absolute bottom-4 left-3 right-3 flex flex-col items-center justify-end text-center space-y-0.5">
+                    <span className="text-white text-xs sm:text-sm font-bold tracking-wider uppercase drop-shadow-sm">
                         {name}
                     </span>
-                    <span className="text-[10px] font-semibold text-white/90 mt-1 drop-shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        Explore Collection →
+                    <span className="text-[10px] text-neutral-300 font-medium tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        View Collection →
                     </span>
                 </div>
             </a>
