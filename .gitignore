@@ -39,3 +39,6 @@ ecommerce-project/
 # vercel
 .vercel
 
+# zip archives
+*.zip
+

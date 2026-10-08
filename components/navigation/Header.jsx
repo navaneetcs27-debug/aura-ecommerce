@@ -53,10 +53,10 @@ export const Header = () => {
     return (
         <header className="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs transition-all">
             {/* Top Announcement Bar */}
-            <div className="bg-slate-900 text-white text-[11px] font-medium py-1.5 px-4 text-center tracking-wide flex items-center justify-center gap-2">
-                <span>✨ <strong>SUMMER SALE:</strong> Get 20% OFF with code <strong className="text-amber-300 underline underline-offset-2">WELCOME20</strong></span>
-                <span className="hidden md:inline text-slate-400">|</span>
-                <span className="hidden md:inline text-slate-300">Free delivery on orders above ₹500</span>
+            <div className="bg-neutral-900 text-neutral-200 text-[11px] font-medium py-2 px-4 text-center tracking-wider flex items-center justify-center gap-3">
+                <span className="tracking-widest uppercase">Complimentary Express Delivery on Orders Over ₹500</span>
+                <span className="hidden md:inline text-neutral-500">•</span>
+                <span className="hidden md:inline text-neutral-300">Use Code <strong className="text-white font-mono font-bold underline underline-offset-2">WELCOME20</strong> For 20% Off First Order</span>
             </div>
 
             {/* Main Navbar */}

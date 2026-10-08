@@ -1,100 +1,151 @@
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useToast } from '../context/toast-context';
 import bannerImg from "../public/images/banner-image.jpg";
 
 export const Banner = () => {
+    const { showToast } = useToast();
+    const [copied, setCopied] = useState(false);
+
+    const handleCopyPromo = (e) => {
+        e.preventDefault();
+        navigator.clipboard.writeText("WELCOME20");
+        setCopied(true);
+        showToast("Code 'WELCOME20' copied to clipboard.", "info");
+        setTimeout(() => setCopied(false), 2500);
+    };
+
     return (
-        <div className="relative overflow-hidden rounded-3xl bg-slate-950 text-white border border-slate-800 shadow-2xl">
-            {/* Background Ambient Glows */}
-            <div className="absolute -top-24 -left-24 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-rose-600/20 rounded-full blur-3xl pointer-events-none" />
-            
-            <div className="relative flex flex-col lg:flex-row items-center min-h-[480px]">
-                {/* Left Visual Area with Floating Badges */}
-                <div className="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex items-center justify-center">
-                    <div className="relative w-full h-[320px] sm:h-[400px] lg:h-[440px] rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+        <section className="relative overflow-hidden rounded-3xl bg-white border border-neutral-200/90 shadow-sm">
+            <div className="flex flex-col lg:flex-row items-stretch min-h-[520px]">
+                
+                {/* Left: Editorial Copy & Collections */}
+                <div className="w-full lg:w-7/12 p-8 sm:p-12 lg:p-14 xl:p-16 flex flex-col justify-between space-y-8 z-10 bg-white">
+                    
+                    {/* Top Eyebrow / Campaign Meta */}
+                    <div className="space-y-4">
+                        <div className="flex items-center gap-3">
+                            <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-neutral-400">
+                                Autumn / Winter 2026
+                            </span>
+                            <span className="w-1.5 h-1.5 rounded-full bg-neutral-300" />
+                            <span className="text-[11px] font-semibold tracking-widest uppercase text-neutral-500">
+                                Capsule Release
+                            </span>
+                        </div>
+
+                        {/* Main High-Contrast Headline */}
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-neutral-900 leading-[1.08]">
+                            Elevate Your Everyday <br />
+                            <span className="font-serif-luxury italic font-normal text-neutral-700">
+                                Aesthetic.
+                            </span>
+                        </h1>
+
+                        {/* High-Readability Editorial Body */}
+                        <p className="text-sm sm:text-base text-neutral-600 leading-relaxed max-w-lg font-normal pt-1">
+                            Tailored from certified organic fibres, pure merino wool, and sustainable mulberry silks. Timeless silhouettes designed for quiet luxury and everyday confidence.
+                        </p>
+                    </div>
+
+                    {/* Curated Collection Chips */}
+                    <div className="space-y-2.5 pt-2">
+                        <span className="text-[10px] font-bold tracking-widest uppercase text-neutral-400 block">
+                            Curated Collections
+                        </span>
+                        <div className="flex flex-wrap gap-2">
+                            {[
+                                { label: "Outerwear & Coats", href: '/search?categories=["Coats"]' },
+                                { label: "Silk Blouses", href: '/search?categories=["Blouses"]' },
+                                { label: "Merino Knitwear", href: '/search?categories=["Sweaters"]' },
+                                { label: "Evening Dresses", href: '/search?categories=["Dresses"]' },
+                                { label: "Tailored Shirts", href: '/search?categories=["Shirts"]' }
+                            ].map((chip, idx) => (
+                                <Link key={idx} href={chip.href}>
+                                    <a className="px-3.5 py-1.5 bg-neutral-50 hover:bg-neutral-900 hover:text-white text-neutral-800 text-xs font-medium rounded-lg border border-neutral-200 transition-colors duration-200">
+                                        {chip.label}
+                                    </a>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* CTAs & Promo Code Banner */}
+                    <div className="space-y-4 pt-2">
+                        <div className="flex flex-wrap items-center gap-3.5">
+                            <Link href="/search">
+                                <a className="px-8 py-3.5 bg-neutral-900 hover:bg-black text-white text-xs sm:text-sm font-semibold tracking-wider uppercase rounded-xl transition duration-200 shadow-sm active:scale-95 flex items-center gap-3">
+                                    <span>Explore Catalog</span>
+                                    <span className="text-base leading-none">→</span>
+                                </a>
+                            </Link>
+                            <Link href="/cart">
+                                <a className="px-7 py-3.5 bg-white hover:bg-neutral-50 text-neutral-900 text-xs sm:text-sm font-semibold tracking-wider uppercase rounded-xl border border-neutral-300 transition duration-200 active:scale-95">
+                                    View Bag
+                                </a>
+                            </Link>
+                        </div>
+
+                        {/* Minimalist Promo Offer Banner */}
+                        <div className="inline-flex items-center gap-3 bg-neutral-50 border border-neutral-200/80 px-4 py-2 rounded-xl text-xs text-neutral-700">
+                            <span className="font-medium">First Order:</span>
+                            <span className="text-neutral-500">20% off with code</span>
+                            <span className="font-mono font-bold text-neutral-900 bg-white px-2 py-0.5 rounded border border-neutral-300">
+                                WELCOME20
+                            </span>
+                            <button
+                                type="button"
+                                onClick={handleCopyPromo}
+                                className="font-semibold text-neutral-900 hover:text-indigo-600 underline underline-offset-2 ml-1 cursor-pointer transition"
+                            >
+                                {copied ? "Copied ✓" : "Copy Code"}
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Editorial Quality Guarantees */}
+                    <div className="flex flex-wrap items-center gap-6 pt-4 border-t border-neutral-100 text-xs text-neutral-500 font-medium">
+                        <span className="flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                            Complimentary Worldwide Shipping
+                        </span>
+                        <span className="flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
+                            Certified Sustainable Fabrics
+                        </span>
+                        <span className="hidden sm:flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
+                            7-Day Seamless Returns
+                        </span>
+                    </div>
+
+                </div>
+
+                {/* Right: Editorial Campaign Photography Frame */}
+                <div className="w-full lg:w-5/12 relative min-h-[380px] lg:min-h-full bg-neutral-100 border-t lg:border-t-0 lg:border-l border-neutral-200/80">
+                    <div className="relative w-full h-full min-h-[380px] lg:min-h-full">
                         <Image
-                            alt="Summer luxury fashion campaign"
+                            alt="Autumn Winter Luxury Campaign"
                             src={bannerImg}
                             layout="fill"
                             objectFit="cover"
                             priority
-                            className="transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                            className="transition-transform duration-700 hover:scale-102"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-black/20" />
-
-                        {/* Floating Glassmorphism Tag 1 */}
-                        <div className="absolute top-4 left-4 glass-card-dark px-3.5 py-1.5 rounded-xl flex items-center gap-2 border border-white/20 shadow-lg animate-floatSlow">
-                            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                            <span className="text-[11px] font-bold text-white tracking-wide uppercase">
-                                New 2026 Drop
-                            </span>
+                        
+                        {/* Minimalist Editorial Corner Labels */}
+                        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-neutral-200/80 text-[10px] font-bold tracking-[0.2em] uppercase text-neutral-900 shadow-xs">
+                            Look 04 // 2026
                         </div>
 
-                        {/* Floating Glassmorphism Tag 2 */}
-                        <div className="absolute bottom-4 right-4 glass-card-dark p-3 rounded-2xl flex items-center gap-3 border border-white/20 shadow-xl backdrop-blur-md">
-                            <div className="w-10 h-10 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center font-bold text-lg">
-                                ⚡
-                            </div>
-                            <div>
-                                <span className="text-[10px] font-extrabold text-amber-300 uppercase tracking-wider block">Special Offer</span>
-                                <span className="text-xs font-bold text-white">20% OFF: WELCOME20</span>
-                            </div>
+                        <div className="absolute bottom-4 right-4 bg-neutral-900/90 text-white backdrop-blur-md px-3.5 py-2 rounded-lg text-[11px] font-medium tracking-wider shadow-sm">
+                            Tailored Double-Breasted Coat
                         </div>
                     </div>
                 </div>
 
-                {/* Right Copy Area */}
-                <div className="w-full lg:w-1/2 p-6 sm:p-10 lg:p-14 flex flex-col justify-center space-y-6">
-                    <div className="flex flex-wrap items-center gap-2">
-                        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[11px] font-extrabold tracking-widest uppercase bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 backdrop-blur-md">
-                            ✨ LUXURY COUTURE & APPAREL
-                        </span>
-                        <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[11px] font-bold text-amber-300 bg-amber-400/10 border border-amber-400/20">
-                            ★ 4.9 / 5.0 Rating
-                        </span>
-                    </div>
-
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-white">
-                        Elevate Your Everyday <span className="text-gradient-aurora">Aesthetic</span>
-                    </h1>
-
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-lg">
-                        Tailored from certified organic fibres, fine wools, and sustainable silks. Experience timeless silhouettes designed to turn heads everywhere you go.
-                    </p>
-
-                    {/* Quick Category Chips */}
-                    <div className="flex flex-wrap gap-2 pt-1">
-                        {[
-                            { label: "Winter Coats", href: '/search?categories=["Coats"]' },
-                            { label: "Silk Blouses", href: '/search?categories=["Blouses"]' },
-                            { label: "Cozy Knitwear", href: '/search?categories=["Sweaters"]' },
-                            { label: "Evening Dresses", href: '/search?categories=["Dresses"]' }
-                        ].map((chip, idx) => (
-                            <Link key={idx} href={chip.href}>
-                                <a className="px-3 py-1.5 bg-white/5 hover:bg-white/15 text-slate-200 hover:text-white rounded-xl text-xs font-medium border border-white/10 transition">
-                                    {chip.label}
-                                </a>
-                            </Link>
-                        ))}
-                    </div>
-
-                    {/* Action Buttons & Customer Proof */}
-                    <div className="flex flex-wrap items-center gap-4 pt-2">
-                        <Link href="/search">
-                            <a className="px-7 py-3.5 bg-white hover:bg-slate-100 text-slate-900 font-bold text-xs sm:text-sm rounded-2xl shadow-xl transition transform active:scale-95 flex items-center gap-2">
-                                <span>Explore All Catalog</span>
-                                <span>→</span>
-                            </a>
-                        </Link>
-                        <Link href="/cart">
-                            <a className="px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm rounded-2xl border border-slate-700 shadow-md transition">
-                                🛍️ View Bag
-                            </a>
-                        </Link>
-                    </div>
-                </div>
             </div>
-        </div>
+        </section>
     );
 };

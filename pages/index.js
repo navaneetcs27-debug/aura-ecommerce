@@ -69,51 +69,59 @@ export default function Home() {
                     <Banner />
                 </div>
 
-                {/* 2. Glassmorphic Trust Badges */}
+                {/* 2. Editorial Trust & Service Markers */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-                    <div className="glass-panel p-4 sm:p-5 rounded-3xl flex items-center gap-4 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-slate-200/80 bg-white/80">
-                        <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl flex-shrink-0">
-                            🚚
+                    <div className="p-5 rounded-2xl flex items-center gap-4 border border-neutral-200/90 bg-white shadow-xs">
+                        <div className="w-10 h-10 rounded-xl bg-neutral-100 text-neutral-900 flex items-center justify-center flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.75" stroke="currentColor" className="w-5 h-5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.25V3.75a1.125 1.125 0 00-1.125-1.125H3.375A1.125 1.125 0 002.25 3.75v10.5h12m0 0V9.75" />
+                            </svg>
                         </div>
                         <div>
-                            <h4 className="text-xs sm:text-sm font-bold text-slate-900">Free Express Delivery</h4>
-                            <p className="text-[11px] text-slate-500 mt-0.5">On orders above ₹500</p>
+                            <h4 className="text-xs sm:text-sm font-bold text-neutral-900">Complimentary Delivery</h4>
+                            <p className="text-[11px] text-neutral-500 mt-0.5">On orders above ₹500</p>
                         </div>
                     </div>
 
-                    <div className="glass-panel p-4 sm:p-5 rounded-3xl flex items-center gap-4 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-slate-200/80 bg-white/80">
-                        <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl flex-shrink-0">
-                            🔒
+                    <div className="p-5 rounded-2xl flex items-center gap-4 border border-neutral-200/90 bg-white shadow-xs">
+                        <div className="w-10 h-10 rounded-xl bg-neutral-100 text-neutral-900 flex items-center justify-center flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.75" stroke="currentColor" className="w-5 h-5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                            </svg>
                         </div>
                         <div>
-                            <h4 className="text-xs sm:text-sm font-bold text-slate-900">256-Bit Encrypted</h4>
-                            <p className="text-[11px] text-slate-500 mt-0.5">UPI, Cards & NetBanking</p>
+                            <h4 className="text-xs sm:text-sm font-bold text-neutral-900">Encrypted Payments</h4>
+                            <p className="text-[11px] text-neutral-500 mt-0.5">UPI, Cards & NetBanking</p>
                         </div>
                     </div>
 
-                    <div className="glass-panel p-4 sm:p-5 rounded-3xl flex items-center gap-4 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-slate-200/80 bg-white/80">
-                        <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl flex-shrink-0">
-                            ✨
+                    <div className="p-5 rounded-2xl flex items-center gap-4 border border-neutral-200/90 bg-white shadow-xs">
+                        <div className="w-10 h-10 rounded-xl bg-neutral-100 text-neutral-900 flex items-center justify-center flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.75" stroke="currentColor" className="w-5 h-5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                            </svg>
                         </div>
                         <div>
-                            <h4 className="text-xs sm:text-sm font-bold text-slate-900">100% Authentic</h4>
-                            <p className="text-[11px] text-slate-500 mt-0.5">Certified premium fabrics</p>
+                            <h4 className="text-xs sm:text-sm font-bold text-neutral-900">Certified Authentic</h4>
+                            <p className="text-[11px] text-neutral-500 mt-0.5">Organic silk & wool fibres</p>
                         </div>
                     </div>
 
-                    <div className="glass-panel p-4 sm:p-5 rounded-3xl flex items-center gap-4 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-slate-200/80 bg-white/80">
-                        <div className="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center text-2xl flex-shrink-0">
-                            🔄
+                    <div className="p-5 rounded-2xl flex items-center gap-4 border border-neutral-200/90 bg-white shadow-xs">
+                        <div className="w-10 h-10 rounded-xl bg-neutral-100 text-neutral-900 flex items-center justify-center flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.75" stroke="currentColor" className="w-5 h-5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                            </svg>
                         </div>
                         <div>
-                            <h4 className="text-xs sm:text-sm font-bold text-slate-900">7-Day Easy Returns</h4>
-                            <p className="text-[11px] text-slate-500 mt-0.5">Instant refunds guaranteed</p>
+                            <h4 className="text-xs sm:text-sm font-bold text-neutral-900">7-Day Easy Returns</h4>
+                            <p className="text-[11px] text-neutral-500 mt-0.5">Instant refunds guaranteed</p>
                         </div>
                     </div>
                 </div>
 
                 {/* 3. Browse Collections Categories */}
-                <div className="glass-panel rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-sm bg-white/80">
+                <div className="rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-xs bg-white">
                     <CategoriesSection />
                 </div>
 
