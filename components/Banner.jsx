@@ -31,7 +31,7 @@ const LOOKS = [
         edition: "Atelier Drop 02",
         titleMain: "Fluid Silks.",
         titleSerif: "Effortless Draping.",
-        description: "Woven from 100% Grade-6A Mulberry silk with hand-rolled French seams. Designed with subtle fluid movement that transitions effortlessly from day into evening.",
+        description: "Woven from 100% Grade-6A Mulberry silk with hand-rolled French seams. Designed with subtle fluid movement that transitions effortlessly from daytime tailoring into evening events.",
         fabricSpec: "100% Grade-6A Mulberry Silk",
         ctaLabel: "Explore Silk Edit",
         ctaLink: '/search?categories=["Blouses"]',
@@ -52,7 +52,7 @@ const LOOKS = [
         edition: "Atelier Drop 03",
         titleMain: "Sculpted Knitwear.",
         titleSerif: "Quiet Sophistication.",
-        description: "Spun from 19.5-micron Australian extra-fine Merino wool in natural un-dyed earth tones. Unrivalled softness with lasting dimensional resilience.",
+        description: "Spun from 19.5-micron Australian extra-fine Merino wool in natural un-dyed earth tones. Unrivalled softness with lasting dimensional resilience wash after wash.",
         fabricSpec: "19.5μ Extra-Fine Merino Wool",
         ctaLabel: "Explore Knitwear",
         ctaLink: '/search?categories=["Sweaters"]',
@@ -96,39 +96,39 @@ export const Banner = () => {
 
     return (
         <section 
-            className="relative overflow-hidden rounded-3xl bg-white border border-neutral-200 shadow-sm"
+            className="relative overflow-hidden rounded-3xl bg-white border border-[#dfdcd3] shadow-md"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
         >
             <div className="flex flex-col lg:flex-row items-stretch min-h-[580px]">
                 
-                {/* Left Column: Master Editorial & Navigation */}
+                {/* Left Column: High-Contrast Master Editorial & Navigation */}
                 <div className="w-full lg:w-7/12 p-8 sm:p-12 lg:p-14 xl:p-16 flex flex-col justify-between space-y-8 z-10 bg-white">
                     
                     {/* Top: Campaign Meta & Interactive Look Switcher */}
                     <div className="space-y-4">
                         <div className="flex flex-wrap items-center justify-between gap-3">
                             <div className="flex items-center gap-2.5">
-                                <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-neutral-400">
+                                <span className="text-xs font-black tracking-[0.25em] uppercase text-neutral-800">
                                     {activeLook.season}
                                 </span>
-                                <span className="w-1.5 h-1.5 rounded-full bg-neutral-300" />
-                                <span className="text-[11px] font-semibold tracking-widest uppercase text-neutral-600">
+                                <span className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
+                                <span className="text-xs font-bold tracking-widest uppercase text-neutral-900">
                                     {activeLook.edition}
                                 </span>
                             </div>
 
                             {/* Interactive Lookbook Tabs */}
-                            <div className="flex items-center gap-1.5 bg-neutral-100 p-1 rounded-xl border border-neutral-200/80">
+                            <div className="flex items-center gap-1.5 bg-neutral-100 p-1 rounded-xl border border-neutral-300">
                                 {LOOKS.map((look, idx) => (
                                     <button
                                         key={look.id}
                                         type="button"
                                         onClick={() => setCurrentLookIdx(idx)}
-                                        className={`px-2.5 py-1 rounded-lg text-[10px] font-bold tracking-wider uppercase transition-all ${
+                                        className={`px-3 py-1.5 rounded-lg text-[11px] font-extrabold tracking-wider uppercase transition-all ${
                                             currentLookIdx === idx
-                                                ? 'bg-neutral-900 text-white shadow-xs'
-                                                : 'text-neutral-500 hover:text-neutral-900'
+                                                ? 'bg-neutral-950 text-white shadow-sm'
+                                                : 'text-neutral-700 hover:text-black hover:bg-neutral-200/70'
                                         }`}
                                     >
                                         Look {look.id}
@@ -139,36 +139,36 @@ export const Banner = () => {
 
                         {/* Master High-Contrast Headline */}
                         <div className="min-h-[120px] sm:min-h-[140px] flex flex-col justify-center">
-                            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-neutral-900 leading-[1.04]">
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-neutral-950 leading-[1.04]">
                                 {activeLook.titleMain} <br />
-                                <span className="font-serif-luxury italic font-normal text-neutral-700">
+                                <span className="font-serif-luxury italic font-semibold text-neutral-900">
                                     {activeLook.titleSerif}
                                 </span>
                             </h1>
                         </div>
 
                         {/* High-Readability Editorial Body */}
-                        <p className="text-sm sm:text-base text-neutral-600 leading-relaxed max-w-lg font-normal">
+                        <p className="text-sm sm:text-base text-neutral-800 font-normal sm:font-medium leading-relaxed max-w-lg">
                             {activeLook.description}
                         </p>
 
                         {/* Material Provenance Badge */}
-                        <div className="inline-flex items-center gap-2 pt-1 text-xs text-neutral-700">
-                            <span className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0" />
-                            <span className="font-semibold text-neutral-900 tracking-wide">Textile Spec:</span>
-                            <span className="text-neutral-600">{activeLook.fabricSpec}</span>
+                        <div className="inline-flex items-center gap-2 pt-1 text-xs bg-neutral-50 px-3 py-1.5 rounded-lg border border-neutral-200">
+                            <span className="w-2 h-2 rounded-full bg-emerald-600 flex-shrink-0" />
+                            <span className="font-bold text-neutral-950 tracking-wide">Textile Spec:</span>
+                            <span className="text-neutral-800 font-semibold">{activeLook.fabricSpec}</span>
                         </div>
                     </div>
 
                     {/* Curated Collection Chips */}
                     <div className="space-y-2 pt-1">
-                        <span className="text-[10px] font-bold tracking-widest uppercase text-neutral-400 block">
+                        <span className="text-xs font-black tracking-widest uppercase text-neutral-700 block">
                             Direct Catalog Jump
                         </span>
                         <div className="flex flex-wrap gap-2">
                             {activeLook.chips.map((chip, idx) => (
                                 <Link key={idx} href={chip.href}>
-                                    <a className="px-3.5 py-1.5 bg-neutral-50 hover:bg-neutral-900 hover:text-white text-neutral-800 text-xs font-medium rounded-lg border border-neutral-200 transition-colors duration-200">
+                                    <a className="px-4 py-2 bg-neutral-50 hover:bg-neutral-950 hover:text-white text-neutral-950 text-xs font-bold rounded-xl border border-neutral-300 transition-colors duration-200 shadow-2xs">
                                         {chip.label}
                                     </a>
                                 </Link>
@@ -180,29 +180,29 @@ export const Banner = () => {
                     <div className="space-y-4 pt-2">
                         <div className="flex flex-wrap items-center gap-3.5">
                             <Link href={activeLook.ctaLink}>
-                                <a className="px-8 py-3.5 bg-neutral-900 hover:bg-black text-white text-xs sm:text-sm font-semibold tracking-wider uppercase rounded-xl transition duration-200 shadow-sm active:scale-95 flex items-center gap-3">
+                                <a className="px-8 py-3.5 bg-neutral-950 hover:bg-black text-white text-xs sm:text-sm font-extrabold tracking-wider uppercase rounded-xl transition duration-200 shadow-md active:scale-95 flex items-center gap-3">
                                     <span>{activeLook.ctaLabel}</span>
                                     <span className="text-base leading-none">→</span>
                                 </a>
                             </Link>
                             <Link href="/cart">
-                                <a className="px-7 py-3.5 bg-white hover:bg-neutral-50 text-neutral-900 text-xs sm:text-sm font-semibold tracking-wider uppercase rounded-xl border border-neutral-300 transition duration-200 active:scale-95">
+                                <a className="px-7 py-3.5 bg-white hover:bg-neutral-950 hover:text-white text-neutral-950 text-xs sm:text-sm font-extrabold tracking-wider uppercase rounded-xl border-2 border-neutral-950 transition duration-200 active:scale-95">
                                     View Bag
                                 </a>
                             </Link>
                         </div>
 
                         {/* Privilege Voucher Pill */}
-                        <div className="inline-flex items-center gap-2.5 bg-neutral-50 border border-neutral-200/90 px-4 py-2 rounded-xl text-xs text-neutral-700">
-                            <span className="font-semibold text-neutral-900">Welcome Privilege:</span>
-                            <span className="text-neutral-500">20% off with</span>
-                            <span className="font-mono font-bold text-neutral-900 bg-white px-2 py-0.5 rounded border border-neutral-300">
+                        <div className="inline-flex items-center gap-2.5 bg-neutral-100 border border-neutral-300 px-4 py-2.5 rounded-xl text-xs text-neutral-900">
+                            <span className="font-bold text-neutral-950">Welcome Privilege:</span>
+                            <span className="text-neutral-700 font-medium">20% off with</span>
+                            <span className="font-mono font-black text-neutral-950 bg-white px-2.5 py-1 rounded-md border border-neutral-400 shadow-2xs">
                                 WELCOME20
                             </span>
                             <button
                                 type="button"
                                 onClick={handleCopyPromo}
-                                className="font-bold text-neutral-900 hover:text-indigo-600 underline underline-offset-2 ml-1 cursor-pointer transition"
+                                className="font-extrabold text-neutral-950 hover:text-indigo-600 underline underline-offset-2 ml-1 cursor-pointer transition"
                             >
                                 {copied ? "Copied ✓" : "Copy Code"}
                             </button>
@@ -210,17 +210,17 @@ export const Banner = () => {
                     </div>
 
                     {/* Human Editorial Standard Markers */}
-                    <div className="flex flex-wrap items-center gap-6 pt-4 border-t border-neutral-100 text-xs text-neutral-500 font-medium">
-                        <span className="flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-neutral-900" />
+                    <div className="flex flex-wrap items-center gap-6 pt-4 border-t border-neutral-200 text-xs text-neutral-700 font-bold">
+                        <span className="flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-neutral-950" />
                             Complimentary Express Delivery
                         </span>
-                        <span className="flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
+                        <span className="flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-neutral-950" />
                             Certified Natural Fibres
                         </span>
-                        <span className="hidden sm:flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
+                        <span className="hidden sm:flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-neutral-950" />
                             7-Day Doorstep Returns
                         </span>
                     </div>
@@ -228,7 +228,7 @@ export const Banner = () => {
                 </div>
 
                 {/* Right Column: Editorial Lookbook Image Display */}
-                <div className="w-full lg:w-5/12 relative min-h-[420px] lg:min-h-full bg-neutral-100 border-t lg:border-t-0 lg:border-l border-neutral-200/90 overflow-hidden">
+                <div className="w-full lg:w-5/12 relative min-h-[420px] lg:min-h-full bg-neutral-200 border-t lg:border-t-0 lg:border-l border-neutral-300 overflow-hidden">
                     <div className="relative w-full h-full min-h-[420px] lg:min-h-full">
                         <Image
                             key={activeLook.imageSrc}
@@ -241,18 +241,18 @@ export const Banner = () => {
                         />
                         
                         {/* Top Editorial Corner Tag */}
-                        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-neutral-200/90 text-[10px] font-bold tracking-[0.2em] uppercase text-neutral-900 shadow-xs">
+                        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl border border-neutral-300 text-xs font-black tracking-[0.2em] uppercase text-neutral-950 shadow-md">
                             {`Look ${activeLook.id} • ${activeLook.season.split(" ")[0]} 2026`}
                         </div>
 
                         {/* Bottom Item Price Tag */}
-                        <div className="absolute bottom-4 right-4 bg-neutral-900/95 text-white backdrop-blur-md px-4 py-2.5 rounded-xl border border-neutral-800 shadow-md flex items-center gap-3">
+                        <div className="absolute bottom-4 right-4 bg-neutral-950 text-white backdrop-blur-md px-4 py-3 rounded-xl border border-neutral-800 shadow-xl flex items-center gap-3">
                             <div>
-                                <p className="text-[11px] font-medium text-neutral-200">{activeLook.itemTag}</p>
-                                <p className="text-xs font-bold text-white tracking-wide">{activeLook.itemPrice}</p>
+                                <p className="text-xs font-semibold text-neutral-300">{activeLook.itemTag}</p>
+                                <p className="text-sm font-black text-white tracking-wide">{activeLook.itemPrice}</p>
                             </div>
                             <Link href={activeLook.ctaLink}>
-                                <a className="w-7 h-7 rounded-lg bg-white text-neutral-900 flex items-center justify-center font-bold text-xs hover:bg-neutral-200 transition">
+                                <a className="w-8 h-8 rounded-lg bg-white text-neutral-950 flex items-center justify-center font-black text-sm hover:bg-neutral-200 transition shadow-sm">
                                     →
                                 </a>
                             </Link>

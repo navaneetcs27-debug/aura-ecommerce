@@ -14,9 +14,9 @@ function MyApp({ Component, pageProps }) {
                 <WishlistProvider>
                     <CartProvider>
                         <OrderProvider>
-                            <div className="min-h-screen flex flex-col bg-[#fafafa] text-neutral-900 selection:bg-neutral-900 selection:text-white relative">
+                            <div className="min-h-screen flex flex-col bg-[#f5f4ef] text-neutral-950 selection:bg-neutral-950 selection:text-white relative">
                                 <Header />
-                                <main className="flex-grow pt-24 pb-16 relative z-10">
+                                <main className="flex-grow pt-32 sm:pt-36 md:pt-40 pb-20 relative z-10">
                                     <Component {...pageProps} />
                                 </main>
                                 <ToastContainer />

@@ -49,27 +49,27 @@ export const ProductCard = ({ product }) => {
 
     return (
         <div
-            className="group relative flex flex-col justify-between bg-white rounded-2xl border border-neutral-200/90 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            className="group relative flex flex-col justify-between bg-white rounded-2xl border border-[#dfdcd3] overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
             {/* Top Showcase Frame */}
-            <div className="relative w-full bg-neutral-50 p-5 flex items-center justify-center overflow-hidden border-b border-neutral-100">
+            <div className="relative w-full bg-[#f8f7f4] p-5 flex items-center justify-center overflow-hidden border-b border-[#e8e6df]">
                 
                 {/* Floating Tags */}
                 <div className="absolute top-3 left-3 z-10 flex flex-col gap-1 items-start">
                     {discountPercent > 0 && (
-                        <span className="bg-neutral-900 text-white font-bold text-[9px] tracking-widest px-2 py-0.5 rounded shadow-xs uppercase">
+                        <span className="bg-neutral-950 text-white font-black text-[10px] tracking-widest px-2.5 py-1 rounded shadow-xs uppercase">
                             -{discountPercent}%
                         </span>
                     )}
                     {product.isBestSeller && (
-                        <span className="bg-white text-neutral-900 border border-neutral-300 font-bold text-[9px] tracking-widest px-2 py-0.5 rounded shadow-xs uppercase">
+                        <span className="bg-white text-neutral-950 border border-neutral-400 font-black text-[10px] tracking-widest px-2.5 py-1 rounded shadow-xs uppercase">
                             Bestseller
                         </span>
                     )}
                     {product.isTrending && !product.isBestSeller && (
-                        <span className="bg-neutral-800 text-neutral-100 font-bold text-[9px] tracking-widest px-2 py-0.5 rounded shadow-xs uppercase">
+                        <span className="bg-neutral-900 text-white font-black text-[10px] tracking-widest px-2.5 py-1 rounded shadow-xs uppercase">
                             Trending
                         </span>
                     )}
@@ -79,10 +79,10 @@ export const ProductCard = ({ product }) => {
                 <button
                     type="button"
                     onClick={handleWishlistToggle}
-                    className={`absolute top-3 right-3 z-10 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 shadow-xs backdrop-blur-sm ${
+                    className={`absolute top-3 right-3 z-10 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 shadow-xs backdrop-blur-sm ${
                         wishlisted
-                            ? "bg-rose-50 text-rose-600 scale-105 border border-rose-200"
-                            : "bg-white/90 text-neutral-400 hover:text-neutral-900 hover:bg-white border border-neutral-200"
+                            ? "bg-rose-50 text-rose-600 scale-105 border border-rose-300"
+                            : "bg-white text-neutral-700 hover:text-black hover:bg-neutral-100 border border-neutral-300"
                     }`}
                     aria-label={wishlisted ? "Remove from wishlist" : "Add to wishlist"}
                 >
@@ -90,7 +90,7 @@ export const ProductCard = ({ product }) => {
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         className={`w-4 h-4 transition-transform duration-200 ${
-                            wishlisted ? "fill-rose-500 stroke-rose-500" : "fill-none stroke-current stroke-2"
+                            wishlisted ? "fill-rose-600 stroke-rose-600" : "fill-none stroke-current stroke-2"
                         }`}
                     >
                         <path
@@ -122,14 +122,14 @@ export const ProductCard = ({ product }) => {
             <div className="p-4 sm:p-5 flex flex-col flex-grow justify-between space-y-3">
                 <div className="space-y-1.5">
                     {/* Category & Gender */}
-                    <div className="flex items-center justify-between text-[11px] text-neutral-400 font-semibold uppercase tracking-wider">
+                    <div className="flex items-center justify-between text-xs text-neutral-700 font-bold uppercase tracking-wider">
                         <span>{product.category || "Apparel"}</span>
                         <span>{product.gender === "M" ? "Men" : product.gender === "F" ? "Women" : "Unisex"}</span>
                     </div>
 
                     {/* Product Title */}
                     <Link href={`/product/${product.id}`}>
-                        <h3 className="font-bold text-neutral-900 text-sm sm:text-base leading-snug line-clamp-1 hover:text-neutral-600 transition-colors cursor-pointer" title={product.title}>
+                        <h3 className="font-black text-neutral-950 text-base leading-snug line-clamp-1 hover:text-neutral-700 transition-colors cursor-pointer" title={product.title}>
                             {product.title}
                         </h3>
                     </Link>
@@ -142,7 +142,7 @@ export const ProductCard = ({ product }) => {
                             size="xs"
                         />
                         {product.stockCount && product.stockCount < 8 && (
-                            <span className="text-[10px] font-semibold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200/60">
+                            <span className="text-[10px] font-bold text-amber-900 bg-amber-100/90 px-2 py-0.5 rounded border border-amber-300">
                                 {product.stockCount} left
                             </span>
                         )}
@@ -150,19 +150,19 @@ export const ProductCard = ({ product }) => {
                 </div>
 
                 {/* Price & Add to Bag */}
-                <div className="pt-3 border-t border-neutral-100 flex items-center justify-between gap-3">
+                <div className="pt-3 border-t border-[#e8e6df] flex items-center justify-between gap-3">
                     <div className="flex flex-col">
                         <div className="flex items-baseline gap-1.5">
-                            <span className="text-base sm:text-lg font-black text-neutral-900">
+                            <span className="text-lg font-black text-neutral-950">
                                 ₹{product.price}
                             </span>
                             {originalPrice > Number(product.price) && (
-                                <span className="text-xs text-neutral-400 line-through">
+                                <span className="text-xs text-neutral-500 font-medium line-through">
                                     ₹{originalPrice}
                                 </span>
                             )}
                         </div>
-                        <span className="text-[10px] text-neutral-500 font-medium">
+                        <span className="text-[11px] text-neutral-800 font-semibold">
                             Free Express Delivery
                         </span>
                     </div>
@@ -172,10 +172,10 @@ export const ProductCard = ({ product }) => {
                         type="button"
                         onClick={handleQuickAdd}
                         disabled={isAdding}
-                        className={`flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider shadow-xs transition-all duration-200 ${
+                        className={`flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider shadow-sm transition-all duration-200 ${
                             isAdding
-                                ? "bg-emerald-600 text-white scale-95"
-                                : "bg-neutral-900 text-white hover:bg-black active:scale-95"
+                                ? "bg-emerald-700 text-white scale-95"
+                                : "bg-neutral-950 text-white hover:bg-black active:scale-95"
                         }`}
                         aria-label="Add to cart"
                     >

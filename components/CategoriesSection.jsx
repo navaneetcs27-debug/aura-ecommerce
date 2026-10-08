@@ -50,14 +50,14 @@ export const CategoriesSection = () => {
         <div>
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
                 <div>
-                    <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-neutral-400">
+                    <span className="text-xs font-black uppercase tracking-[0.25em] text-neutral-700">
                         Atelier Archives
                     </span>
-                    <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight mt-1">
+                    <h2 className="text-2xl sm:text-3xl font-black text-neutral-950 tracking-tight mt-1">
                         Explore Wardrobe Disciplines
                     </h2>
                 </div>
-                <p className="text-xs sm:text-sm text-neutral-500 max-w-sm">
+                <p className="text-xs sm:text-sm text-neutral-800 font-medium max-w-sm">
                     Structured silhouettes and certified organic natural fibres designed for lasting rotation.
                 </p>
             </div>
