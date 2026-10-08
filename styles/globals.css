@@ -24,12 +24,12 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #f5f4ef;
+  background-color: #ede9e1;
   background-image: 
-    radial-gradient(at 15% 0%, rgba(238, 235, 226, 0.8) 0px, transparent 50%),
-    radial-gradient(at 85% 10%, rgba(243, 240, 232, 0.8) 0px, transparent 50%),
-    radial-gradient(at 50% 60%, rgba(248, 246, 240, 0.6) 0px, transparent 60%);
-  color: #0a0a0a;
+    radial-gradient(at 15% 0%, rgba(246, 243, 237, 0.95) 0px, transparent 50%),
+    radial-gradient(at 85% 10%, rgba(236, 231, 221, 0.95) 0px, transparent 50%),
+    radial-gradient(at 50% 60%, rgba(242, 238, 230, 0.8) 0px, transparent 60%);
+  color: #050505;
   overflow-x: hidden;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -38,7 +38,7 @@ body {
 
 h1, h2, h3, h4, .font-heading {
   font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
-  color: #0a0a0a;
+  color: #050505;
 }
 
 .font-serif-luxury {
