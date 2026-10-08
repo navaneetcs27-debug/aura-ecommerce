@@ -81,16 +81,16 @@ export const OrderStatusTracker = ({ timeline = [], currentStatus = "Order Place
                                 <p
                                     className={`text-xs leading-tight ${
                                         state === "completed"
-                                            ? "text-emerald-800 font-bold"
+                                            ? "text-emerald-950 font-black"
                                             : state === "current"
-                                            ? "text-neutral-950 font-black"
-                                            : "text-neutral-700 font-bold"
+                                            ? "text-black font-black"
+                                            : "text-black font-bold"
                                     }`}
                                 >
                                     {stage.label}
                                 </p>
                                 {matchingTimelineItem && matchingTimelineItem.date && (
-                                    <p className="text-[10px] text-neutral-600 font-semibold mt-0.5 max-w-[90px] truncate">
+                                    <p className="text-[10px] text-black font-bold mt-0.5 max-w-[90px] truncate">
                                         {matchingTimelineItem.date}
                                     </p>
                                 )}

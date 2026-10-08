@@ -40,7 +40,7 @@ export const ResultsSummary = ({ count, currPage, resultsPerPage, onPageUpdate }
     return (
         <div className='sm:flex sm:flex-1 sm:items-center sm:justify-between my-2 gap-4'>
             <div>
-                <p className="text-neutral-900 font-bold text-sm text-center sm:text-left">{`Showing ${count} curated product results`}</p>
+                <p className="text-black font-black text-sm text-center sm:text-left">{`Showing ${count} curated product results`}</p>
             </div>
             <div className='flex justify-between items-center gap-3'>
                 <div className='sm:hidden block'>
@@ -79,14 +79,14 @@ export const ResultsSummary = ({ count, currPage, resultsPerPage, onPageUpdate }
                                     <div className="mt-6 flex justify-between gap-3">
                                         <button
                                             type="button"
-                                            className="flex-1 py-2.5 border border-neutral-300 rounded-xl text-xs font-bold text-neutral-800 hover:bg-neutral-100 transition"
+                                            className="flex-1 py-2.5 border border-neutral-300 rounded-xl text-xs font-black text-black hover:bg-neutral-100 transition"
                                             onClick={closeModal}
                                             >
                                             Cancel
                                         </button>
                                         <button
                                             type="button"
-                                            className="flex-1 py-2.5 bg-neutral-950 rounded-xl text-xs font-bold text-white hover:bg-black transition shadow-sm"
+                                            className="flex-1 py-2.5 bg-neutral-950 rounded-xl text-xs font-black text-white hover:bg-black transition shadow-sm"
                                             onClick={closeModal}
                                             >
                                             Apply Filters
@@ -99,8 +99,8 @@ export const ResultsSummary = ({ count, currPage, resultsPerPage, onPageUpdate }
                             </Dialog>
                         </Transition>
                 </div>
-                <nav className="isolate inline-flex -space-x-px rounded-xl shadow-2xs bg-white border border-neutral-200 overflow-hidden" aria-label="Pagination">
-                    <button className={clsx(pageNumberStyle.default, defaultPageNumberStyle, "text-neutral-900 font-bold hover:bg-neutral-100")} onClick={() => onPageUpdate(currPage - 1)} disabled={currPage == 1}>
+                <nav className="isolate inline-flex -space-x-px rounded-xl shadow-2xs bg-white border border-neutral-300 overflow-hidden" aria-label="Pagination">
+                    <button className={clsx(pageNumberStyle.default, defaultPageNumberStyle, "text-black font-black hover:bg-neutral-100")} onClick={() => onPageUpdate(currPage - 1)} disabled={currPage == 1}>
                         <span className="sr-only">Previous</span>
                         <ChevronLeft width={20}/>
                     </button> 
@@ -110,7 +110,7 @@ export const ResultsSummary = ({ count, currPage, resultsPerPage, onPageUpdate }
                         currentPage={currPage}
                         isExpanded={false}
                         />
-                     <button className={clsx(pageNumberStyle.default, defaultPageNumberStyle, "text-neutral-900 font-bold hover:bg-neutral-100")} onClick={() => onPageUpdate(currPage + 1)} disabled={currPage == totalPages}>
+                     <button className={clsx(pageNumberStyle.default, defaultPageNumberStyle, "text-black font-black hover:bg-neutral-100")} onClick={() => onPageUpdate(currPage + 1)} disabled={currPage == totalPages}>
                         <span className="sr-only">Next</span>
                         <ChevronRight width={20} />
                      </button>

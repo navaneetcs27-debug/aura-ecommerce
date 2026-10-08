@@ -31,7 +31,7 @@ const NumberCounter = ({ quantity = 1, updateQuantity, min = 1, max = 99, size =
                 type="button"
                 onClick={handleDecrement}
                 disabled={quantity <= min}
-                className={`flex items-center justify-center font-black text-neutral-900 hover:bg-neutral-200 active:bg-neutral-300 disabled:opacity-40 disabled:cursor-not-allowed transition ${
+                className={`flex items-center justify-center font-black text-black hover:bg-neutral-200 active:bg-neutral-300 disabled:opacity-40 disabled:cursor-not-allowed transition ${
                     isSmall ? 'w-7 text-sm' : 'w-9 text-base'
                 }`}
                 aria-label="Decrease quantity"
@@ -43,7 +43,7 @@ const NumberCounter = ({ quantity = 1, updateQuantity, min = 1, max = 99, size =
                 readOnly
                 value={quantity}
                 onChange={handleChange}
-                className={`font-black text-neutral-950 bg-transparent text-center focus:outline-none select-none ${
+                className={`font-black text-black bg-transparent text-center focus:outline-none select-none ${
                     isSmall ? 'w-8 text-xs' : 'w-10 text-sm'
                 }`}
                 aria-label="Item quantity"
@@ -52,7 +52,7 @@ const NumberCounter = ({ quantity = 1, updateQuantity, min = 1, max = 99, size =
                 type="button"
                 onClick={handleIncrement}
                 disabled={quantity >= max}
-                className={`flex items-center justify-center font-black text-neutral-900 hover:bg-neutral-200 active:bg-neutral-300 disabled:opacity-40 disabled:cursor-not-allowed transition ${
+                className={`flex items-center justify-center font-black text-black hover:bg-neutral-200 active:bg-neutral-300 disabled:opacity-40 disabled:cursor-not-allowed transition ${
                     isSmall ? 'w-7 text-sm' : 'w-9 text-base'
                 }`}
                 aria-label="Increase quantity"

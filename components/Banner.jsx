@@ -109,11 +109,11 @@ export const Banner = () => {
                     <div className="space-y-4">
                         <div className="flex flex-wrap items-center justify-between gap-3">
                             <div className="flex items-center gap-2.5">
-                                <span className="text-xs font-black tracking-[0.25em] uppercase text-neutral-800">
+                                <span className="text-xs font-black tracking-[0.25em] uppercase text-black">
                                     {activeLook.season}
                                 </span>
-                                <span className="w-1.5 h-1.5 rounded-full bg-neutral-400" />
-                                <span className="text-xs font-bold tracking-widest uppercase text-neutral-900">
+                                <span className="w-1.5 h-1.5 rounded-full bg-black" />
+                                <span className="text-xs font-black tracking-widest uppercase text-black">
                                     {activeLook.edition}
                                 </span>
                             </div>
@@ -125,10 +125,10 @@ export const Banner = () => {
                                         key={look.id}
                                         type="button"
                                         onClick={() => setCurrentLookIdx(idx)}
-                                        className={`px-3 py-1.5 rounded-lg text-[11px] font-extrabold tracking-wider uppercase transition-all ${
+                                        className={`px-3 py-1.5 rounded-lg text-[11px] font-black tracking-wider uppercase transition-all ${
                                             currentLookIdx === idx
-                                                ? 'bg-neutral-950 text-white shadow-sm'
-                                                : 'text-neutral-700 hover:text-black hover:bg-neutral-200/70'
+                                                ? 'bg-black text-white shadow-sm'
+                                                : 'text-black hover:bg-neutral-200'
                                         }`}
                                     >
                                         Look {look.id}
@@ -139,36 +139,36 @@ export const Banner = () => {
 
                         {/* Master High-Contrast Headline */}
                         <div className="min-h-[120px] sm:min-h-[140px] flex flex-col justify-center">
-                            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-neutral-950 leading-[1.04]">
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-black leading-[1.04]">
                                 {activeLook.titleMain} <br />
-                                <span className="font-serif-luxury italic font-semibold text-neutral-900">
+                                <span className="font-serif-luxury italic font-bold text-black">
                                     {activeLook.titleSerif}
                                 </span>
                             </h1>
                         </div>
 
                         {/* High-Readability Editorial Body */}
-                        <p className="text-sm sm:text-base text-neutral-800 font-normal sm:font-medium leading-relaxed max-w-lg">
+                        <p className="text-sm sm:text-base text-black font-semibold leading-relaxed max-w-lg">
                             {activeLook.description}
                         </p>
 
                         {/* Material Provenance Badge */}
-                        <div className="inline-flex items-center gap-2 pt-1 text-xs bg-neutral-50 px-3 py-1.5 rounded-lg border border-neutral-200">
-                            <span className="w-2 h-2 rounded-full bg-emerald-600 flex-shrink-0" />
-                            <span className="font-bold text-neutral-950 tracking-wide">Textile Spec:</span>
-                            <span className="text-neutral-800 font-semibold">{activeLook.fabricSpec}</span>
+                        <div className="inline-flex items-center gap-2 pt-1 text-xs bg-neutral-100 px-3 py-1.5 rounded-lg border border-neutral-300">
+                            <span className="w-2 h-2 rounded-full bg-black flex-shrink-0" />
+                            <span className="font-black text-black tracking-wide">Textile Spec:</span>
+                            <span className="text-black font-bold">{activeLook.fabricSpec}</span>
                         </div>
                     </div>
 
                     {/* Curated Collection Chips */}
                     <div className="space-y-2 pt-1">
-                        <span className="text-xs font-black tracking-widest uppercase text-neutral-700 block">
+                        <span className="text-xs font-black tracking-widest uppercase text-black block">
                             Direct Catalog Jump
                         </span>
                         <div className="flex flex-wrap gap-2">
                             {activeLook.chips.map((chip, idx) => (
                                 <Link key={idx} href={chip.href}>
-                                    <a className="px-4 py-2 bg-neutral-50 hover:bg-neutral-950 hover:text-white text-neutral-950 text-xs font-bold rounded-xl border border-neutral-300 transition-colors duration-200 shadow-2xs">
+                                    <a className="px-4 py-2 bg-neutral-100 hover:bg-black hover:text-white text-black text-xs font-black rounded-xl border border-neutral-300 transition-colors duration-200 shadow-2xs">
                                         {chip.label}
                                     </a>
                                 </Link>
@@ -180,29 +180,29 @@ export const Banner = () => {
                     <div className="space-y-4 pt-2">
                         <div className="flex flex-wrap items-center gap-3.5">
                             <Link href={activeLook.ctaLink}>
-                                <a className="px-8 py-3.5 bg-neutral-950 hover:bg-black text-white text-xs sm:text-sm font-extrabold tracking-wider uppercase rounded-xl transition duration-200 shadow-md active:scale-95 flex items-center gap-3">
+                                <a className="px-8 py-3.5 bg-black hover:bg-neutral-800 text-white text-xs sm:text-sm font-black tracking-wider uppercase rounded-xl transition duration-200 shadow-md active:scale-95 flex items-center gap-3">
                                     <span>{activeLook.ctaLabel}</span>
                                     <span className="text-base leading-none">→</span>
                                 </a>
                             </Link>
                             <Link href="/cart">
-                                <a className="px-7 py-3.5 bg-white hover:bg-neutral-950 hover:text-white text-neutral-950 text-xs sm:text-sm font-extrabold tracking-wider uppercase rounded-xl border-2 border-neutral-950 transition duration-200 active:scale-95">
+                                <a className="px-7 py-3.5 bg-white hover:bg-black hover:text-white text-black text-xs sm:text-sm font-black tracking-wider uppercase rounded-xl border-2 border-black transition duration-200 active:scale-95">
                                     View Bag
                                 </a>
                             </Link>
                         </div>
 
                         {/* Privilege Voucher Pill */}
-                        <div className="inline-flex items-center gap-2.5 bg-neutral-100 border border-neutral-300 px-4 py-2.5 rounded-xl text-xs text-neutral-900">
-                            <span className="font-bold text-neutral-950">Welcome Privilege:</span>
-                            <span className="text-neutral-700 font-medium">20% off with</span>
-                            <span className="font-mono font-black text-neutral-950 bg-white px-2.5 py-1 rounded-md border border-neutral-400 shadow-2xs">
+                        <div className="inline-flex items-center gap-2.5 bg-neutral-100 border border-neutral-300 px-4 py-2.5 rounded-xl text-xs text-black">
+                            <span className="font-black text-black">Welcome Privilege:</span>
+                            <span className="text-black font-bold">20% off with</span>
+                            <span className="font-mono font-black text-black bg-white px-2.5 py-1 rounded-md border border-neutral-400 shadow-2xs">
                                 WELCOME20
                             </span>
                             <button
                                 type="button"
                                 onClick={handleCopyPromo}
-                                className="font-extrabold text-neutral-950 hover:text-indigo-600 underline underline-offset-2 ml-1 cursor-pointer transition"
+                                className="font-black text-black hover:underline ml-1 cursor-pointer transition"
                             >
                                 {copied ? "Copied ✓" : "Copy Code"}
                             </button>
@@ -210,17 +210,17 @@ export const Banner = () => {
                     </div>
 
                     {/* Human Editorial Standard Markers */}
-                    <div className="flex flex-wrap items-center gap-6 pt-4 border-t border-neutral-200 text-xs text-neutral-700 font-bold">
+                    <div className="flex flex-wrap items-center gap-6 pt-4 border-t border-neutral-300 text-xs text-black font-black">
                         <span className="flex items-center gap-2">
-                            <span className="w-2 h-2 rounded-full bg-neutral-950" />
+                            <span className="w-2 h-2 rounded-full bg-black" />
                             Complimentary Express Delivery
                         </span>
                         <span className="flex items-center gap-2">
-                            <span className="w-2 h-2 rounded-full bg-neutral-950" />
+                            <span className="w-2 h-2 rounded-full bg-black" />
                             Certified Natural Fibres
                         </span>
                         <span className="hidden sm:flex items-center gap-2">
-                            <span className="w-2 h-2 rounded-full bg-neutral-950" />
+                            <span className="w-2 h-2 rounded-full bg-black" />
                             7-Day Doorstep Returns
                         </span>
                     </div>
@@ -241,7 +241,7 @@ export const Banner = () => {
                         />
                         
                         {/* Top Editorial Corner Tag */}
-                        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl border border-neutral-300 text-xs font-black tracking-[0.2em] uppercase text-neutral-950 shadow-md">
+                        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl border border-neutral-300 text-xs font-black tracking-[0.2em] uppercase text-black shadow-md">
                             {`Look ${activeLook.id} • ${activeLook.season.split(" ")[0]} 2026`}
                         </div>
 

@@ -18,7 +18,7 @@ export const CategoryCard = ({ name, subtitle, count, imgUrl, categoryKey }) => 
 
                 {/* Top Badge: Item count */}
                 {count && (
-                    <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-md text-[10px] font-black tracking-widest uppercase text-neutral-950 border border-neutral-300 shadow-xs">
+                    <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-md text-[10px] font-black tracking-widest uppercase text-black border border-neutral-300 shadow-xs">
                         {count} Pieces
                     </div>
                 )}
@@ -32,7 +32,7 @@ export const CategoryCard = ({ name, subtitle, count, imgUrl, categoryKey }) => 
                         <span className="text-white text-base sm:text-lg font-black tracking-wide drop-shadow-sm">
                             {name}
                         </span>
-                        <span className="w-7 h-7 rounded-full bg-white text-neutral-950 flex items-center justify-center text-xs font-black group-hover:bg-neutral-950 group-hover:text-white transition-colors duration-200 shadow-xs">
+                        <span className="w-7 h-7 rounded-full bg-white text-black flex items-center justify-center text-xs font-black group-hover:bg-black group-hover:text-white transition-colors duration-200 shadow-xs">
                             →
                         </span>
                     </div>

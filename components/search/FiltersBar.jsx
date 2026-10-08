@@ -81,11 +81,11 @@ export const FiltersBar = () => {
             <div className="flex pb-3 justify-between items-center border-b border-neutral-200">
                 <div className="flex items-center gap-2">
                     <FiltersIcon />
-                    <span className="font-extrabold text-sm uppercase tracking-wider text-neutral-950">Filters</span>
+                    <span className="font-black text-sm uppercase tracking-wider text-black">Filters</span>
                 </div>
                 <button 
                     type="button" 
-                    className="text-xs font-bold text-neutral-600 hover:text-neutral-950 underline transition" 
+                    className="text-xs font-bold text-black hover:underline transition" 
                     onClick={clearFilters}
                 >
                     Clear All
@@ -141,7 +141,7 @@ export const FiltersBar = () => {
                                 background: "#0a0a0a"
                             }]}
                         />
-                        <div className="flex justify-between items-center text-xs font-bold text-neutral-950 pt-2">
+                        <div className="flex justify-between items-center text-xs font-black text-black pt-2">
                             <span>₹{selectedFilters.price?.[0] || PRICE_RANGE[0]}</span>
                             <span>₹{selectedFilters.price?.[1] || PRICE_RANGE[1]}</span>
                         </div>

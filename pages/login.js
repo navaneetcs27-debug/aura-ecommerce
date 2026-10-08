@@ -56,10 +56,10 @@ export default function LoginPage() {
                         <div className="w-12 h-12 mx-auto mb-3 rounded-2xl bg-neutral-950 text-white flex items-center justify-center font-black text-xl">
                             A
                         </div>
-                        <h1 className="text-2xl font-black text-neutral-950 tracking-tight">
+                        <h1 className="text-2xl font-black text-black tracking-tight">
                             Welcome Back
                         </h1>
-                        <p className="text-xs text-neutral-800 font-medium mt-1">
+                        <p className="text-xs text-black font-bold mt-1">
                             Sign in to access your orders, saved items, and personalized style.
                         </p>
                     </div>
@@ -68,13 +68,13 @@ export default function LoginPage() {
                     <div className="p-4 bg-neutral-100 border border-neutral-300 rounded-2xl">
                         <div className="flex items-center justify-between">
                             <div>
-                                <span className="text-xs font-black text-neutral-950 block">⚡ Quick Demo Login</span>
-                                <span className="text-[11px] text-neutral-700 font-medium">Instant access for previewing</span>
+                                <span className="text-xs font-black text-black block">⚡ Quick Demo Login</span>
+                                <span className="text-[11px] text-black font-bold">Instant access for previewing</span>
                             </div>
                             <button
                                 type="button"
                                 onClick={handleDemoLogin}
-                                className="px-3.5 py-1.5 bg-neutral-950 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl shadow-xs transition"
+                                className="px-3.5 py-1.5 bg-neutral-950 hover:bg-black text-white text-xs font-bold rounded-xl shadow-xs transition"
                             >
                                 1-Click Sign In
                             </button>
@@ -83,7 +83,7 @@ export default function LoginPage() {
 
                     <div className="flex items-center gap-3">
                         <div className="h-px bg-neutral-300 flex-1" />
-                        <span className="text-[11px] text-neutral-700 font-bold uppercase tracking-wider">Or sign in with email</span>
+                        <span className="text-[11px] text-black font-black uppercase tracking-wider">Or sign in with email</span>
                         <div className="h-px bg-neutral-300 flex-1" />
                     </div>
 
@@ -96,7 +96,7 @@ export default function LoginPage() {
                         )}
 
                         <div>
-                            <label className="text-xs font-bold text-neutral-900 block mb-1.5">
+                            <label className="text-xs font-black text-black block mb-1.5">
                                 Email Address
                             </label>
                             <input
@@ -105,17 +105,17 @@ export default function LoginPage() {
                                 placeholder="name@example.com"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className="w-full px-4 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:bg-white focus:border-neutral-950 text-neutral-950 font-semibold transition"
+                                className="w-full px-4 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:bg-white focus:border-black text-black placeholder-neutral-500 font-bold transition"
                             />
                         </div>
 
                         <div>
                             <div className="flex items-center justify-between mb-1.5">
-                                <label className="text-xs font-bold text-neutral-900">Password</label>
+                                <label className="text-xs font-black text-black">Password</label>
                                 <button
                                     type="button"
                                     onClick={() => alert("For testing, please use Demo Login or sign up with any password.")}
-                                    className="text-[11px] text-neutral-800 hover:text-black font-semibold underline"
+                                    className="text-[11px] text-black hover:underline font-bold underline"
                                 >
                                     Forgot password?
                                 </button>
@@ -127,12 +127,12 @@ export default function LoginPage() {
                                     placeholder="••••••••"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    className="w-full px-4 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:bg-white focus:border-neutral-950 text-neutral-950 font-semibold transition pr-12"
+                                    className="w-full px-4 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:bg-white focus:border-black text-black placeholder-neutral-500 font-bold transition pr-12"
                                 />
                                 <button
                                     type="button"
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute right-3 top-2.5 text-neutral-700 hover:text-black font-bold text-xs"
+                                    className="absolute right-3 top-2.5 text-black hover:opacity-80 font-black text-xs"
                                 >
                                     {showPassword ? "Hide" : "Show"}
                                 </button>
@@ -142,7 +142,7 @@ export default function LoginPage() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full py-3.5 bg-neutral-950 hover:bg-neutral-800 text-white font-bold text-xs rounded-2xl shadow-md transition active:scale-98"
+                            className="w-full py-3.5 bg-neutral-950 hover:bg-black text-white font-black text-xs rounded-2xl shadow-md transition active:scale-98"
                         >
                             {loading ? "Signing in..." : "Sign In to Account"}
                         </button>
@@ -150,10 +150,10 @@ export default function LoginPage() {
 
                     {/* Switch to Register */}
                     <div className="text-center pt-2 border-t border-neutral-200">
-                        <p className="text-xs text-neutral-800 font-medium">
+                        <p className="text-xs text-black font-bold">
                             Don&apos;t have an account yet?{' '}
                             <Link href={`/register${redirectPath ? `?redirect=${encodeURIComponent(redirectPath)}` : ''}`}>
-                                <a className="font-black text-neutral-950 hover:underline">Create Account</a>
+                                <a className="font-black text-black underline hover:opacity-80">Create Account</a>
                             </Link>
                         </p>
                     </div>

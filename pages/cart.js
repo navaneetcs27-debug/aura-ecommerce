@@ -71,12 +71,12 @@ const Cart = () => {
                     <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-neutral-100 flex items-center justify-center text-3xl">
                         🛍️
                     </div>
-                    <h2 className="text-xl font-black text-neutral-950">Your Shopping Bag is Empty</h2>
-                    <p className="text-xs text-neutral-700 mt-2 mb-6 leading-relaxed font-medium">
+                    <h2 className="text-xl font-black text-black">Your Shopping Bag is Empty</h2>
+                    <p className="text-xs text-black mt-2 mb-6 leading-relaxed font-bold">
                         Explore our curated atelier catalog of pure silks, merino knitwear, and architectural coats.
                     </p>
                     <Link href="/search">
-                        <a className="inline-flex items-center justify-center px-7 py-3.5 bg-neutral-950 text-white text-xs font-black uppercase tracking-wider rounded-xl hover:bg-black transition shadow-sm">
+                        <a className="inline-flex items-center justify-center px-7 py-3.5 bg-black text-white text-xs font-black uppercase tracking-wider rounded-xl hover:bg-neutral-900 transition shadow-sm">
                             Explore Collections 🛍️
                         </a>
                     </Link>
@@ -95,9 +95,9 @@ const Cart = () => {
                 {/* Header */}
                 <div className="flex items-center justify-between pb-6 border-b border-neutral-200">
                     <div>
-                        <h1 className="text-2xl sm:text-3xl font-black text-neutral-950 tracking-tight flex items-center gap-2.5">
+                        <h1 className="text-2xl sm:text-3xl font-black text-black tracking-tight flex items-center gap-2.5">
                             <span>Shopping Bag</span>
-                            <span className="text-xs font-black text-neutral-950 bg-neutral-100 border border-neutral-300 px-3 py-1 rounded-full">
+                            <span className="text-xs font-black text-black bg-neutral-100 border border-neutral-300 px-3 py-1 rounded-full">
                                 {totalItemsCount} items
                             </span>
                         </h1>
@@ -118,7 +118,7 @@ const Cart = () => {
                     <div className="lg:col-span-8 space-y-4">
                         {/* Free Shipping Progress Indicator */}
                         <div className="p-4 bg-white border border-[#dfdcd3] rounded-2xl shadow-2xs">
-                            <div className="flex items-center justify-between text-xs font-bold text-neutral-950 mb-2">
+                            <div className="flex items-center justify-between text-xs font-black text-black mb-2">
                                 <span>
                                     {amountNeededForFreeDelivery > 0
                                         ? `Add ₹${amountNeededForFreeDelivery} more to unlock COMPLIMENTARY Express Delivery! 🚚`
@@ -144,7 +144,7 @@ const Cart = () => {
                         {/* Continue Shopping Link */}
                         <div className="pt-2">
                             <Link href="/search">
-                                <a className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-neutral-900 hover:text-black transition">
+                                <a className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-black hover:underline transition">
                                     <span>←</span> Continue Shopping
                                 </a>
                             </Link>
@@ -153,55 +153,55 @@ const Cart = () => {
 
                     {/* Right: Order Summary Sidebar */}
                     <div className="lg:col-span-4 bg-white border border-[#dfdcd3] rounded-3xl p-6 shadow-sm sticky top-36 space-y-6">
-                        <h2 className="text-lg font-black text-neutral-950 border-b border-neutral-100 pb-3">
+                        <h2 className="text-lg font-black text-black border-b border-neutral-100 pb-3">
                             Order Summary
                         </h2>
 
                         {/* Pricing Breakdown */}
                         <div className="space-y-3 text-xs">
-                            <div className="flex justify-between text-neutral-800 font-medium">
+                            <div className="flex justify-between text-black font-semibold">
                                 <span>Subtotal ({totalItemsCount} items)</span>
-                                <span className="font-bold text-neutral-950">₹{subtotal}</span>
+                                <span className="font-black text-black">₹{subtotal}</span>
                             </div>
 
-                            <div className="flex justify-between text-neutral-800 font-medium">
+                            <div className="flex justify-between text-black font-semibold">
                                 <span>Estimated Tax (10% GST)</span>
-                                <span className="font-bold text-neutral-950">₹{tax}</span>
+                                <span className="font-black text-black">₹{tax}</span>
                             </div>
 
-                            <div className="flex justify-between text-neutral-800 font-medium">
+                            <div className="flex justify-between text-black font-semibold">
                                 <span>Delivery Fee</span>
                                 {deliveryCharge === 0 ? (
-                                    <span className="font-extrabold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">FREE</span>
+                                    <span className="font-black text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-300">FREE</span>
                                 ) : (
-                                    <span className="font-bold text-neutral-950">₹{deliveryCharge}</span>
+                                    <span className="font-black text-black">₹{deliveryCharge}</span>
                                 )}
                             </div>
 
                             {discount > 0 && (
-                                <div className="flex justify-between text-emerald-800 font-bold bg-emerald-50 p-2.5 rounded-xl border border-emerald-200">
+                                <div className="flex justify-between text-emerald-900 font-black bg-emerald-50 p-2.5 rounded-xl border border-emerald-300">
                                     <span>Privilege Coupon ({appliedCoupon?.code})</span>
                                     <span>-₹{discount}</span>
                                 </div>
                             )}
 
                             <div className="pt-3 border-t border-neutral-200 flex justify-between items-baseline">
-                                <span className="text-sm font-black text-neutral-950">Grand Total</span>
-                                <span className="text-2xl font-black text-neutral-950">₹{grandTotal}</span>
+                                <span className="text-sm font-black text-black">Grand Total</span>
+                                <span className="text-2xl font-black text-black">₹{grandTotal}</span>
                             </div>
                         </div>
 
                         {/* Coupon Code Box */}
                         <div className="pt-2">
-                            <label className="text-[11px] font-black uppercase tracking-wider text-neutral-800 block mb-2">
+                            <label className="text-[11px] font-black uppercase tracking-wider text-black block mb-2">
                                 Apply Privilege Code
                             </label>
 
                             {appliedCoupon ? (
                                 <div className="flex items-center justify-between p-3 bg-neutral-50 border border-emerald-400 rounded-2xl">
                                     <div className="flex items-center gap-2">
-                                        <span className="text-emerald-800 font-black text-xs font-mono">✓ {appliedCoupon.code}</span>
-                                        <span className="text-[11px] text-neutral-700 font-semibold">applied</span>
+                                        <span className="text-emerald-900 font-black text-xs font-mono">✓ {appliedCoupon.code}</span>
+                                        <span className="text-[11px] text-black font-bold">applied</span>
                                     </div>
                                     <button
                                         type="button"
@@ -222,30 +222,30 @@ const Cart = () => {
                                                 setCouponInput(e.target.value.toUpperCase());
                                                 setCouponError('');
                                             }}
-                                            className="flex-1 px-3.5 py-2.5 text-xs bg-neutral-50 uppercase font-bold text-neutral-950 rounded-xl border border-neutral-300 focus:outline-none focus:bg-white focus:border-neutral-950"
+                                            className="flex-1 px-3.5 py-2.5 text-xs bg-neutral-50 uppercase font-black text-black rounded-xl border border-neutral-300 focus:outline-none focus:bg-white focus:border-black"
                                         />
                                         <button
                                             type="button"
                                             onClick={() => handleApplyCoupon()}
-                                            className="px-4 py-2 bg-neutral-950 text-white text-xs font-extrabold rounded-xl hover:bg-black transition"
+                                            className="px-4 py-2 bg-black text-white text-xs font-black rounded-xl hover:bg-neutral-900 transition"
                                         >
                                             Apply
                                         </button>
                                     </div>
                                     {couponError && (
-                                        <p className="text-[11px] text-rose-600 font-bold mt-1.5">{couponError}</p>
+                                        <p className="text-[11px] text-rose-600 font-black mt-1.5">{couponError}</p>
                                     )}
 
                                     {/* Available Coupons Badges */}
                                     <div className="mt-3">
-                                        <span className="text-[10px] text-neutral-700 font-bold uppercase tracking-wider block mb-1.5">Tap code to apply:</span>
+                                        <span className="text-[10px] text-black font-black uppercase tracking-wider block mb-1.5">Tap code to apply:</span>
                                         <div className="flex flex-wrap gap-1.5">
                                             {AVAILABLE_COUPONS.map((c) => (
                                                 <button
                                                     key={c.code}
                                                     type="button"
                                                     onClick={() => handleApplyCoupon(c.code)}
-                                                    className="px-2.5 py-1 bg-neutral-100 hover:bg-neutral-950 hover:text-white text-neutral-900 text-[10px] font-extrabold rounded-lg border border-neutral-300 transition"
+                                                    className="px-2.5 py-1 bg-neutral-100 hover:bg-black hover:text-white text-black text-[10px] font-black rounded-lg border border-neutral-300 transition"
                                                 >
                                                     {c.code}
                                                 </button>
@@ -260,14 +260,14 @@ const Cart = () => {
                         <button
                             type="button"
                             onClick={() => router.push('/checkout')}
-                            className="w-full py-4 bg-neutral-950 text-white font-black text-xs sm:text-sm uppercase tracking-wider rounded-2xl hover:bg-black shadow-md active:scale-98 transition flex items-center justify-center gap-2"
+                            className="w-full py-4 bg-black text-white font-black text-xs sm:text-sm uppercase tracking-wider rounded-2xl hover:bg-neutral-900 shadow-md active:scale-98 transition flex items-center justify-center gap-2"
                         >
                             <span>Proceed to Checkout</span>
                             <span>→</span>
                         </button>
 
                         {/* Trust info */}
-                        <div className="pt-2 flex items-center justify-center gap-4 text-[11px] text-neutral-700 font-bold border-t border-neutral-100">
+                        <div className="pt-2 flex items-center justify-center gap-4 text-[11px] text-black font-bold border-t border-neutral-200">
                             <span className="flex items-center gap-1">🔒 256-Bit SSL</span>
                             <span>•</span>
                             <span className="flex items-center gap-1">⚡ Express Delivery</span>

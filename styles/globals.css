@@ -29,16 +29,21 @@ body {
     radial-gradient(at 15% 0%, rgba(246, 243, 237, 0.95) 0px, transparent 50%),
     radial-gradient(at 85% 10%, rgba(236, 231, 221, 0.95) 0px, transparent 50%),
     radial-gradient(at 50% 60%, rgba(242, 238, 230, 0.8) 0px, transparent 60%);
-  color: #050505;
+  color: #000000;
   overflow-x: hidden;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, .font-heading {
+h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
-  color: #050505;
+  color: #000000;
+  font-weight: 800;
+}
+
+p, span, label, li, a {
+  color: inherit;
 }
 
 .font-serif-luxury {

@@ -184,10 +184,10 @@ export default function RazorpayModal({
                                     key={tab.id}
                                     type="button"
                                     onClick={() => setSelectedTab(tab.id)}
-                                    className={`px-3 py-2.5 rounded-xl text-left text-xs font-bold transition flex items-center justify-between whitespace-nowrap sm:whitespace-normal gap-2 ${
+                                    className={`px-3 py-2.5 rounded-xl text-left text-xs font-black transition flex items-center justify-between whitespace-nowrap sm:whitespace-normal gap-2 ${
                                         selectedTab === tab.id
                                             ? 'bg-neutral-950 text-white shadow-sm'
-                                            : 'text-neutral-800 hover:bg-neutral-200'
+                                            : 'text-black hover:bg-neutral-200'
                                     }`}
                                 >
                                     <div className="flex items-center gap-2">
@@ -196,7 +196,7 @@ export default function RazorpayModal({
                                     </div>
                                     {tab.badge && (
                                         <span className={`text-[9px] px-1.5 py-0.5 rounded-md font-black ${
-                                            selectedTab === tab.id ? 'bg-amber-400 text-neutral-950' : 'bg-neutral-300 text-neutral-900'
+                                            selectedTab === tab.id ? 'bg-amber-400 text-black' : 'bg-neutral-300 text-black'
                                         }`}>
                                             {tab.badge}
                                         </span>
@@ -212,8 +212,8 @@ export default function RazorpayModal({
                             {selectedTab === 'upi' && (
                                 <div className="space-y-4">
                                     <div className="flex items-center justify-between">
-                                        <h4 className="text-xs font-black text-neutral-950 uppercase tracking-wider">Select UPI App</h4>
-                                        <span className="text-[10px] text-emerald-900 font-black bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">0% Fee</span>
+                                        <h4 className="text-xs font-black text-black uppercase tracking-wider">Select UPI App</h4>
+                                        <span className="text-[10px] text-emerald-950 font-black bg-emerald-50 px-2 py-0.5 rounded border border-emerald-300">0% Fee</span>
                                     </div>
 
                                     <div className="grid grid-cols-2 gap-2.5">
@@ -224,14 +224,14 @@ export default function RazorpayModal({
                                                 onClick={() => setUpiApp(app.id)}
                                                 className={`p-3 rounded-2xl border text-left flex items-center gap-2.5 transition ${
                                                     upiApp === app.id
-                                                        ? 'bg-neutral-100 border-neutral-950 ring-1 ring-neutral-950 text-neutral-950'
-                                                        : 'bg-white border-neutral-300 hover:border-neutral-400 text-neutral-800'
+                                                        ? 'bg-neutral-100 border-neutral-950 ring-1 ring-neutral-950 text-black'
+                                                        : 'bg-white border-neutral-300 hover:border-black text-black'
                                                 }`}
                                             >
                                                 <span className="text-lg">{app.icon}</span>
                                                 <div>
-                                                    <p className="text-xs font-bold text-neutral-950">{app.name}</p>
-                                                    <p className="text-[10px] text-neutral-700 font-semibold">1-Tap Auth</p>
+                                                    <p className="text-xs font-black text-black">{app.name}</p>
+                                                    <p className="text-[10px] text-black font-bold">1-Tap Auth</p>
                                                 </div>
                                             </button>
                                         ))}
@@ -243,28 +243,28 @@ export default function RazorpayModal({
                                             <span>[⚡ QR]</span>
                                             <span className="text-[7px] text-neutral-300 mt-1 font-bold">SCAN & PAY</span>
                                         </div>
-                                        <div className="text-xs text-neutral-800 space-y-1">
-                                            <p className="font-black text-neutral-950">Scan QR Code using any UPI App</p>
-                                            <p className="text-[11px] text-neutral-700 font-semibold">Google Pay, PhonePe, Paytm, CRED or BHIM</p>
+                                        <div className="text-xs space-y-1">
+                                            <p className="font-black text-black">Scan QR Code using any UPI App</p>
+                                            <p className="text-[11px] text-black font-bold">Google Pay, PhonePe, Paytm, CRED or BHIM</p>
                                         </div>
                                     </div>
 
                                     {/* Custom UPI Input */}
                                     <div>
-                                        <label className="text-[11px] font-bold text-neutral-900 block mb-1">Enter UPI VPA / ID</label>
+                                        <label className="text-[11px] font-black text-black block mb-1">Enter UPI VPA / ID</label>
                                         <input
                                             type="text"
                                             value={customUpiId}
                                             onChange={(e) => setCustomUpiId(e.target.value)}
                                             placeholder="yourname@okhdfcbank"
-                                            className="w-full px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-mono font-semibold"
+                                            className="w-full px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-black placeholder-neutral-500 font-mono font-bold"
                                         />
                                     </div>
 
                                     <button
                                         type="button"
                                         onClick={() => handleExecutePayment(`UPI (${upiApps.find(a => a.id === upiApp)?.name || 'Custom'})`)}
-                                        className="w-full py-3.5 bg-neutral-950 hover:bg-neutral-800 text-white font-extrabold text-xs sm:text-sm rounded-2xl shadow-lg transition transform active:scale-98 flex items-center justify-center gap-2"
+                                        className="w-full py-3.5 bg-neutral-950 hover:bg-black text-white font-black text-xs sm:text-sm rounded-2xl shadow-lg transition transform active:scale-98 flex items-center justify-center gap-2"
                                     >
                                         <span>Pay ₹{amount} via UPI ⚡</span>
                                     </button>
@@ -294,11 +294,11 @@ export default function RazorpayModal({
                                     </div>
 
                                     <div className="flex items-center justify-between">
-                                        <span className="text-[11px] font-bold text-neutral-900">Enter Card Information</span>
+                                        <span className="text-[11px] font-black text-black">Enter Card Information</span>
                                         <button
                                             type="button"
                                             onClick={handleAutoFillTestCard}
-                                            className="text-[10px] font-black text-neutral-950 hover:underline"
+                                            className="text-[10px] font-black text-black hover:underline"
                                         >
                                             ⚡ Auto-fill Test Card
                                         </button>
@@ -310,7 +310,7 @@ export default function RazorpayModal({
                                             value={cardNumber}
                                             onChange={(e) => setCardNumber(e.target.value)}
                                             placeholder="4242 •••• •••• 4242"
-                                            className="w-full px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-mono font-semibold"
+                                            className="w-full px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-black placeholder-neutral-500 font-mono font-bold"
                                         />
                                         <div className="grid grid-cols-2 gap-2">
                                             <input
@@ -318,7 +318,7 @@ export default function RazorpayModal({
                                                 value={cardExpiry}
                                                 onChange={(e) => setCardExpiry(e.target.value)}
                                                 placeholder="MM/YY"
-                                                className="px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
+                                                className="px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-black placeholder-neutral-500 font-bold"
                                             />
                                             <input
                                                 type="password"
@@ -326,7 +326,7 @@ export default function RazorpayModal({
                                                 onChange={(e) => setCardCvv(e.target.value)}
                                                 placeholder="CVV"
                                                 maxLength={4}
-                                                className="px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
+                                                className="px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-black placeholder-neutral-500 font-bold"
                                             />
                                         </div>
                                     </div>
@@ -334,7 +334,7 @@ export default function RazorpayModal({
                                     <button
                                         type="button"
                                         onClick={() => handleExecutePayment(`Card ending ${cardNumber.slice(-4)}`)}
-                                        className="w-full py-3.5 bg-neutral-950 hover:bg-neutral-800 text-white font-extrabold text-xs sm:text-sm rounded-2xl shadow-lg transition transform active:scale-98 flex items-center justify-center gap-2"
+                                        className="w-full py-3.5 bg-neutral-950 hover:bg-black text-white font-black text-xs sm:text-sm rounded-2xl shadow-lg transition transform active:scale-98 flex items-center justify-center gap-2"
                                     >
                                         <span>Authorize & Pay ₹{amount} 💳</span>
                                     </button>
@@ -344,7 +344,7 @@ export default function RazorpayModal({
                             {/* TAB 3: NETBANKING */}
                             {selectedTab === 'netbanking' && (
                                 <div className="space-y-4">
-                                    <h4 className="text-xs font-black text-neutral-950 uppercase tracking-wider">Select Your Bank</h4>
+                                    <h4 className="text-xs font-black text-black uppercase tracking-wider">Select Your Bank</h4>
                                     
                                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                                         {bankOptions.map((b) => (
@@ -355,23 +355,23 @@ export default function RazorpayModal({
                                                 className={`p-3 rounded-2xl border text-center transition flex flex-col items-center justify-center gap-1 ${
                                                     selectedBank === b.id
                                                         ? 'bg-neutral-950 text-white border-neutral-950 shadow-sm'
-                                                        : 'bg-neutral-50 text-neutral-800 border-neutral-300 hover:bg-neutral-100'
+                                                        : 'bg-neutral-50 text-black border-neutral-300 hover:bg-neutral-100 font-bold'
                                                 }`}
                                             >
                                                 <span className="font-black text-xs">{b.code}</span>
-                                                <span className="text-[10px] font-bold truncate w-full">{b.name}</span>
+                                                <span className="text-[10px] font-black truncate w-full">{b.name}</span>
                                             </button>
                                         ))}
                                     </div>
 
-                                    <div className="p-3 bg-amber-50 border border-amber-300 rounded-xl text-[11px] text-amber-900 font-semibold">
+                                    <div className="p-3 bg-amber-50 border border-amber-300 rounded-xl text-[11px] text-amber-950 font-bold">
                                         ℹ️ You will be redirected to simulated secure NetBanking portal for {bankOptions.find(b => b.id === selectedBank)?.name}.
                                     </div>
 
                                     <button
                                         type="button"
                                         onClick={() => handleExecutePayment(`NetBanking (${selectedBank})`)}
-                                        className="w-full py-3.5 bg-neutral-950 hover:bg-neutral-800 text-white font-extrabold text-xs sm:text-sm rounded-2xl shadow-lg transition transform active:scale-98 flex items-center justify-center gap-2"
+                                        className="w-full py-3.5 bg-neutral-950 hover:bg-black text-white font-black text-xs sm:text-sm rounded-2xl shadow-lg transition transform active:scale-98 flex items-center justify-center gap-2"
                                     >
                                         <span>Proceed with {selectedBank} (₹{amount}) 🏦</span>
                                     </button>
@@ -385,15 +385,15 @@ export default function RazorpayModal({
                                         ⚡
                                     </div>
                                     <div>
-                                        <h4 className="text-sm font-black text-neutral-950">Instant Sandbox Test Payment</h4>
-                                        <p className="text-xs text-neutral-800 font-medium mt-1 max-w-xs mx-auto">
+                                        <h4 className="text-sm font-black text-black">Instant Sandbox Test Payment</h4>
+                                        <p className="text-xs text-black font-bold mt-1 max-w-xs mx-auto">
                                             Bypass manual card/UPI entries and simulate instant 100% verified Razorpay transaction.
                                         </p>
                                     </div>
 
-                                    <div className="p-3 bg-neutral-100 rounded-2xl border border-neutral-300 text-[11px] text-neutral-800 flex justify-between font-mono">
+                                    <div className="p-3 bg-neutral-100 rounded-2xl border border-neutral-300 text-[11px] text-black flex justify-between font-mono">
                                         <span className="font-bold">Order Total:</span>
-                                        <strong className="text-neutral-950 font-black text-sm">₹{amount}</strong>
+                                        <strong className="text-black font-black text-sm">₹{amount}</strong>
                                     </div>
 
                                     <button
@@ -410,13 +410,13 @@ export default function RazorpayModal({
                 )}
 
                 {/* Modal Footer Trust Bar */}
-                <div className="bg-neutral-100 px-6 py-2.5 border-t border-neutral-300 flex items-center justify-between text-[10px] text-neutral-700 font-bold">
+                <div className="bg-neutral-100 px-6 py-2.5 border-t border-neutral-300 flex items-center justify-between text-[10px] text-black font-bold">
                     <div className="flex items-center gap-2">
                         <span>🔒 256-Bit SSL Encrypted</span>
                         <span>•</span>
                         <span>RBI Authorized</span>
                     </div>
-                    <div className="font-mono text-neutral-600">
+                    <div className="font-mono text-black font-bold">
                         Razorpay Gateway v2.4
                     </div>
                 </div>

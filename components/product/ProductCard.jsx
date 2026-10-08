@@ -82,7 +82,7 @@ export const ProductCard = ({ product }) => {
                     className={`absolute top-3 right-3 z-10 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 shadow-xs backdrop-blur-sm ${
                         wishlisted
                             ? "bg-rose-50 text-rose-600 scale-105 border border-rose-300"
-                            : "bg-white text-neutral-700 hover:text-black hover:bg-neutral-100 border border-neutral-300"
+                            : "bg-white text-black hover:text-black hover:bg-neutral-100 border border-neutral-300"
                     }`}
                     aria-label={wishlisted ? "Remove from wishlist" : "Add to wishlist"}
                 >
@@ -122,14 +122,14 @@ export const ProductCard = ({ product }) => {
             <div className="p-4 sm:p-5 flex flex-col flex-grow justify-between space-y-3">
                 <div className="space-y-1.5">
                     {/* Category & Gender */}
-                    <div className="flex items-center justify-between text-xs text-neutral-700 font-bold uppercase tracking-wider">
+                    <div className="flex items-center justify-between text-xs text-black font-black uppercase tracking-wider">
                         <span>{product.category || "Apparel"}</span>
                         <span>{product.gender === "M" ? "Men" : product.gender === "F" ? "Women" : "Unisex"}</span>
                     </div>
 
                     {/* Product Title */}
                     <Link href={`/product/${product.id}`}>
-                        <h3 className="font-black text-neutral-950 text-base leading-snug line-clamp-1 hover:text-neutral-700 transition-colors cursor-pointer" title={product.title}>
+                        <h3 className="font-black text-black text-base leading-snug line-clamp-1 hover:underline transition-colors cursor-pointer" title={product.title}>
                             {product.title}
                         </h3>
                     </Link>
@@ -142,7 +142,7 @@ export const ProductCard = ({ product }) => {
                             size="xs"
                         />
                         {product.stockCount && product.stockCount < 8 && (
-                            <span className="text-[10px] font-bold text-amber-900 bg-amber-100/90 px-2 py-0.5 rounded border border-amber-300">
+                            <span className="text-[10px] font-black text-amber-950 bg-amber-100 px-2 py-0.5 rounded border border-amber-400">
                                 {product.stockCount} left
                             </span>
                         )}
@@ -153,16 +153,16 @@ export const ProductCard = ({ product }) => {
                 <div className="pt-3 border-t border-[#e8e6df] flex items-center justify-between gap-3">
                     <div className="flex flex-col">
                         <div className="flex items-baseline gap-1.5">
-                            <span className="text-lg font-black text-neutral-950">
+                            <span className="text-lg font-black text-black">
                                 ₹{product.price}
                             </span>
                             {originalPrice > Number(product.price) && (
-                                <span className="text-xs text-neutral-500 font-medium line-through">
+                                <span className="text-xs text-black/60 font-black line-through">
                                     ₹{originalPrice}
                                 </span>
                             )}
                         </div>
-                        <span className="text-[11px] text-neutral-800 font-semibold">
+                        <span className="text-[11px] text-black font-bold">
                             Free Express Delivery
                         </span>
                     </div>

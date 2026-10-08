@@ -39,10 +39,10 @@ export default function ProfilePage() {
         return (
             <div className="max-w-md mx-auto my-16 p-8 bg-white rounded-3xl border border-neutral-300 text-center shadow-sm">
                 <span className="text-4xl block mb-3">🔒</span>
-                <h1 className="text-xl font-black text-neutral-950">Sign In Required</h1>
-                <p className="text-xs text-neutral-700 font-semibold mt-1 mb-6">Please sign in to view your profile and saved addresses.</p>
+                <h1 className="text-xl font-black text-black">Sign In Required</h1>
+                <p className="text-xs text-black font-bold mt-1 mb-6">Please sign in to view your profile and saved addresses.</p>
                 <Link href="/login?redirect=/profile">
-                    <a className="inline-flex px-6 py-2.5 bg-neutral-950 text-white text-xs font-bold rounded-xl hover:bg-neutral-800 transition">
+                    <a className="inline-flex px-6 py-2.5 bg-neutral-950 text-white text-xs font-black rounded-xl hover:bg-black transition">
                         Sign In Now
                     </a>
                 </Link>
@@ -100,35 +100,35 @@ export default function ProfilePage() {
                             width={80}
                             height={80}
                             unoptimized
-                            className="rounded-2xl object-cover border-2 border-neutral-200 shadow-xs"
+                            className="rounded-2xl object-cover border-2 border-neutral-300 shadow-xs"
                         />
                         <div>
                             <div className="flex items-center gap-2">
-                                <h1 className="text-xl sm:text-2xl font-black text-neutral-950">{user.name}</h1>
-                                <span className="px-2.5 py-0.5 bg-neutral-950 text-white font-bold text-[10px] rounded-full uppercase tracking-wider">
+                                <h1 className="text-xl sm:text-2xl font-black text-black">{user.name}</h1>
+                                <span className="px-2.5 py-0.5 bg-neutral-950 text-white font-black text-[10px] rounded-full uppercase tracking-wider">
                                     Atelier Member
                                 </span>
                             </div>
-                            <p className="text-xs text-neutral-800 font-bold mt-0.5">{user.email} • {user.phone}</p>
-                            <p className="text-xs text-neutral-700 mt-1 font-medium italic">{user.bio || 'Curator of everyday aesthetics'}</p>
+                            <p className="text-xs text-black font-black mt-0.5">{user.email} • {user.phone}</p>
+                            <p className="text-xs text-black mt-1 font-bold italic">{user.bio || 'Curator of everyday aesthetics'}</p>
                         </div>
                     </div>
 
                     <div className="flex items-center gap-3">
                         <Link href="/orders">
-                            <a className="px-4 py-2 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-neutral-950 text-xs font-bold rounded-xl transition">
+                            <a className="px-4 py-2 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-black text-xs font-black rounded-xl transition">
                                 📦 {orders.length} Orders
                             </a>
                         </Link>
                         <Link href="/wishlist">
-                            <a className="px-4 py-2 bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-800 text-xs font-bold rounded-xl transition">
+                            <a className="px-4 py-2 bg-rose-50 hover:bg-rose-100 border border-rose-300 text-rose-900 text-xs font-black rounded-xl transition">
                                 ❤️ {wishlistCount} Wishlist
                             </a>
                         </Link>
                         <button
                             type="button"
                             onClick={handleLogout}
-                            className="px-4 py-2 text-rose-700 hover:bg-rose-50 border border-rose-200 text-xs font-bold rounded-xl transition"
+                            className="px-4 py-2 text-rose-800 hover:bg-rose-50 border border-rose-300 text-xs font-black rounded-xl transition"
                         >
                             Sign Out
                         </button>
@@ -143,8 +143,8 @@ export default function ProfilePage() {
                         <button
                             type="button"
                             onClick={() => setActiveTab('profile')}
-                            className={`w-full text-left px-4 py-3 rounded-2xl text-xs font-bold transition flex items-center gap-2.5 ${
-                                activeTab === 'profile' ? 'bg-neutral-950 text-white' : 'text-neutral-800 hover:bg-neutral-100'
+                            className={`w-full text-left px-4 py-3 rounded-2xl text-xs font-black transition flex items-center gap-2.5 ${
+                                activeTab === 'profile' ? 'bg-neutral-950 text-white' : 'text-black hover:bg-neutral-100'
                             }`}
                         >
                             <span>👤</span> Personal Details
@@ -152,19 +152,19 @@ export default function ProfilePage() {
                         <button
                             type="button"
                             onClick={() => setActiveTab('addresses')}
-                            className={`w-full text-left px-4 py-3 rounded-2xl text-xs font-bold transition flex items-center gap-2.5 ${
-                                activeTab === 'addresses' ? 'bg-neutral-950 text-white' : 'text-neutral-800 hover:bg-neutral-100'
+                            className={`w-full text-left px-4 py-3 rounded-2xl text-xs font-black transition flex items-center gap-2.5 ${
+                                activeTab === 'addresses' ? 'bg-neutral-950 text-white' : 'text-black hover:bg-neutral-100'
                             }`}
                         >
                             <span>📍</span> Saved Addresses ({savedAddresses.length})
                         </button>
                         <Link href="/orders">
-                            <a className="w-full text-left px-4 py-3 rounded-2xl text-xs font-bold text-neutral-800 hover:bg-neutral-100 transition flex items-center gap-2.5">
+                            <a className="w-full text-left px-4 py-3 rounded-2xl text-xs font-black text-black hover:bg-neutral-100 transition flex items-center gap-2.5">
                                 <span>📦</span> Order History & Tracking
                             </a>
                         </Link>
                         <Link href="/wishlist">
-                            <a className="w-full text-left px-4 py-3 rounded-2xl text-xs font-bold text-neutral-800 hover:bg-neutral-100 transition flex items-center gap-2.5">
+                            <a className="w-full text-left px-4 py-3 rounded-2xl text-xs font-black text-black hover:bg-neutral-100 transition flex items-center gap-2.5">
                                 <span>❤️</span> My Wishlist
                             </a>
                         </Link>
@@ -175,56 +175,56 @@ export default function ProfilePage() {
                         {activeTab === 'profile' && (
                             <form onSubmit={handleSaveProfile} className="space-y-6 max-w-xl">
                                 <div>
-                                    <h2 className="text-lg font-black text-neutral-950">Personal Information</h2>
-                                    <p className="text-xs text-neutral-700 font-semibold mt-0.5">Manage your display name, contact phone, and bio.</p>
+                                    <h2 className="text-lg font-black text-black">Personal Information</h2>
+                                    <p className="text-xs text-black font-bold mt-0.5">Manage your display name, contact phone, and bio.</p>
                                 </div>
 
                                 <div className="space-y-4">
                                     <div>
-                                        <label className="text-xs font-bold text-neutral-900 block mb-1">Full Name</label>
+                                        <label className="text-xs font-black text-black block mb-1">Full Name</label>
                                         <input
                                             type="text"
                                             value={editForm.name}
                                             onChange={(e) => setEditForm({ ...editForm, name: e.target.value })}
-                                            className="w-full px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
+                                            className="w-full px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-black font-bold"
                                         />
                                     </div>
 
                                     <div>
-                                        <label className="text-xs font-bold text-neutral-900 block mb-1">Email Address</label>
+                                        <label className="text-xs font-black text-black block mb-1">Email Address</label>
                                         <input
                                             type="email"
                                             disabled
                                             value={user.email}
-                                            className="w-full px-3.5 py-2.5 text-xs bg-neutral-100 text-neutral-700 font-semibold rounded-xl border border-neutral-300 cursor-not-allowed"
+                                            className="w-full px-3.5 py-2.5 text-xs bg-neutral-100 text-black font-bold rounded-xl border border-neutral-300 cursor-not-allowed"
                                         />
-                                        <span className="text-[10px] text-neutral-600 font-semibold">Email cannot be changed directly.</span>
+                                        <span className="text-[10px] text-black font-bold">Email cannot be changed directly.</span>
                                     </div>
 
                                     <div>
-                                        <label className="text-xs font-bold text-neutral-900 block mb-1">Mobile Phone</label>
+                                        <label className="text-xs font-black text-black block mb-1">Mobile Phone</label>
                                         <input
                                             type="tel"
                                             value={editForm.phone}
                                             onChange={(e) => setEditForm({ ...editForm, phone: e.target.value })}
-                                            className="w-full px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
+                                            className="w-full px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-black font-bold"
                                         />
                                     </div>
 
                                     <div>
-                                        <label className="text-xs font-bold text-neutral-900 block mb-1">About / Bio</label>
+                                        <label className="text-xs font-black text-black block mb-1">About / Bio</label>
                                         <textarea
                                             rows="3"
                                             value={editForm.bio}
                                             onChange={(e) => setEditForm({ ...editForm, bio: e.target.value })}
-                                            className="w-full px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
+                                            className="w-full px-3.5 py-2.5 text-xs bg-neutral-50 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-black font-bold"
                                         ></textarea>
                                     </div>
                                 </div>
 
                                 <button
                                     type="submit"
-                                    className="px-6 py-2.5 bg-neutral-950 text-white text-xs font-bold rounded-xl hover:bg-neutral-800 transition shadow-sm"
+                                    className="px-6 py-2.5 bg-neutral-950 text-white text-xs font-black rounded-xl hover:bg-black transition shadow-sm"
                                 >
                                     Save Profile Changes
                                 </button>
@@ -235,13 +235,13 @@ export default function ProfilePage() {
                             <div className="space-y-6">
                                 <div className="flex items-center justify-between">
                                     <div>
-                                        <h2 className="text-lg font-black text-neutral-950">Saved Shipping Addresses</h2>
-                                        <p className="text-xs text-neutral-700 font-semibold mt-0.5">Manage delivery addresses for quick 1-click checkout.</p>
+                                        <h2 className="text-lg font-black text-black">Saved Shipping Addresses</h2>
+                                        <p className="text-xs text-black font-bold mt-0.5">Manage delivery addresses for quick 1-click checkout.</p>
                                     </div>
                                     <button
                                         type="button"
                                         onClick={() => setShowAddAddressModal(true)}
-                                        className="px-4 py-2 bg-neutral-950 text-white text-xs font-bold rounded-xl hover:bg-neutral-800 transition shadow-sm flex items-center gap-1.5"
+                                        className="px-4 py-2 bg-neutral-950 text-white text-xs font-black rounded-xl hover:bg-black transition shadow-sm flex items-center gap-1.5"
                                     >
                                         <span>+ Add New Address</span>
                                     </button>
@@ -258,20 +258,20 @@ export default function ProfilePage() {
                                             }`}
                                         >
                                             <div className="flex items-center justify-between mb-2">
-                                                <span className="px-2 py-0.5 bg-neutral-200 border border-neutral-300 text-neutral-950 text-[10px] font-black rounded-md uppercase">
+                                                <span className="px-2 py-0.5 bg-neutral-200 border border-neutral-300 text-black text-[10px] font-black rounded-md uppercase">
                                                     {addr.tag || "Address"}
                                                 </span>
                                                 {addr.isDefault && (
-                                                    <span className="text-[10px] font-black text-emerald-900 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded-full">
+                                                    <span className="text-[10px] font-black text-emerald-950 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded-full">
                                                         ✓ Default
                                                     </span>
                                                 )}
                                             </div>
 
-                                            <h3 className="font-black text-sm text-neutral-950">{addr.fullName}</h3>
-                                            <p className="text-xs text-neutral-800 font-medium mt-1 leading-relaxed">{addr.street}</p>
-                                            <p className="text-xs text-neutral-800 font-medium">{addr.city}, {addr.state} - {addr.pincode}</p>
-                                            <p className="text-xs text-neutral-700 font-bold mt-1">📞 {addr.phone}</p>
+                                            <h3 className="font-black text-sm text-black">{addr.fullName}</h3>
+                                            <p className="text-xs text-black font-bold mt-1 leading-relaxed">{addr.street}</p>
+                                            <p className="text-xs text-black font-bold">{addr.city}, {addr.state} - {addr.pincode}</p>
+                                            <p className="text-xs text-black font-black mt-1">📞 {addr.phone}</p>
 
                                             <div className="mt-4 pt-3 border-t border-neutral-200 flex items-center justify-between text-xs">
                                                 {!addr.isDefault && (
@@ -281,7 +281,7 @@ export default function ProfilePage() {
                                                             setDefaultAddress(addr.id);
                                                             showToast("Set as default delivery address", "success");
                                                         }}
-                                                        className="font-bold text-neutral-900 hover:text-black underline"
+                                                        className="font-black text-black hover:underline underline"
                                                     >
                                                         Set Default
                                                     </button>
@@ -292,7 +292,7 @@ export default function ProfilePage() {
                                                         removeAddress(addr.id);
                                                         showToast("Address removed", "info");
                                                     }}
-                                                    className="font-bold text-rose-700 hover:text-rose-900 ml-auto"
+                                                    className="font-black text-rose-800 hover:text-rose-950 ml-auto"
                                                 >
                                                     Delete
                                                 </button>
@@ -304,7 +304,7 @@ export default function ProfilePage() {
                                 {/* Add Address Modal / Expandable Form */}
                                 {showAddAddressModal && (
                                     <div className="p-6 bg-neutral-100 rounded-2xl border border-neutral-300 space-y-4 animate-fadeIn">
-                                        <h3 className="text-sm font-black text-neutral-950">Add New Shipping Address</h3>
+                                        <h3 className="text-sm font-black text-black">Add New Shipping Address</h3>
                                         <form onSubmit={handleAddAddressSubmit} className="space-y-3">
                                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                                 <input
@@ -313,7 +313,7 @@ export default function ProfilePage() {
                                                     placeholder="Full Name"
                                                     value={newAddress.fullName}
                                                     onChange={(e) => setNewAddress({ ...newAddress, fullName: e.target.value })}
-                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
+                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-black font-bold"
                                                 />
                                                 <input
                                                     type="tel"
@@ -321,7 +321,7 @@ export default function ProfilePage() {
                                                     placeholder="Phone Number"
                                                     value={newAddress.phone}
                                                     onChange={(e) => setNewAddress({ ...newAddress, phone: e.target.value })}
-                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
+                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-black font-bold"
                                                 />
                                             </div>
                                             <input
@@ -330,7 +330,7 @@ export default function ProfilePage() {
                                                 placeholder="Street / House / Flat / Apartment No."
                                                 value={newAddress.street}
                                                 onChange={(e) => setNewAddress({ ...newAddress, street: e.target.value })}
-                                                className="w-full px-3.5 py-2 text-xs bg-white rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
+                                                className="w-full px-3.5 py-2 text-xs bg-white rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-black font-bold"
                                             />
                                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                                                 <input
@@ -339,7 +339,7 @@ export default function ProfilePage() {
                                                     placeholder="City"
                                                     value={newAddress.city}
                                                     onChange={(e) => setNewAddress({ ...newAddress, city: e.target.value })}
-                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
+                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-black font-bold"
                                                 />
                                                 <input
                                                     type="text"
@@ -347,7 +347,7 @@ export default function ProfilePage() {
                                                     placeholder="State"
                                                     value={newAddress.state}
                                                     onChange={(e) => setNewAddress({ ...newAddress, state: e.target.value })}
-                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
+                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-black font-bold"
                                                 />
                                                 <input
                                                     type="text"
@@ -355,17 +355,17 @@ export default function ProfilePage() {
                                                     placeholder="PIN Code"
                                                     value={newAddress.pincode}
                                                     onChange={(e) => setNewAddress({ ...newAddress, pincode: e.target.value })}
-                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-neutral-300 focus:outline-none focus:border-neutral-950 text-neutral-950 font-semibold"
+                                                    className="px-3.5 py-2 text-xs bg-white rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-black font-bold"
                                                 />
                                             </div>
 
                                             <div className="flex items-center justify-between pt-2">
-                                                <label className="flex items-center gap-2 text-xs text-neutral-900 font-bold cursor-pointer">
+                                                <label className="flex items-center gap-2 text-xs text-black font-black cursor-pointer">
                                                     <input
                                                         type="checkbox"
                                                         checked={newAddress.isDefault}
                                                         onChange={(e) => setNewAddress({ ...newAddress, isDefault: e.target.checked })}
-                                                        className="rounded text-neutral-950 accent-neutral-950"
+                                                        className="rounded text-black accent-black"
                                                     />
                                                     <span>Set as default shipping address</span>
                                                 </label>
@@ -374,13 +374,13 @@ export default function ProfilePage() {
                                                     <button
                                                         type="button"
                                                         onClick={() => setShowAddAddressModal(false)}
-                                                        className="px-4 py-2 text-xs font-bold text-neutral-700 hover:bg-neutral-200 rounded-xl"
+                                                        className="px-4 py-2 text-xs font-black text-black hover:bg-neutral-200 rounded-xl"
                                                     >
                                                         Cancel
                                                     </button>
                                                     <button
                                                         type="submit"
-                                                        className="px-5 py-2 bg-neutral-950 text-white text-xs font-bold rounded-xl hover:bg-neutral-800"
+                                                        className="px-5 py-2 bg-neutral-950 text-white text-xs font-black rounded-xl hover:bg-black"
                                                     >
                                                         Save Address
                                                     </button>

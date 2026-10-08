@@ -72,13 +72,13 @@ export default function OrdersPage() {
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-neutral-300">
                     <div>
-                        <h1 className="text-2xl sm:text-3xl font-black text-neutral-950 tracking-tight flex items-center gap-3">
+                        <h1 className="text-2xl sm:text-3xl font-black text-black tracking-tight flex items-center gap-3">
                             <span>Order History & Tracking</span>
-                            <span className="text-xs font-black text-neutral-950 bg-neutral-200 border border-neutral-300 px-3 py-1 rounded-full">
+                            <span className="text-xs font-black text-black bg-neutral-200 border border-neutral-300 px-3 py-1 rounded-full">
                                 {orders.length} orders
                             </span>
                         </h1>
-                        <p className="text-xs sm:text-sm text-neutral-800 font-medium mt-1">
+                        <p className="text-xs sm:text-sm text-black font-bold mt-1">
                             Track shipments in real-time, view invoices, or re-order your favorite pieces.
                         </p>
                     </div>
@@ -95,10 +95,10 @@ export default function OrdersPage() {
                                 key={tab.id}
                                 type="button"
                                 onClick={() => setStatusFilter(tab.id)}
-                                className={`px-4 py-1.5 rounded-xl text-xs font-bold transition whitespace-nowrap ${
+                                className={`px-4 py-1.5 rounded-xl text-xs font-black transition whitespace-nowrap ${
                                     statusFilter === tab.id
                                         ? 'bg-neutral-950 text-white shadow-xs'
-                                        : 'text-neutral-700 hover:text-neutral-950'
+                                        : 'text-black hover:text-black hover:bg-neutral-300/50'
                                 }`}
                             >
                                 {tab.label}
@@ -113,14 +113,14 @@ export default function OrdersPage() {
                         <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-neutral-100 border border-neutral-200 flex items-center justify-center text-3xl">
                             📦
                         </div>
-                        <h2 className="text-xl font-black text-neutral-950">No Orders Found</h2>
-                        <p className="text-xs text-neutral-700 font-semibold mt-2 mb-6">
+                        <h2 className="text-xl font-black text-black">No Orders Found</h2>
+                        <p className="text-xs text-black font-bold mt-2 mb-6">
                             {statusFilter === 'all'
                                 ? "You haven't placed any orders yet. Start exploring our atelier collections!"
                                 : `No orders matching filter "${statusFilter}".`}
                         </p>
                         <Link href="/search">
-                            <a className="inline-flex items-center justify-center px-6 py-3 bg-neutral-950 text-white text-xs font-bold rounded-xl hover:bg-neutral-800 transition shadow-sm">
+                            <a className="inline-flex items-center justify-center px-6 py-3 bg-neutral-950 text-white text-xs font-black rounded-xl hover:bg-black transition shadow-sm">
                                 Explore Store 🛍️
                             </a>
                         </Link>
@@ -130,15 +130,15 @@ export default function OrdersPage() {
                         {filteredOrders.map((order) => (
                             <div
                                 key={order.id}
-                                className="bg-white rounded-3xl border border-neutral-300 p-6 sm:p-7 shadow-sm hover:border-neutral-400 transition space-y-5"
+                                className="bg-white rounded-3xl border border-neutral-300 p-6 sm:p-7 shadow-sm hover:border-black transition space-y-5"
                             >
                                 {/* Top Bar: ID, Date, Status */}
                                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-neutral-200">
                                     <div className="flex items-center gap-3 flex-wrap">
-                                        <span className="font-mono font-black text-sm text-neutral-950 bg-neutral-100 border border-neutral-300 px-3 py-1 rounded-xl">
+                                        <span className="font-mono font-black text-sm text-black bg-neutral-100 border border-neutral-300 px-3 py-1 rounded-xl">
                                             #{order.id}
                                         </span>
-                                        <span className="text-xs text-neutral-700 font-bold">
+                                        <span className="text-xs text-black font-bold">
                                             Placed on {order.formattedDate || new Date(order.date).toLocaleDateString()}
                                         </span>
                                     </div>
@@ -151,7 +151,7 @@ export default function OrdersPage() {
                                         >
                                             ● {order.status}
                                         </span>
-                                        <span className="text-base font-black text-neutral-950">
+                                        <span className="text-base font-black text-black">
                                             ₹{order.pricing?.grandTotal}
                                         </span>
                                     </div>
@@ -177,16 +177,16 @@ export default function OrdersPage() {
                                             </div>
                                         ))}
                                         {order.items?.length > 4 && (
-                                            <div className="w-16 h-20 bg-neutral-100 rounded-xl flex items-center justify-center text-xs font-black text-neutral-900 border border-neutral-300">
+                                            <div className="w-16 h-20 bg-neutral-100 rounded-xl flex items-center justify-center text-xs font-black text-black border border-neutral-300">
                                                 +{order.items.length - 4} more
                                             </div>
                                         )}
                                         <div className="ml-2">
-                                            <p className="text-xs font-black text-neutral-950">
+                                            <p className="text-xs font-black text-black">
                                                 {order.items?.length || 0} {order.items?.length === 1 ? 'item' : 'items'}
                                             </p>
-                                            <p className="text-[11px] text-neutral-700 font-semibold mt-0.5">
-                                                Est. Delivery: <span className="font-bold text-neutral-950">{order.estimatedDelivery}</span>
+                                            <p className="text-[11px] text-black font-bold mt-0.5">
+                                                Est. Delivery: <span className="font-black text-black">{order.estimatedDelivery}</span>
                                             </p>
                                         </div>
                                     </div>
@@ -197,7 +197,7 @@ export default function OrdersPage() {
                                             <button
                                                 type="button"
                                                 onClick={() => handleCancelOrder(order.id)}
-                                                className="px-3.5 py-2 text-xs font-bold text-rose-700 hover:bg-rose-50 border border-rose-300 rounded-xl transition"
+                                                className="px-3.5 py-2 text-xs font-black text-rose-800 hover:bg-rose-50 border border-rose-300 rounded-xl transition"
                                             >
                                                 Cancel Order
                                             </button>
@@ -206,13 +206,13 @@ export default function OrdersPage() {
                                         <button
                                             type="button"
                                             onClick={() => handleReorder(order)}
-                                            className="px-4 py-2 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-neutral-950 text-xs font-bold rounded-xl transition"
+                                            className="px-4 py-2 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-black text-xs font-black rounded-xl transition"
                                         >
                                             🔁 Buy Again
                                         </button>
 
                                         <Link href={`/orders/${order.id}`}>
-                                            <a className="px-5 py-2 bg-neutral-950 hover:bg-neutral-800 text-white text-xs font-bold rounded-xl shadow-xs transition">
+                                            <a className="px-5 py-2 bg-neutral-950 hover:bg-black text-white text-xs font-black rounded-xl shadow-xs transition">
                                                 Track & Details →
                                             </a>
                                         </Link>

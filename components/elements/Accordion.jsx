@@ -10,8 +10,8 @@ export const Accordion = ({ label, children }) => {
     return (
         <div className="py-2">
             <div className="flex flex-1 justify-between items-center cursor-pointer select-none py-1" onClick={toggleAccordion}>
-                <div><p className="font-extrabold text-xs uppercase tracking-wider text-neutral-950">{label}</p></div>
-                <button type="button" className="p-1.5 text-neutral-800 hover:text-black transition" onClick={(e) => { e.stopPropagation(); toggleAccordion(); }} aria-label="Toggle filter section">
+                <div><p className="font-black text-xs uppercase tracking-wider text-black">{label}</p></div>
+                <button type="button" className="p-1.5 text-black hover:text-black transition" onClick={(e) => { e.stopPropagation(); toggleAccordion(); }} aria-label="Toggle filter section">
                     {
                         isOpen ? <UpArrowIcon height="12" width="12" /> : <DownArrowIcon height="12" width="12" />
                     }

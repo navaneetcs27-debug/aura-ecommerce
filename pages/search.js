@@ -22,10 +22,10 @@ const SearchPage = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
                 <div className="text-center pt-2">
-                    <h1 className="text-2xl sm:text-4xl font-black text-neutral-950 tracking-tight">
+                    <h1 className="text-2xl sm:text-4xl font-black text-black tracking-tight">
                         Explore Atelier Catalog
                     </h1>
-                    <p className="text-xs sm:text-sm text-neutral-800 font-medium mt-1">
+                    <p className="text-xs sm:text-sm text-black font-bold mt-1">
                         Filter by certified fibres, silhouettes, color palettes, and price points.
                     </p>
                 </div>

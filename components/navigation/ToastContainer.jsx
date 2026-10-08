@@ -39,11 +39,11 @@ export const ToastContainer = () => {
                 >
                     <div className="flex items-center gap-3">
                         {getIcon(toast.type)}
-                        <p className="text-xs font-black text-neutral-950 leading-snug">{toast.message}</p>
+                        <p className="text-xs font-black text-black leading-snug">{toast.message}</p>
                     </div>
                     <button
                         onClick={() => removeToast(toast.id)}
-                        className="ml-3 text-neutral-700 hover:text-black font-bold p-1 text-xs rounded transition"
+                        className="ml-3 text-black hover:opacity-75 font-black p-1 text-xs rounded transition"
                         aria-label="Close"
                     >
                         ✕

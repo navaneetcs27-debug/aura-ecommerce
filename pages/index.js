@@ -71,50 +71,50 @@ export default function Home() {
                 {/* 2. Editorial Trust & Service Markers */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
                     <div className="p-6 rounded-2xl flex items-center gap-4 border border-[#dfdcd3] bg-white shadow-xs">
-                        <div className="w-12 h-12 rounded-xl bg-neutral-950 text-white flex items-center justify-center flex-shrink-0 shadow-xs">
+                        <div className="w-12 h-12 rounded-xl bg-black text-white flex items-center justify-center flex-shrink-0 shadow-xs">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.25V3.75a1.125 1.125 0 00-1.125-1.125H3.375A1.125 1.125 0 002.25 3.75v10.5h12m0 0V9.75" />
                             </svg>
                         </div>
                         <div>
-                            <h4 className="text-sm font-extrabold text-neutral-950">Complimentary Delivery</h4>
-                            <p className="text-xs text-neutral-700 font-medium mt-0.5">On all orders above ₹500</p>
+                            <h4 className="text-sm font-black text-black">Complimentary Delivery</h4>
+                            <p className="text-xs text-black font-bold mt-0.5">On all orders above ₹500</p>
                         </div>
                     </div>
 
                     <div className="p-6 rounded-2xl flex items-center gap-4 border border-[#dfdcd3] bg-white shadow-xs">
-                        <div className="w-12 h-12 rounded-xl bg-neutral-950 text-white flex items-center justify-center flex-shrink-0 shadow-xs">
+                        <div className="w-12 h-12 rounded-xl bg-black text-white flex items-center justify-center flex-shrink-0 shadow-xs">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
                             </svg>
                         </div>
                         <div>
-                            <h4 className="text-sm font-extrabold text-neutral-950">Encrypted Payments</h4>
-                            <p className="text-xs text-neutral-700 font-medium mt-0.5">UPI, Cards & NetBanking</p>
+                            <h4 className="text-sm font-black text-black">Encrypted Payments</h4>
+                            <p className="text-xs text-black font-bold mt-0.5">UPI, Cards & NetBanking</p>
                         </div>
                     </div>
 
                     <div className="p-6 rounded-2xl flex items-center gap-4 border border-[#dfdcd3] bg-white shadow-xs">
-                        <div className="w-12 h-12 rounded-xl bg-neutral-950 text-white flex items-center justify-center flex-shrink-0 shadow-xs">
+                        <div className="w-12 h-12 rounded-xl bg-black text-white flex items-center justify-center flex-shrink-0 shadow-xs">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
                             </svg>
                         </div>
                         <div>
-                            <h4 className="text-sm font-extrabold text-neutral-950">Certified Authentic</h4>
-                            <p className="text-xs text-neutral-700 font-medium mt-0.5">Organic silk & wool fibres</p>
+                            <h4 className="text-sm font-black text-black">Certified Authentic</h4>
+                            <p className="text-xs text-black font-bold mt-0.5">Organic silk & wool fibres</p>
                         </div>
                     </div>
 
                     <div className="p-6 rounded-2xl flex items-center gap-4 border border-[#dfdcd3] bg-white shadow-xs">
-                        <div className="w-12 h-12 rounded-xl bg-neutral-950 text-white flex items-center justify-center flex-shrink-0 shadow-xs">
+                        <div className="w-12 h-12 rounded-xl bg-black text-white flex items-center justify-center flex-shrink-0 shadow-xs">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                             </svg>
                         </div>
                         <div>
-                            <h4 className="text-sm font-extrabold text-neutral-950">7-Day Easy Returns</h4>
-                            <p className="text-xs text-neutral-700 font-medium mt-0.5">Instant refunds guaranteed</p>
+                            <h4 className="text-sm font-black text-black">7-Day Easy Returns</h4>
+                            <p className="text-xs text-black font-bold mt-0.5">Instant refunds guaranteed</p>
                         </div>
                     </div>
                 </div>
@@ -169,10 +169,10 @@ export default function Home() {
                 <div className="space-y-6">
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                         <div>
-                            <span className="text-xs font-black uppercase tracking-[0.25em] text-neutral-700">
+                            <span className="text-xs font-black uppercase tracking-[0.25em] text-black">
                                 Current Atelier Rotation
                             </span>
-                            <h2 className="text-2xl sm:text-3xl font-black text-neutral-950 tracking-tight mt-1">
+                            <h2 className="text-2xl sm:text-3xl font-black text-black tracking-tight mt-1">
                                 Essential Wardrobe Foundations
                             </h2>
                         </div>
@@ -184,10 +184,10 @@ export default function Home() {
                                     key={tab}
                                     type="button"
                                     onClick={() => setSelectedCategoryTab(tab)}
-                                    className={`px-4 py-2 rounded-lg text-xs font-bold tracking-wide transition-all whitespace-nowrap ${
+                                    className={`px-4 py-2 rounded-lg text-xs font-black tracking-wide transition-all whitespace-nowrap ${
                                         selectedCategoryTab === tab
-                                            ? 'bg-neutral-950 text-white shadow-xs'
-                                            : 'text-neutral-700 hover:text-black hover:bg-neutral-100'
+                                            ? 'bg-black text-white shadow-xs'
+                                            : 'text-black hover:text-black hover:bg-neutral-100'
                                     }`}
                                 >
                                     {tab}
@@ -204,7 +204,7 @@ export default function Home() {
 
                     <div className="text-center pt-4">
                         <Link href="/search">
-                            <a className="inline-flex items-center gap-3 px-8 py-4 bg-neutral-950 text-white font-extrabold text-xs sm:text-sm tracking-wider uppercase rounded-xl hover:bg-black transition shadow-md active:scale-95">
+                            <a className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white font-black text-xs sm:text-sm tracking-wider uppercase rounded-xl hover:bg-neutral-900 transition shadow-md active:scale-95">
                                 <span>Explore Entire 24+ Item Collection</span>
                                 <span className="text-base">→</span>
                             </a>
@@ -239,7 +239,7 @@ export default function Home() {
                         </div>
                         <div className="relative z-20 pt-6">
                             <Link href='/search?categories=["Coats"]'>
-                                <a className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-neutral-950 text-xs font-extrabold uppercase tracking-wider rounded-xl hover:bg-neutral-100 transition shadow-md">
+                                <a className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-black text-xs font-black uppercase tracking-wider rounded-xl hover:bg-neutral-100 transition shadow-md">
                                     <span>Shop Outerwear</span>
                                     <span>→</span>
                                 </a>
@@ -272,7 +272,7 @@ export default function Home() {
                         </div>
                         <div className="relative z-20 pt-6">
                             <Link href='/search?categories=["Blouses"]'>
-                                <a className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-neutral-950 text-xs font-extrabold uppercase tracking-wider rounded-xl hover:bg-neutral-100 transition shadow-md">
+                                <a className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-black text-xs font-black uppercase tracking-wider rounded-xl hover:bg-neutral-100 transition shadow-md">
                                     <span>Shop Blouses</span>
                                     <span>→</span>
                                 </a>
@@ -284,44 +284,44 @@ export default function Home() {
                 {/* 7. Craftsmanship & Textile Journal Spotlight */}
                 <div className="bg-white rounded-3xl p-8 sm:p-12 border border-[#dfdcd3] shadow-sm">
                     <div className="max-w-3xl mb-10">
-                        <span className="text-xs font-black uppercase tracking-[0.25em] text-neutral-700">
+                        <span className="text-xs font-black uppercase tracking-[0.25em] text-black">
                             Material Provenance
                         </span>
-                        <h2 className="text-2xl sm:text-3xl font-black text-neutral-950 tracking-tight mt-1">
+                        <h2 className="text-2xl sm:text-3xl font-black text-black tracking-tight mt-1">
                             Engineered for Longevity & Tactile Comfort
                         </h2>
-                        <p className="text-sm text-neutral-800 font-medium mt-2 leading-relaxed">
+                        <p className="text-sm text-black font-semibold mt-2 leading-relaxed">
                             Every garment in the Aura Atelier collection undergoes rigorous textile certification to guarantee zero synthetic fillers, structural dimensional stability, and natural breathability.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="p-6 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-3">
-                            <div className="text-xs font-mono font-black text-neutral-900 uppercase tracking-widest">
+                        <div className="p-6 rounded-2xl bg-neutral-50 border border-neutral-300 space-y-3">
+                            <div className="text-xs font-mono font-black text-black uppercase tracking-widest">
                                 Discipline 01
                             </div>
-                            <h4 className="text-base font-extrabold text-neutral-950">Grade-6A Mulberry Silk</h4>
-                            <p className="text-xs text-neutral-800 leading-relaxed font-normal">
+                            <h4 className="text-base font-black text-black">Grade-6A Mulberry Silk</h4>
+                            <p className="text-xs text-black leading-relaxed font-semibold">
                                 Naturally hypoallergenic with unbroken long fibres that create a luminous, friction-free drape that regulates temperature across seasons.
                             </p>
                         </div>
 
-                        <div className="p-6 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-3">
-                            <div className="text-xs font-mono font-black text-neutral-900 uppercase tracking-widest">
+                        <div className="p-6 rounded-2xl bg-neutral-50 border border-neutral-300 space-y-3">
+                            <div className="text-xs font-mono font-black text-black uppercase tracking-widest">
                                 Discipline 02
                             </div>
-                            <h4 className="text-base font-extrabold text-neutral-950">19.5μ Extra-Fine Merino</h4>
-                            <p className="text-xs text-neutral-800 leading-relaxed font-normal">
+                            <h4 className="text-base font-black text-black">19.5μ Extra-Fine Merino</h4>
+                            <p className="text-xs text-black leading-relaxed font-semibold">
                                 Sourced from ethical non-mulesed farms, spun into 4-ply yarns for high resilience, zero itchiness, and natural wrinkle resistance.
                             </p>
                         </div>
 
-                        <div className="p-6 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-3">
-                            <div className="text-xs font-mono font-black text-neutral-900 uppercase tracking-widest">
+                        <div className="p-6 rounded-2xl bg-neutral-50 border border-neutral-300 space-y-3">
+                            <div className="text-xs font-mono font-black text-black uppercase tracking-widest">
                                 Discipline 03
                             </div>
-                            <h4 className="text-base font-extrabold text-neutral-950">Double-Faced Virgin Wool</h4>
-                            <p className="text-xs text-neutral-800 leading-relaxed font-normal">
+                            <h4 className="text-base font-black text-black">Double-Faced Virgin Wool</h4>
+                            <p className="text-xs text-black leading-relaxed font-semibold">
                                 Two layers of pure wool hand-split and blind-stitched along the edges to provide thermal insulation without unnecessary bulk.
                             </p>
                         </div>
@@ -331,63 +331,63 @@ export default function Home() {
                 {/* 8. Client Reflections / Social Proof */}
                 <div className="space-y-6">
                     <div className="text-center max-w-xl mx-auto">
-                        <span className="text-xs font-black uppercase tracking-[0.25em] text-neutral-700">
+                        <span className="text-xs font-black uppercase tracking-[0.25em] text-black">
                             Client Reflections
                         </span>
-                        <h2 className="text-2xl sm:text-3xl font-black text-neutral-950 tracking-tight mt-1">
+                        <h2 className="text-2xl sm:text-3xl font-black text-black tracking-tight mt-1">
                             Trusted by 50,000+ Patrons Worldwide
                         </h2>
-                        <p className="text-xs text-neutral-700 font-medium mt-1">
+                        <p className="text-xs text-black font-bold mt-1">
                             Real experiences from verified clients across India and internationally.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="p-6 rounded-2xl border border-[#dfdcd3] bg-white shadow-xs space-y-3">
-                            <div className="flex items-center gap-1 text-neutral-950 text-sm">
+                            <div className="flex items-center gap-1 text-black text-sm font-black">
                                 ★★★★★
                             </div>
-                            <p className="text-xs text-neutral-900 italic font-medium leading-relaxed">
+                            <p className="text-xs text-black italic font-bold leading-relaxed">
                                 &quot;The Ruby Red Trench Coat is pure perfection. The tailoring and textile weight rival bespoke luxury ateliers in Milan. Arrived in Mumbai in 2 business days.&quot;
                             </p>
                             <div className="flex items-center justify-between pt-3 border-t border-neutral-200">
                                 <div>
-                                    <h4 className="text-xs font-bold text-neutral-950">Sneha Kapoor</h4>
-                                    <span className="text-[11px] text-neutral-600 font-semibold">Mumbai, MH</span>
+                                    <h4 className="text-xs font-black text-black">Sneha Kapoor</h4>
+                                    <span className="text-[11px] text-black font-bold">Mumbai, MH</span>
                                 </div>
-                                <span className="text-[10px] text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded font-bold border border-emerald-300">Verified Order</span>
+                                <span className="text-[10px] text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded font-black border border-emerald-300">Verified Order</span>
                             </div>
                         </div>
 
                         <div className="p-6 rounded-2xl border border-[#dfdcd3] bg-white shadow-xs space-y-3">
-                            <div className="flex items-center gap-1 text-neutral-950 text-sm">
+                            <div className="flex items-center gap-1 text-black text-sm font-black">
                                 ★★★★★
                             </div>
-                            <p className="text-xs text-neutral-900 italic font-medium leading-relaxed">
+                            <p className="text-xs text-black italic font-bold leading-relaxed">
                                 &quot;The Beige Joggers and Merino Sweater pairing is extraordinary. Organic fibres are breathable, exceptionally structured, and maintain shape wash after wash.&quot;
                             </p>
                             <div className="flex items-center justify-between pt-3 border-t border-neutral-200">
                                 <div>
-                                    <h4 className="text-xs font-bold text-neutral-950">Rohan Varma</h4>
-                                    <span className="text-[11px] text-neutral-600 font-semibold">Bengaluru, KA</span>
+                                    <h4 className="text-xs font-black text-black">Rohan Varma</h4>
+                                    <span className="text-[11px] text-black font-bold">Bengaluru, KA</span>
                                 </div>
-                                <span className="text-[10px] text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded font-bold border border-emerald-300">Verified Order</span>
+                                <span className="text-[10px] text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded font-black border border-emerald-300">Verified Order</span>
                             </div>
                         </div>
 
                         <div className="p-6 rounded-2xl border border-[#dfdcd3] bg-white shadow-xs space-y-3">
-                            <div className="flex items-center gap-1 text-neutral-950 text-sm">
+                            <div className="flex items-center gap-1 text-black text-sm font-black">
                                 ★★★★★
                             </div>
-                            <p className="text-xs text-neutral-900 italic font-medium leading-relaxed">
+                            <p className="text-xs text-black italic font-bold leading-relaxed">
                                 &quot;Seamless checkout experience with instantaneous confirmation and live map tracking. The garment packaging and fabric hand-feel are unmatched.&quot;
                             </p>
                             <div className="flex items-center justify-between pt-3 border-t border-neutral-200">
                                 <div>
-                                    <h4 className="text-xs font-bold text-neutral-950">Ananya Patel</h4>
-                                    <span className="text-[11px] text-neutral-600 font-semibold">New Delhi, DL</span>
+                                    <h4 className="text-xs font-black text-black">Ananya Patel</h4>
+                                    <span className="text-[11px] text-black font-bold">New Delhi, DL</span>
                                 </div>
-                                <span className="text-[10px] text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded font-bold border border-emerald-300">Verified Order</span>
+                                <span className="text-[10px] text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded font-black border border-emerald-300">Verified Order</span>
                             </div>
                         </div>
                     </div>

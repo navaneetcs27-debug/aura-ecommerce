@@ -37,14 +37,14 @@ export default function WishlistPage() {
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-neutral-200">
                     <div>
-                        <h1 className="text-2xl sm:text-3xl font-black text-neutral-950 tracking-tight flex items-center gap-2.5">
+                        <h1 className="text-2xl sm:text-3xl font-black text-black tracking-tight flex items-center gap-2.5">
                             <span>My Wishlist</span>
                             <span className="text-rose-600">❤️</span>
-                            <span className="text-xs font-black text-neutral-950 bg-neutral-100 border border-neutral-300 px-3 py-1 rounded-full">
+                            <span className="text-xs font-black text-black bg-neutral-100 border border-neutral-300 px-3 py-1 rounded-full">
                                 {wishlist ? wishlist.length : 0} items
                             </span>
                         </h1>
-                        <p className="text-xs sm:text-sm text-neutral-800 font-medium mt-1">
+                        <p className="text-xs sm:text-sm text-black font-bold mt-1">
                             Save your favorite pieces here and add them to your bag whenever you are ready.
                         </p>
                     </div>
@@ -61,7 +61,7 @@ export default function WishlistPage() {
                             <button
                                 type="button"
                                 onClick={handleMoveAllToCart}
-                                className="px-5 py-2.5 bg-neutral-950 text-white text-xs font-black uppercase tracking-wider rounded-xl hover:bg-black transition shadow-sm flex items-center gap-2"
+                                className="px-5 py-2.5 bg-black text-white text-xs font-black uppercase tracking-wider rounded-xl hover:bg-neutral-900 transition shadow-sm flex items-center gap-2"
                             >
                                 <span>🛒 Move All to Bag</span>
                             </button>
@@ -75,12 +75,12 @@ export default function WishlistPage() {
                         <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-rose-50 flex items-center justify-center text-3xl">
                             ❤️
                         </div>
-                        <h2 className="text-xl font-black text-neutral-950">Your Wishlist is Empty</h2>
-                        <p className="text-xs text-neutral-700 font-medium mt-2 mb-6 leading-relaxed">
+                        <h2 className="text-xl font-black text-black">Your Wishlist is Empty</h2>
+                        <p className="text-xs text-black font-bold mt-2 mb-6 leading-relaxed">
                             Explore our latest collections and click the heart icon on any product to save your favorites!
                         </p>
                         <Link href="/search">
-                            <a className="inline-flex items-center justify-center px-7 py-3.5 bg-neutral-950 text-white text-xs font-black uppercase tracking-wider rounded-xl hover:bg-black transition shadow-sm">
+                            <a className="inline-flex items-center justify-center px-7 py-3.5 bg-black text-white text-xs font-black uppercase tracking-wider rounded-xl hover:bg-neutral-900 transition shadow-sm">
                                 Start Shopping Now 🛍️
                             </a>
                         </Link>

@@ -51,23 +51,23 @@ export const CartItemRow = ({ product }) => {
                 </Link>
 
                 <div className="flex flex-col">
-                    <span className="text-[11px] font-black text-neutral-800 uppercase tracking-wider">
+                    <span className="text-[11px] font-black text-black uppercase tracking-wider">
                         {product.category || "Apparel"}
                     </span>
                     <Link href={`/product/${product.id}`}>
-                        <a className="font-extrabold text-sm sm:text-base text-neutral-950 hover:text-neutral-700 transition line-clamp-1">
+                        <a className="font-black text-sm sm:text-base text-black hover:underline transition line-clamp-1">
                             {product.title}
                         </a>
                     </Link>
-                    <p className="text-xs text-neutral-700 font-medium mt-0.5">
-                        Unit Price: <span className="font-bold text-neutral-950">₹{unitPrice}</span>
+                    <p className="text-xs text-black font-bold mt-0.5">
+                        Unit Price: <span className="font-black text-black">₹{unitPrice}</span>
                     </p>
 
                     {/* Quick Move to Wishlist action */}
                     <button
                         type="button"
                         onClick={handleMoveToWishlist}
-                        className="text-left text-xs font-bold text-neutral-800 hover:text-rose-600 transition mt-2 inline-flex items-center gap-1"
+                        className="text-left text-xs font-bold text-black hover:text-rose-600 transition mt-2 inline-flex items-center gap-1"
                     >
                         <span>❤️</span> Move to Wishlist
                     </button>
@@ -87,8 +87,8 @@ export const CartItemRow = ({ product }) => {
 
                 {/* Total */}
                 <div className="text-right min-w-[80px]">
-                    <span className="text-xs text-neutral-700 font-bold block sm:hidden">Total</span>
-                    <span className="text-base sm:text-lg font-black text-neutral-950">
+                    <span className="text-xs text-black font-bold block sm:hidden">Total</span>
+                    <span className="text-base sm:text-lg font-black text-black">
                         ₹{itemTotal}
                     </span>
                 </div>
@@ -97,7 +97,7 @@ export const CartItemRow = ({ product }) => {
                 <button
                     type="button"
                     onClick={handleRemove}
-                    className="p-2 text-neutral-600 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition"
+                    className="p-2 text-black hover:text-rose-700 hover:bg-rose-50 rounded-xl transition"
                     title="Remove from Cart"
                     aria-label="Remove item"
                 >
