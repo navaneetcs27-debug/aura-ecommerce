@@ -42,13 +42,12 @@ export default function Home() {
     }).slice(0, 8);
 
     const flashDeals = PRODUCTS.filter((p) => (p.discountPercent || 0) >= 28).slice(0, 4);
-    const bestSellers = PRODUCTS.filter((p) => p.isBestSeller).slice(0, 4);
 
     const handleNewsletterSubmit = (e) => {
         e.preventDefault();
         if (newsletterEmail && newsletterEmail.includes('@')) {
             setIsSubscribed(true);
-            showToast("🎉 You've unlocked 20% OFF! Code: WELCOME20 applied.", "success");
+            showToast("You have been added to the private Atelier guestlist. 20% privilege applied.", "success");
             setNewsletterEmail('');
         } else {
             showToast("Please enter a valid email address.", "error");
@@ -58,14 +57,14 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>AURA STYLE | Luxury Modern Fashion, Apparel & Accessories</title>
-                <meta name="description" content="Discover premium apparel, structured winter coats, silk blouses, and timeless wardrobe essentials with express worldwide shipping and easy returns." />
+                <title>AURA ATELIER | Timeless Luxury Apparel, Tailoring & Silks</title>
+                <meta name="description" content="Discover premium apparel, structured winter overcoats, mulberry silk blouses, and timeless wardrobe foundations with complimentary express shipping and 7-day doorstep returns." />
             </Head>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-20">
                 
                 {/* 1. Hero Showcase Section */}
-                <div className="relative">
+                <div className="relative pt-2">
                     <Banner />
                 </div>
 
@@ -86,7 +85,7 @@ export default function Home() {
                     <div className="p-5 rounded-2xl flex items-center gap-4 border border-neutral-200/90 bg-white shadow-xs">
                         <div className="w-10 h-10 rounded-xl bg-neutral-100 text-neutral-900 flex items-center justify-center flex-shrink-0">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.75" stroke="currentColor" className="w-5 h-5">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
                             </svg>
                         </div>
                         <div>
@@ -121,38 +120,38 @@ export default function Home() {
                 </div>
 
                 {/* 3. Browse Collections Categories */}
-                <div className="rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-xs bg-white">
+                <div className="rounded-3xl p-6 sm:p-10 border border-neutral-200/90 shadow-xs bg-white">
                     <CategoriesSection />
                 </div>
 
                 {/* 4. Seasonal Archive Drop with Live Countdown */}
-                <div className="bg-neutral-900 text-white rounded-3xl p-8 sm:p-12 border border-neutral-800 shadow-lg relative overflow-hidden">
+                <div className="bg-neutral-950 text-white rounded-3xl p-8 sm:p-12 border border-neutral-800 shadow-xl relative overflow-hidden">
                     <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
                         <div>
-                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-neutral-800 text-neutral-300 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 border border-neutral-700">
-                                <span>Private Archive // Limited Release</span>
+                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-neutral-900 text-neutral-300 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 border border-neutral-800">
+                                <span>Private Archive • Limited Release</span>
                             </div>
                             <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
                                 Seasonal Archive Drops
                             </h2>
-                            <p className="text-xs sm:text-sm text-neutral-400 mt-1">
-                                Exceptional investment pieces with private reductions up to 35% before archive closure.
+                            <p className="text-xs sm:text-sm text-neutral-400 mt-1 max-w-xl">
+                                Exceptional investment pieces with private reductions up to 35% before archive vault closure.
                             </p>
                         </div>
 
                         {/* Live Countdown Box */}
-                        <div className="flex items-center gap-2 bg-black/60 border border-neutral-700 p-2.5 sm:p-3 rounded-2xl backdrop-blur-md self-start md:self-auto">
-                            <span className="text-[11px] font-semibold text-neutral-400 uppercase tracking-widest mr-1">Archive Closes:</span>
+                        <div className="flex items-center gap-2 bg-neutral-900/90 border border-neutral-800 p-3 rounded-2xl backdrop-blur-md self-start md:self-auto">
+                            <span className="text-[11px] font-semibold text-neutral-400 uppercase tracking-widest mr-1">Vault Closes:</span>
                             <div className="flex items-center gap-1.5 font-mono">
-                                <span className="bg-white text-neutral-900 text-xs sm:text-sm font-black px-2.5 py-1.5 rounded-lg shadow-sm">
+                                <span className="bg-white text-neutral-950 text-xs sm:text-sm font-black px-2.5 py-1.5 rounded-lg shadow-sm">
                                     {String(timeLeft.hours).padStart(2, '0')}h
                                 </span>
                                 <span className="font-bold text-neutral-500">:</span>
-                                <span className="bg-white text-neutral-900 text-xs sm:text-sm font-black px-2.5 py-1.5 rounded-lg shadow-sm">
+                                <span className="bg-white text-neutral-950 text-xs sm:text-sm font-black px-2.5 py-1.5 rounded-lg shadow-sm">
                                     {String(timeLeft.minutes).padStart(2, '0')}m
                                 </span>
                                 <span className="font-bold text-neutral-500">:</span>
-                                <span className="bg-white text-neutral-900 text-xs sm:text-sm font-black px-2.5 py-1.5 rounded-lg shadow-sm">
+                                <span className="bg-white text-neutral-950 text-xs sm:text-sm font-black px-2.5 py-1.5 rounded-lg shadow-sm">
                                     {String(timeLeft.seconds).padStart(2, '0')}s
                                 </span>
                             </div>
@@ -213,10 +212,10 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* 6. Editorial Lookbook Double Banner */}
+                {/* 6. Editorial Lookbook Double Feature */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Editorial 1: The Winter Trench */}
-                    <div className="group relative rounded-3xl overflow-hidden bg-neutral-900 text-white p-8 sm:p-10 flex flex-col justify-between min-h-[360px] border border-neutral-800 shadow-md">
+                    <div className="group relative rounded-3xl overflow-hidden bg-neutral-950 text-white p-8 sm:p-12 flex flex-col justify-between min-h-[400px] border border-neutral-800 shadow-md">
                         <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/90 via-neutral-950/50 to-transparent z-10" />
                         <div className="absolute inset-0 z-0">
                             <Image
@@ -224,23 +223,23 @@ export default function Home() {
                                 layout="fill"
                                 objectFit="cover"
                                 alt="Coats editorial"
-                                className="group-hover:scale-105 transition-transform duration-700 opacity-70"
+                                className="group-hover:scale-105 transition-transform duration-700 opacity-65"
                             />
                         </div>
                         <div className="relative z-20 space-y-2">
                             <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-[0.25em]">
-                                Editorial Lookbook // 01
+                                Editorial Lookbook • 01
                             </span>
                             <h3 className="text-2xl sm:text-3xl font-black">
-                                The Minimalist Outerwear
+                                Minimalist Outerwear
                             </h3>
-                            <p className="text-xs text-neutral-300 max-w-xs leading-relaxed">
+                            <p className="text-xs sm:text-sm text-neutral-300 max-w-xs leading-relaxed">
                                 Heavy pure wool overcoats, architectural trench lines, and double-breasted tailoring crafted to outlast seasons.
                             </p>
                         </div>
                         <div className="relative z-20 pt-6">
                             <Link href='/search?categories=["Coats"]'>
-                                <a className="inline-flex items-center gap-2 px-6 py-3 bg-white text-neutral-900 text-xs font-bold uppercase tracking-wider rounded-xl hover:bg-neutral-100 transition shadow-sm">
+                                <a className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-neutral-900 text-xs font-bold uppercase tracking-wider rounded-xl hover:bg-neutral-100 transition shadow-sm">
                                     <span>Shop Outerwear</span>
                                     <span>→</span>
                                 </a>
@@ -249,7 +248,7 @@ export default function Home() {
                     </div>
 
                     {/* Editorial 2: The Silk & Satin Edit */}
-                    <div className="group relative rounded-3xl overflow-hidden bg-neutral-900 text-white p-8 sm:p-10 flex flex-col justify-between min-h-[360px] border border-neutral-800 shadow-md">
+                    <div className="group relative rounded-3xl overflow-hidden bg-neutral-950 text-white p-8 sm:p-12 flex flex-col justify-between min-h-[400px] border border-neutral-800 shadow-md">
                         <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/90 via-neutral-950/50 to-transparent z-10" />
                         <div className="absolute inset-0 z-0">
                             <Image
@@ -257,23 +256,23 @@ export default function Home() {
                                 layout="fill"
                                 objectFit="cover"
                                 alt="Blouses editorial"
-                                className="group-hover:scale-105 transition-transform duration-700 opacity-70"
+                                className="group-hover:scale-105 transition-transform duration-700 opacity-65"
                             />
                         </div>
                         <div className="relative z-20 space-y-2">
                             <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-[0.25em]">
-                                Editorial Lookbook // 02
+                                Editorial Lookbook • 02
                             </span>
                             <h3 className="text-2xl sm:text-3xl font-black">
-                                Pure Silk & Satin Silhouettes
+                                Pure Silk Silhouettes
                             </h3>
-                            <p className="text-xs text-neutral-300 max-w-xs leading-relaxed">
-                                Delicate pleats, French cuffs, and effortless fluid draping designed for both day and evening attire.
+                            <p className="text-xs sm:text-sm text-neutral-300 max-w-xs leading-relaxed">
+                                Delicate pleats, French cuffs, and effortless fluid draping designed for both daytime tailoring and evening attire.
                             </p>
                         </div>
                         <div className="relative z-20 pt-6">
                             <Link href='/search?categories=["Blouses"]'>
-                                <a className="inline-flex items-center gap-2 px-6 py-3 bg-white text-neutral-900 text-xs font-bold uppercase tracking-wider rounded-xl hover:bg-neutral-100 transition shadow-sm">
+                                <a className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-neutral-900 text-xs font-bold uppercase tracking-wider rounded-xl hover:bg-neutral-100 transition shadow-sm">
                                     <span>Shop Blouses</span>
                                     <span>→</span>
                                 </a>
@@ -282,7 +281,54 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* 7. Client Reflections / Social Proof */}
+                {/* 7. Craftsmanship & Textile Journal Spotlight */}
+                <div className="bg-white rounded-3xl p-8 sm:p-12 border border-neutral-200/90 shadow-xs">
+                    <div className="max-w-3xl mb-10">
+                        <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-neutral-400">
+                            Material Provenance
+                        </span>
+                        <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight mt-1">
+                            Engineered for Longevity & Tactile Comfort
+                        </h2>
+                        <p className="text-xs sm:text-sm text-neutral-600 mt-2">
+                            Every garment in the Aura Atelier collection undergoes rigorous textile certification to guarantee zero synthetic fillers, structural dimensional stability, and natural breathability.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="p-6 rounded-2xl bg-neutral-50 border border-neutral-200/80 space-y-3">
+                            <div className="text-xs font-mono font-bold text-neutral-400 uppercase tracking-widest">
+                                Discipline 01
+                            </div>
+                            <h4 className="text-base font-bold text-neutral-900">Grade-6A Mulberry Silk</h4>
+                            <p className="text-xs text-neutral-600 leading-relaxed">
+                                Naturally hypoallergenic with unbroken long fibres that create a luminous, friction-free drape that regulates temperature across seasons.
+                            </p>
+                        </div>
+
+                        <div className="p-6 rounded-2xl bg-neutral-50 border border-neutral-200/80 space-y-3">
+                            <div className="text-xs font-mono font-bold text-neutral-400 uppercase tracking-widest">
+                                Discipline 02
+                            </div>
+                            <h4 className="text-base font-bold text-neutral-900">19.5μ Extra-Fine Merino</h4>
+                            <p className="text-xs text-neutral-600 leading-relaxed">
+                                Sourced from ethical non-mulesed farms, spun into 4-ply yarns for high resilience, zero itchiness, and natural wrinkle resistance.
+                            </p>
+                        </div>
+
+                        <div className="p-6 rounded-2xl bg-neutral-50 border border-neutral-200/80 space-y-3">
+                            <div className="text-xs font-mono font-bold text-neutral-400 uppercase tracking-widest">
+                                Discipline 03
+                            </div>
+                            <h4 className="text-base font-bold text-neutral-900">Double-Faced Virgin Wool</h4>
+                            <p className="text-xs text-neutral-600 leading-relaxed">
+                                Two layers of pure wool hand-split and blind-stitched along the edges to provide thermal insulation without unnecessary bulk.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* 8. Client Reflections / Social Proof */}
                 <div className="space-y-6">
                     <div className="text-center max-w-xl mx-auto">
                         <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-neutral-500">
@@ -292,7 +338,7 @@ export default function Home() {
                             Trusted by 50,000+ Patrons Worldwide
                         </h2>
                         <p className="text-xs text-neutral-500 mt-1">
-                            Real experiences from verified clients across India and globally.
+                            Real experiences from verified clients across India and internationally.
                         </p>
                     </div>
 
@@ -302,7 +348,7 @@ export default function Home() {
                                 ★★★★★
                             </div>
                             <p className="text-xs text-neutral-700 italic leading-relaxed">
-                                &quot;The Ruby Red Trench Coat is pure perfection. The tailoring and textile weight rival bespoke luxury ateliers. Arrived in Mumbai in 2 business days.&quot;
+                                &quot;The Ruby Red Trench Coat is pure perfection. The tailoring and textile weight rival bespoke luxury ateliers in Milan. Arrived in Mumbai in 2 business days.&quot;
                             </p>
                             <div className="flex items-center justify-between pt-3 border-t border-neutral-100">
                                 <div>
@@ -347,11 +393,11 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* 8. The Atelier Guestlist & Newsletter */}
-                <div className="relative overflow-hidden rounded-3xl bg-neutral-900 text-white p-8 sm:p-14 border border-neutral-800 shadow-xl">
+                {/* 9. The Atelier Guestlist & Newsletter */}
+                <div className="relative overflow-hidden rounded-3xl bg-neutral-950 text-white p-8 sm:p-14 border border-neutral-800 shadow-xl">
                     <div className="relative z-10 max-w-2xl mx-auto text-center space-y-4">
                         <span className="px-3.5 py-1 bg-white/10 rounded-full text-[10px] font-bold tracking-[0.25em] uppercase text-neutral-300 inline-block border border-white/10">
-                            The Aura Atelier // Private Guestlist
+                            The Aura Atelier • Private Guestlist
                         </span>
                         
                         <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
